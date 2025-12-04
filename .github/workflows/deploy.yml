@@ -22,7 +22,7 @@ jobs:
       - run: npx vite build
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/public
+          path: dist
 
   deploy:
     needs: build
