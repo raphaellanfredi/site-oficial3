@@ -1,0 +1,882 @@
+You are an AI product designer working inside Replit Design Mode.
+Your job is to design and implement a high-converting landing page for Eva Inteligência, using React + TypeScript + Tailwind + shadcn/ui, plus AI-generated images / videos / stock photos.
+
+Follow this brief and the design.json below as your single source of truth.
+
+1. Goal & Constraints
+
+Create a clean, futuristic, corporately polished landing page.
+
+Visual style: fundo branco, tipografia escura, com gradientes neon pontuais (magenta, laranja, roxo) e glows suaves, nunca exagerados.
+
+Use muito espaço em branco, cards bem definidos, e um foco visual principal por seção.
+
+Toda a cópia em PT-BR, exatamente como fornecido abaixo (não inventar textos novos; apenas adaptar micro-rótulos quando necessário).
+
+Stack: React + TypeScript + Tailwind + shadcn/ui + Lucide icons.
+
+A página deve ser responsiva (desktop, tablet, mobile).
+
+2. Brand & Voice
+
+Brand name: Eva Inteligência
+Tagline: “Seu primeiro agente de IA profissional.”
+
+Produtos:
+
+Produto principal: EVA — superinteligência de atendimento e vendas (omnichannel, prospecção, qualificação, funis prontos).
+
+Produto de suporte: Captain — IA de assistência para o usuário da plataforma (central de ajuda, Q&A, documentação).
+
+Promessa central:
+Colocar uma IA realmente inteligente operando o atendimento, vendas e prospecção do cliente sem precisar programar.
+
+ICP:
+Donos de negócios de alto valor (clínicas, escritórios, consultorias, negócios de serviços) que buscam Controle, Perfeição e Confiança.
+
+Gatilhos emocionais principais:
+
+Traição (Controle): medo de perder leads e não enxergar o todo.
+
+Injustiça (Perfeição): intolerância a atendimento medíocre.
+
+Humilhação (Confiança): medo de parecer amador ao adotar IA.
+
+Tom de voz: profissional, direto, confiante, sem exageros técnicos.
+Palavras-chave: controle, perfeição, confiança, inteligência coletiva, setup guiado.
+
+3. Global Visual System (resumo do design.json)
+
+Layout:
+
+maxWidth: ~1200px.
+
+Grid 12 colunas, gutter 24px.
+
+Padding vertical por seção: ~80px desktop, 56px mobile.
+
+Hero: altura ~90vh, conteúdo alinhado à esquerda, 2 colunas 6/6, com glow central atrás do visual 3D.
+
+Cores (modo light):
+
+Fundo da página: #FFFFFF.
+
+Seção diferenciada suave: #F7F7FB.
+
+Gradientes suaves de fundo: #FFFFFF → #FFE6F5 → #FFF4E5.
+
+Texto primário: #050816, secundário #3B3B4F, muted #6E6E80.
+
+Acentos principais:
+
+Primário: #FF1CF7 (magenta neon).
+
+Secundário: #FF8A3C (laranja neon).
+
+Terciário: #7C3AED (roxo).
+
+Usar gradientes em hero glow, banners, stripes, destaques, não como poluição.
+
+Tipografia:
+
+Base: system-ui, Inter, sans-serif.
+
+Hierarquia:
+
+h1: 40px, bold, letter-spacing -0.04em.
+
+h2: 32px, bold.
+
+h3: 24px, semi-bold.
+
+Body: 16–18px.
+
+Eyebrow: 12px, uppercase, letter-spacing generoso.
+
+Raios & sombras:
+
+Cards com bordas arredondadas (20–28px), pill buttons 999px.
+
+Sombras suaves e médias, com intenseGlow (magenta) usado apenas em glows especiais.
+
+Componentes principais:
+
+Navbar: fundo branco, borda inferior sutil, nav central, CTA à direita.
+
+Botões:
+
+Primário: gradiente #FF1CF7 → #FF8A3C, pill, sombra forte, leve hover lift.
+
+Secundário (outline): fundo branco, borda escura suave, hover com leve fundo cinza claro.
+
+Badges: variam entre soft (cinza claro) e gradient.
+
+Cards: fundo branco, borda sutil, sombra leve, bastante padding interno.
+
+Chips: borda sutil, pill, hover com leve glow e sombra.
+
+Chat UI: card arredondado com header, balões de mensagem diferenciados.
+
+Footer: fundo branco, borda superior, 4 colunas.
+
+Princípios de UX e estilo:
+
+Hierarquia visual clara com títulos fortes e parágrafos curtos.
+
+Cards e blocos bem separados, com respiro generoso.
+
+Microinterações em hover: lift, subtle scale, glows discretos.
+
+Priorizar legibilidade (fundo branco, texto escuro, contraste alto).
+
+4. Seções da Página
+Section 1 – Hero (2 colunas, 90vh, fundo branco)
+
+Background:
+
+Fundo #FFFFFF.
+
+Glow central atrás do visual 3D (gradiente magenta/laranja, com bordas suaves e blur).
+
+Column 1 (esquerda): texto
+
+h1:
+
+O primeiro agente de IA profissional para o seu atendimento
+
+Subtítulo (parágrafo curto):
+
+A Eva coloca uma IA realmente inteligente na linha de frente do seu WhatsApp, Instagram e site — criando um funil de atendimento e vendas padrão Amazon, sem você precisar programar nada.
+
+Bullets (3, com ícone de check):
+
+✓ Funil de atendimento pronto em 3 etapas
+
+✓ Omnichannel: WhatsApp, Instagram e site
+
+✓ Setup que paga o seu CAC
+
+Botões (lado a lado, com espaçamento):
+
+Primário: Agendar uma demonstração
+
+Secundário (outline): Ver planos e setups
+
+Column 2 (direita): visual 3D hero
+
+Gere um visual 3D minimalista, inspirado no template, com:
+
+Fundo branco.
+
+Um card flutuante em perspectiva (rounded rectangle, borda suave, sombra e leve reflexo).
+
+Glow em gradiente magenta/laranja atrás do card (neon suave, não estourado).
+
+Na frente do card, elementos de UI simulada da Eva:
+
+Balões de chat.
+
+Ícones de WhatsApp e Instagram.
+
+Cards menores com rótulos como:
+
+“Leads Qualificados”
+
+“Funil pronto”
+
+“Prospecção Infinita”
+
+Estética: clean, tech premium, sombras e reflexos discretos, glow neon contido.
+
+Crie um prompt de imagem para este hero, por exemplo:
+
+IMAGE_HERO_EVA: 3D minimal floating card UI on white background, soft magenta-orange gradient glow, WhatsApp and Instagram chat bubbles, labeled cards “Leads Qualificados”, “Funil pronto”, “Prospecção Infinita”, ultra clean, soft shadows, professional SaaS landing style.
+
+Section 2 – Why Eva (Gatilhos Emocionais – 3 cards)
+
+Layout:
+
+Fundo #FFFFFF.
+
+Header em 1 coluna (título + subtítulo).
+
+Abaixo, grade de 3 cards (3 colunas no desktop, 1–2 em mobile/tablet).
+
+Header:
+
+h2:
+
+Por que a Eva é diferente de qualquer chatbot que você já viu?
+
+Subtítulo:
+
+Cada detalhe foi pensado para dar ao seu negócio Controle, Perfeição e Confiança na adoção de IA.
+
+Cards:
+
+Card 1 – Traição (Controle)
+
+Icone Lucide: ShieldCheck dentro de um pequeno badge com gradiente.
+
+h3: Controle absoluto da operação
+
+Descrição:
+
+Nada se perde. Cada lead, conversa e oportunidade é rastreada. Tenha visão total da performance da sua equipe e da Eva em tempo real.
+
+Micro-tag em caption:
+
+Nunca mais seja traído pelos dados.
+
+Card 2 – Injustiça (Perfeição)
+
+Ícone Lucide: Sparkles.
+
+h3: Atendimento padrão ouro, sem falhas
+
+Descrição:
+
+A Eva atende 24/7 com consistência, script perfeito e tom profissional — sem improvisos ou respostas medianas.
+
+Card 3 – Humilhação (Confiança)
+
+Ícone Lucide: Handshake.
+
+h3: Setup feito por especialistas
+
+Descrição:
+
+Nós configuramos tudo por você. A implantação em 3 etapas garante um funil pronto, sem você passar vergonha com uma IA mal treinada.
+
+Cada card deve ter:
+
+Fundo branco, borda sutil, sombra suave.
+
+Ícone dentro de um círculo suave ou badge gradient, alinhado à esquerda do título.
+
+Hover: leve lift (translateY -4px, scale ~1.01) e sombra um pouco mais forte.
+
+Section 3 – Eva Answers (Inteligência Coletiva na prática)
+
+Layout:
+
+Fundo: #F7F7FB (off-white suave).
+
+Conteúdo centralizado, 1 coluna.
+
+Header:
+
+h2:
+
+Você tem demandas complexas. A Eva responde com precisão.
+
+Visual – Card de UI (tipo ChatGPT adaptado)
+
+Card grande centralizado, com bordas arredondadas (~24px).
+
+Header do card:
+
+Pergunte qualquer coisa sobre suas conversas, leads e funil de vendas.
+
+Campo de input (na parte inferior do card):
+
+Placeholder:
+
+Pergunte à Eva…
+
+Dentro do card, exiba chips de sugestões de perguntas (botões interativos):
+
+"Quantos leads qualificados a Eva gerou esta semana?"
+
+"Quais atendentes estão perdendo mais oportunidades?"
+
+"Como está a taxa de resposta do meu WhatsApp?"
+
+"Quais mensagens mais convertem em agendamento?"
+
+"O que posso ajustar hoje para vender mais?"
+
+Microinterações:
+
+Em hover nos chips:
+
+leve glow em gradiente (magenta/laranja),
+
+pequena animação de deslocamento (translateY(-1px), scale(1.02)),
+
+sombra leve conforme chipsHover do design.json.
+
+Section 4 – Eva + Captain (Stack de Inteligências)
+
+Background:
+
+Gradiente muito leve e texturizado: branco → cinza clarinho.
+
+Deve manter boa leitura de texto escuro.
+
+Layout:
+
+2 colunas no desktop; empilhar em mobile.
+
+Column 1 – EVA (Agente Profissional)
+
+h2:
+
+EVA: sua superinteligência de atendimento e vendas
+
+Bullets:
+
+Atende em múltiplos canais (WhatsApp, Instagram, site).
+
+Segmenta leads, qualifica oportunidades e dispara rotinas automáticas.
+
+Entrega uma experiência de alto padrão para seus clientes — mesmo com equipe enxuta.
+
+Column 2 – Captain (Suporte de Elite)
+
+Subheading:
+
+Captain: a IA que apoia você e sua equipe
+
+Card com 3 bullets:
+
+Central de ajuda inteligente para sua operação.
+
+Responde dúvidas sobre configurações, fluxos e integrações da Eva.
+
+Garante ordem, documentação viva e onboarding contínuo.
+
+Visualmente, represente dois cards lado a lado, no próprio layout desta seção:
+
+Card EVA: gradiente magenta/roxo (seguindo cardStripeWarm ou cardStripeCool).
+
+Card Captain: gradiente laranja/rosa, em estilo “Featured Tools”, com ícones minimalistas.
+
+Section 5 – Segurança, Confiabilidade e Setup
+
+Background:
+
+Gradiente texturizado suave:
+
+Base #FFFFFF
+
+Manchas muito discretas em #FFE6F5 (rosa claro) e #FFF4E5 (laranja claro).
+
+Layout:
+
+2 colunas.
+
+Column 1 (texto):
+
+h2:
+
+Seus dados e sua reputação em boas mãos
+
+Parágrafo curto:
+
+Eva Inteligência foi pensada para negócios que não podem se dar ao luxo de errar. Segurança técnica e segurança de imagem caminham juntas.
+
+Column 2 (stack de cards “pill”):
+
+Coluna direita com uma pilha vertical de cards minimalistas, no formato pill:
+
+Card 1:
+
+Ícone de check (Lucide CheckCircle2).
+
+Texto: Infraestrutura com padrões de segurança corporativa.
+
+Card 2:
+
+Ícone de check.
+
+Texto: Fluxos validados em dezenas de operações reais.
+
+Card 3:
+
+Ícone de check.
+
+Texto: Setup guiado em 3 etapas para evitar qualquer sensação de amadorismo.
+
+Card 4:
+
+Ícone de check.
+
+Texto: Suporte humano + IA para não deixar você travado.
+
+Estilo dos cards: pill, borda suave, fundo branco translúcido, ícone à esquerda, texto à direita, hover com leve destaque.
+
+Section 6 – Call To Action Final (MRR + Upsell)
+
+Layout:
+
+1 coluna, seção de destaque.
+
+Background:
+
+Bloco forte com gradiente horizontal neon:
+
+#FF1CF7 → #FF8A3C → #7C3AED (como ctaBanner).
+
+Esta é a seção onde você pode inverter texto:
+
+Se necessário, use texto branco para alto contraste.
+
+Conteúdo:
+
+h2:
+
+Comece com um Setup que paga seu CAC e expanda com a Eva Club
+
+Bullets (em texto claro, com checks ou ícones sutis):
+
+✓ Setup de implantação para tirar o peso da configuração do seu time
+
+✓ Eva One como base do seu MRR previsível
+
+✓ Upsells como Prospecção Infinita para acelerar o ROI
+
+✓ Clube de clientes (Eva Club) com 50% de desconto em novos módulos
+
+CTAs (botões):
+
+Primário: Agendar conversa com o time
+
+Secundário: Baixar apresentação completa
+
+Coloque os botões lado a lado no desktop, empilhados no mobile.
+
+Section 7 – Footer
+
+Background:
+
+Fundo branco, borda superior sutil.
+
+Conteúdo:
+
+Logo da Eva Inteligência (pode usar tipografia simples ou um marcador de logo).
+
+Navegação organizada em colunas:
+
+Produtos:
+
+Eva
+
+Captain
+
+Eva Club
+
+Prospecção Infinita
+
+Recursos:
+
+Central de Ajuda
+
+Base de Conhecimento
+
+Blog
+
+Empresa:
+
+Sobre
+
+Carreiras
+
+Contato
+
+Legal:
+
+Política de Privacidade
+
+Termos de Uso
+
+Ícones sociais (Lucide ou equivalentes):
+
+LinkedIn
+
+Instagram
+
+YouTube
+
+Texto pequeno no rodapé inferior:
+
+© Eva Inteligência – Todos os direitos reservados.
+
+5. Interações & Motion
+
+Use as diretrizes de animação do design.json:
+
+Durations: 150ms / 220ms / 400ms.
+
+Easing: curvas suaves e “soft spring”.
+
+Aplique:
+
+Hover lift em cards.
+
+Hover com glow sutil em chips, CTAs e cards principais.
+
+Glow pulsante muito leve no hero spotlight (heroGlowPulse).
+
+Sempre mantenha as animações sutis e elegantes, nunca chamativas demais.
+
+6. Saída Esperada
+
+Quando gerar o resultado:
+
+Produza o layout completo em React + TypeScript + Tailwind + shadcn/ui, incluindo:
+
+Navbar,
+
+Seções 1 a 7,
+
+Footer,
+
+Responsividade.
+
+Para cada imagem ou vídeo necessário, gere prompts claros rotulados, por exemplo:
+
+IMAGE_HERO_EVA: ...
+
+IMAGE_SECTION4_STACK: ...
+
+VIDEO_CTA_BANNER_LOOP: ... (se desejar um pequeno loop de background sutil).
+
+Respeite estritamente:
+
+os textos em PT-BR fornecidos,
+
+o conceito de fundo branco com tipografia escura,
+
+a paleta e gradientes do design.json.
+
+7. design.json (fonte de verdade de estilo)
+
+Use este objeto como referência fiel de design system:
+
+{
+  "brand": {
+    "name": "Eva Inteligência",
+    "voice": {
+      "tone": "profissional, direto, confiante, sem exageros técnicos",
+      "keywords": [
+        "controle",
+        "perfeição",
+        "confiança",
+        "inteligência coletiva",
+        "setup guiado"
+      ]
+    }
+  },
+  "layout": {
+    "maxWidth": "1200px",
+    "grid": {
+      "columnsDesktop": 12,
+      "gutter": "24px",
+      "sectionVerticalPadding": "80px",
+      "sectionVerticalPaddingMobile": "56px"
+    },
+    "hero": {
+      "height": "90vh",
+      "contentAlignment": "center-left",
+      "columns": "2",
+      "columnRatio": "6/6",
+      "useCentralGlowBackground": true,
+      "allowFloatingCards": true
+    }
+  },
+  "colors": {
+    "mode": "light",
+    "background": {
+      "page": "#FFFFFF",
+      "sectionMuted": "#F7F7FB",
+      "sectionGradientSoft": [
+        "#FFFFFF",
+        "#FFE6F5",
+        "#FFF4E5"
+      ]
+    },
+    "text": {
+      "primary": "#050816",
+      "secondary": "#3B3B4F",
+      "muted": "#6E6E80",
+      "onAccent": "#FFFFFF"
+    },
+    "accent": {
+      "primary": "#FF1CF7",
+      "secondary": "#FF8A3C",
+      "tertiary": "#7C3AED"
+    },
+    "borders": {
+      "subtle": "#E4E4EE",
+      "strong": "#C5C5D4"
+    },
+    "surface": {
+      "card": "#FFFFFF",
+      "cardElevated": "#FFFFFF",
+      "glass": "rgba(255,255,255,0.85)"
+    },
+    "states": {
+      "hover": "rgba(5,8,22,0.04)",
+      "pressed": "rgba(5,8,22,0.08)",
+      "focusRing": "#FF1CF7"
+    },
+    "gradients": {
+      "heroGlow": [
+        "#FF1CF7",
+        "#FF8A3C"
+      ],
+      "cardStripeWarm": [
+        "#FF8A3C",
+        "#FF1CF7"
+      ],
+      "cardStripeCool": [
+        "#7C3AED",
+        "#22D3EE"
+      ],
+      "ctaBanner": [
+        "#FF1CF7",
+        "#FF8A3C",
+        "#7C3AED"
+      ]
+    }
+  },
+  "typography": {
+    "fontFamilyBase": "system-ui, -apple-system, BlinkMacSystemFont, 'Inter', sans-serif",
+    "fontFamilyMono": "'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace",
+    "scale": {
+      "h1": { "size": "40px", "lineHeight": "1.1", "weight": 700, "letterSpacing": "-0.04em" },
+      "h2": { "size": "32px", "lineHeight": "1.15", "weight": 700, "letterSpacing": "-0.03em" },
+      "h3": { "size": "24px", "lineHeight": "1.2", "weight": 600, "letterSpacing": "-0.02em" },
+      "bodyLg": { "size": "18px", "lineHeight": "1.6", "weight": 400 },
+      "body": { "size": "16px", "lineHeight": "1.6", "weight": 400 },
+      "caption": { "size": "13px", "lineHeight": "1.4", "weight": 400, "uppercase": false },
+      "eyebrow": { "size": "12px", "lineHeight": "1.4", "weight": 600, "uppercase": true, "letterSpacing": "0.14em" }
+    }
+  },
+  "radius": {
+    "xs": "6px",
+    "sm": "10px",
+    "md": "16px",
+    "lg": "20px",
+    "xl": "28px",
+    "pill": "999px"
+  },
+  "shadows": {
+    "subtle": "0 8px 18px rgba(15,23,42,0.06)",
+    "medium": "0 18px 45px rgba(15,23,42,0.10)",
+    "intenseGlow": "0 0 120px rgba(255,28,247,0.45)"
+  },
+  "effects": {
+    "glassmorphism": {
+      "background": "rgba(255,255,255,0.85)",
+      "border": "1px solid rgba(255,255,255,0.6)",
+      "backdropFilter": "blur(22px)"
+    },
+    "cardStripeOverlay": {
+      "height": "40%",
+      "position": "top",
+      "opacity": 0.85,
+      "blendMode": "screen",
+      "borderRadius": "20px"
+    }
+  },
+  "components": {
+    "navbar": {
+      "height": "72px",
+      "background": "#FFFFFF",
+      "borderBottom": "1px solid #E4E4EE",
+      "layout": "logo-left, nav-center, cta-right",
+      "navItem": {
+        "fontSize": "14px",
+        "paddingX": "14px",
+        "paddingY": "8px",
+        "hoverBackground": "rgba(5,8,22,0.04)",
+        "activeIndicator": {
+          "height": "2px",
+          "background": "#FF1CF7",
+          "borderRadius": "999px"
+        }
+      }
+    },
+    "button": {
+      "sizes": {
+        "md": { "paddingX": "20px", "paddingY": "11px", "fontSize": "15px", "gap": "8px" },
+        "lg": { "paddingX": "24px", "paddingY": "13px", "fontSize": "16px", "gap": "10px" }
+      },
+      "primary": {
+        "background": "linear-gradient(120deg, #FF1CF7, #FF8A3C)",
+        "color": "#FFFFFF",
+        "shadow": "0 14px 40px rgba(255,28,247,0.35)",
+        "radius": "999px",
+        "hoverTransform": "translateY(-1px) scale(1.01)"
+      },
+      "secondary": {
+        "background": "#FFFFFF",
+        "border": "1px solid rgba(5,8,22,0.18)",
+        "color": "#050816",
+        "radius": "999px",
+        "hoverBackground": "rgba(5,8,22,0.04)"
+      },
+      "ghost": {
+        "background": "transparent",
+        "color": "#050816",
+        "hoverBackground": "rgba(5,8,22,0.04)"
+      }
+    },
+    "badge": {
+      "variants": {
+        "soft": {
+          "background": "rgba(5,8,22,0.04)",
+          "color": "#3B3B4F",
+          "radius": "999px",
+          "paddingX": "10px",
+          "paddingY": "4px"
+        },
+        "gradient": {
+          "background": "linear-gradient(120deg, #FF8A3C, #FF1CF7)",
+          "color": "#FFFFFF",
+          "radius": "999px",
+          "paddingX": "12px",
+          "paddingY": "4px"
+        }
+      }
+    },
+    "card": {
+      "base": {
+        "background": "#FFFFFF",
+        "border": "1px solid rgba(5,8,22,0.06)",
+        "radius": "20px",
+        "padding": "24px",
+        "shadow": "0 16px 40px rgba(15,23,42,0.06)"
+      },
+      "withStripeHeader": {
+        "stripeGradient": "cardStripeWarm",
+        "stripeHeight": "40%",
+        "contentPaddingTop": "28px"
+      },
+      "metric": {
+        "layout": "icon-left, metric-right",
+        "numberFont": "h2",
+        "labelFont": "caption"
+      }
+    },
+    "sectionHeader": {
+      "alignment": "left",
+      "maxWidth": "640px",
+      "eyebrowUse": true,
+      "spacingBelow": "32px"
+    },
+    "featureGrid": {
+      "columnsDesktop": 3,
+      "columnsTablet": 2,
+      "columnsMobile": 1,
+      "gap": "24px"
+    },
+    "chip": {
+      "background": "rgba(5,8,22,0.03)",
+      "border": "1px solid rgba(5,8,22,0.06)",
+      "radius": "999px",
+      "paddingX": "14px",
+      "paddingY": "7px",
+      "fontSize": "14px",
+      "hover": {
+        "background": "rgba(5,8,22,0.06)",
+        "shadow": "0 10px 30px rgba(15,23,42,0.10)",
+        "outline": "1px solid rgba(255,28,247,0.5)"
+      }
+    },
+    "heroVisual": {
+      "type": "3d-composition",
+      "baseShape": "rounded-rectangle",
+      "elevation": "medium",
+      "glowBehind": true,
+      "glowGradient": "heroGlow",
+      "tilt": "slight",
+      "floatingElements": 4
+    },
+    "chatUI": {
+      "background": "#FFFFFF",
+      "border": "1px solid rgba(5,8,22,0.06)",
+      "radius": "24px",
+      "padding": "20px",
+      "shadow": "0 18px 45px rgba(15,23,42,0.08)",
+      "header": {
+        "titleFont": "bodyLg",
+        "subtleLabel": "caption",
+        "iconStyle": "minimal-line"
+      },
+      "messageBubble": {
+        "user": {
+          "background": "rgba(5,8,22,0.04)",
+          "radius": "16px 16px 4px 16px"
+        },
+        "assistant": {
+          "background": "linear-gradient(135deg, rgba(255,28,247,0.06), rgba(255,138,60,0.04))",
+          "radius": "16px 16px 16px 4px"
+        }
+      },
+      "input": {
+        "background": "#FFFFFF",
+        "border": "1px solid rgba(5,8,22,0.08)",
+        "radius": "999px",
+        "iconPlacement": "right"
+      }
+    },
+    "footer": {
+      "background": "#FFFFFF",
+      "borderTop": "1px solid #E4E4EE",
+      "paddingVertical": "40px",
+      "columns": 4,
+      "columnGap": "32px",
+      "copyrightFont": "caption"
+    }
+  },
+  "animation": {
+    "durationFast": "150ms",
+    "durationBase": "220ms",
+    "durationSlow": "400ms",
+    "easing": {
+      "standard": "cubic-bezier(0.22, 0.61, 0.36, 1)",
+      "softSpring": "cubic-bezier(0.18, 0.89, 0.32, 1.28)"
+    },
+    "microInteractions": {
+      "cardsHoverLift": {
+        "translateY": "-4px",
+        "shadow": "medium",
+        "scale": 1.01
+      },
+      "chipsHover": {
+        "scale": 1.02,
+        "glow": "intenseGlow"
+      },
+      "heroGlowPulse": {
+        "type": "loop",
+        "opacityRange": [0.6, 1],
+        "duration": "4800ms"
+      }
+    }
+  },
+  "principles": {
+    "structure": [
+      "Use uma hierarquia visual clara com títulos fortes e parágrafos curtos.",
+      "Agrupe informações em blocos (cards) com muito espaço em branco ao redor.",
+      "Mantenha sempre um foco visual principal por seção (um card, gráfico ou chat)."
+    ],
+    "spacing": [
+      "Nunca deixe elementos encostados nas bordas: use padding mínimo de 24px em cards.",
+      "Use grandes blocos de espaço negativo para dar sensação de sofisticação.",
+      "Entre seções, mantenha respiro generoso para destacar mudanças de contexto."
+    ],
+    "style": [
+      "Combine estética futurista (gradientes neon, glows) com layout limpo e corporativo.",
+      "Use gradientes sempre em superfícies específicas (hero, banners, stripes de cards), não como poluição visual.",
+      "Priorize legibilidade e clareza: fundo branco, texto escuro, contraste alto."
+    ],
+    "ux": [
+      "Todos os CTAs principais devem ser visíveis sem esforço e com rotulagem clara.",
+      "Use microinterações (hover, foco, pequenos movimentos) para sinalizar interatividade.",
+      "Evite paredes de texto: quebre explicações técnicas em bullets e cards."
+    ]
+  }
+}
