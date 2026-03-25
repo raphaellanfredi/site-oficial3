@@ -1,0 +1,97 @@
+Ficou muito bom! Agora temos alguns ajustes finos para finalziarmos o projeto. Vou elencar as alterações abaixo e em anexo está a página atualmente. OBS: o layout está perfeito, vamos manter sem alterações. 
+
+- adicionar a logo no menu flutuante e no rodapé do site 
+- Sabstituir a frase "Setup que paga seu CAC" por Recupere o controle em 7 dias 
+- Todos os botões de CTA de agendamento da página "agendar uma demonstração", "agendar uma conversa" devem ser direcionados para o link: wa.me/5511961163777
+- crie uma página de planos e preços (valores e descrição em anexo), no menu ele deve ser a última opção. Mantenha a mesma comunicação visual da página principal
+- No botão "ver planos e setups" abrir página de planos e preços
+- Subistituir a palavra "dezenas"por "centenas"na frase: Fluxos validados em dezenas de operações reais.
+- Subsituir a frase: Comece com um Setup que paga seu CAC e expanda com a Eva Club, por: "Comece com um setup que entrega sua IA pronta em 7 dias." 
+- Substituir a palavra "upsell" por "ferramentas", por exemplo: "Ferramentas como a Prospecção Infinita para acelerar suas vendas. "
+- Substituir a frase: "Eva One como base do seu MRR previsível" por "Eva One atende, qualifica e agenda seus compromissos 24 horas por dia."
+- Substituir a frase: "Clube de clientes (Eva Club) com 50% de desconto em novos módulos" por "Membros do Eva Club possuem 50% de desconto em todos os produtos." 
+- No botão "Baixar a apresentação completa" precisa ter o pdf da apresentação anexado, como faco no replit?
+_ melhorar a responsividade dos botões
+- No rodapé, em Produtos, alterar para: Eva One, Eva Pro, Eva Black, Gestor de Condomínios, Prospecção infinita, Resumidor de Grupos, Gerador de Contratos. Na aba Empresa, alterar para: Sobre, contato, Politica de privacidade e Termos de uso. 
+- Link Instagram (para anexar ao icone): https://www.instagram.com/eva.inteligencia.art/ 
+- Atualizar a frase: "© 2024 Eva Inteligência. Todos os direitos reservados." para "© 2026 Eva Inteligência. Todos os direitos reservados. " 
+
+# Planos e preços (incluindo  produtos de upsell - não diga upseel na copy):
+Obs: Em todos os produtos, quem faz parte do Eva Club, ou seja, é cliente ativo da base tem 50% de desconto em todos os produtos Eva.
+
+**Eva One**
+- Até 1500 atendimentos por mês
+- 3 etapas de recuperação de cliente (follow up)
+- Disparo de mensagens em massa com segmentação
+- 2 conexões (escolha entre: Whatsapp / Instagram / email / sms / Telegram / chatbox)
+- 3 usuários
+- CRM nativo
+- Integração com Google Agenda
+
+Plano sem fidelidade:
+Implantação: 3.500 (12x no cartão)
+Mensalidade: 1.592 
+
+Plano Semestral:
+Implantação: 2.510 (12x no cartão)
+Mensalidade: 1.295
+
+Plano Anual:
+Implantação: R$1.853 (12x no cartão)
+Mensalidade: 998
+
+**Eva PRO**
+- Até 3500 atendimentos por mês
+- 7 etapas  de recuperação de cliente (follow up)
+- Disparo de mensagens em massa com segmentação ilimitado
+- Anti no Show (confirma os agendamentos no automático)
+- 5 conexões (Whatsapp / Instagram / email / sms / Telegram / chatbox)
+- 10 usuários
+- CRM nativo
+- Integração com Google Agenda
+- Integração com meios de pagamento Asaas / PagarMe / Conta Azul
+- Ligações com IA (ativa e passiva) 
+
+Plano sem fidelidade:
+Implantação: 5.300 (12x no cartão)
+Mensalidade: 3.500
+
+Plano Semestral:
+Implantação: 4.490 (12x no cartão)
+Mensalidade: 3.230
+
+Plano Anual:
+Implantação: 3.950 (12x no cartão)
+Mensalidade: 2.690
+  
+Obs: custo da IA de ligação é pós pago, de acordo com o uso. 
+
+**Eva BLACK**
+- Servidor dedicado
+- Até 15.200 atendimentos por mês
+- Suporte Premium
+- Infraestrutura escalável
+- 15 etapas de recuperação de cliente (follow up)
+- Disparo de mensagens em massa com segmentação ilimitadas 
+- 10 conexões (Whatsapp / Instagram / email / sms / Telegram / chatbox)
+- 30 usuários
+- CRM nativo
+- Integração com Google Agenda
+- Integração com meios de pagamento Asaas / PagarMe / Conta Azul
+- Ligações com IA (ativa e passiva)
+  
+Plano sem fidelidade:
+Implantação: 15.200 (12x no cartão)
+Mensalidade: 5.300
+  
+Plano Semestral:
+Implantação: 12.500 (12x no cartão)
+Mensalidade: 4.850
+
+Plano Anual:
+Implantação: 9.800 (12x no cartão)
+Mensalidade: 4.490
+
+Obs: custo da IA de ligação é pós pago, de acordo com o uso. 
+
+ Lembre-se me dê o prompt completo para aplicar no replit e finalizar o site
