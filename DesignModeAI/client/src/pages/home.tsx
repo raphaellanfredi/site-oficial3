@@ -1,6 +1,5 @@
 import { Navbar } from "@/components/eva/Navbar";
 import { Hero } from "@/components/eva/Hero";
-import { Problem } from "@/components/eva/Problem";
 import { Solution } from "@/components/eva/Solution";
 import { HowItWorks } from "@/components/eva/HowItWorks";
 import { Results } from "@/components/eva/Results";
@@ -21,7 +20,6 @@ export default function Home() {
         <Hero />
         <ChatSimulator />
         <DoresSection />
-        <Problem />
         <Solution />
         <HowItWorks />
         <Results />
