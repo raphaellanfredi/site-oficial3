@@ -11,6 +11,7 @@ import { Affiliates } from "@/components/eva/Affiliates";
 import { FinalCTA } from "@/components/eva/FinalCTA";
 import { Footer } from "@/components/eva/Footer";
 import { ChatSimulator } from "@/components/eva/ChatSimulator";
+import { DoresSection } from "@/components/eva/DoresSection";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <main>
         <Hero />
         <ChatSimulator />
+        <DoresSection />
         <Problem />
         <Solution />
         <HowItWorks />

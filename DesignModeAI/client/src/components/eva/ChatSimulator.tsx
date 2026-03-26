@@ -22,11 +22,13 @@ const flows: Record<string, {
     name: "Eva — SaúdeMax",
     color: "#185FA5",
     steps: [
-      { from: "eva", text: "Olá! Sou a Eva da SaúdeMax 👋\nPosso verificar cobertura, agendar consultas ou esclarecer dúvidas sobre seu plano.", quick: ["Verificar cobertura", "Agendar consulta", "Falar com atendente"] },
-      { from: "user", text: "Verificar cobertura", quick: [] },
-      { from: "eva", text: "Claro! Me informe o número da carteirinha ou CPF.", quick: [] },
-      { from: "user", text: "123.456.789-00", quick: [] },
-      { from: "eva", text: "✅ Plano encontrado!\n\nPlano: SaúdeMax Essencial\nValidade: 31/12/2025\nStatus: Ativo\n\nCobertura inclui: consultas clínicas, exames básicos, pronto-socorro.", quick: ["Ver cobertura completa", "Agendar consulta"] },
+      { from: "eva", text: "Olá! Sou a Eva da SaúdeMax 👋\nComo posso te ajudar hoje?", quick: ["Quero agendar consulta", "Verificar cobertura", "Falar com atendente"] },
+      { from: "user", text: "Quero agendar consulta", quick: [] },
+      { from: "eva", text: "Ótimo! Qual especialidade você precisa?\n\n• Clínico Geral\n• Cardiologia\n• Dermatologia\n• Ortopedia", quick: ["Clínico Geral", "Cardiologia", "Dermatologia"] },
+      { from: "user", text: "Clínico Geral", quick: [] },
+      { from: "eva", text: "Temos disponibilidade com clínico geral:\n\n📅 Amanhã às 9h ou 14h\n📅 Quinta às 10h ou 16h\n\nQual horário prefere?", quick: ["Amanhã às 9h", "Amanhã às 14h", "Quinta às 10h"] },
+      { from: "user", text: "Amanhã às 9h", quick: [] },
+      { from: "eva", text: "✅ Consulta agendada para amanhã às 9h com clínico geral.\n\nVou te enviar a confirmação por aqui. Precisa de mais alguma coisa?", quick: [] },
     ],
   },
   juridico: {

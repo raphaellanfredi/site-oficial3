@@ -213,8 +213,16 @@ export function Hero() {
 
         {/* CTAs */}
         <div
-          className="word-reveal flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
-          style={{ animationDelay: "0.9s", justifyContent: "center" }}
+          style={{
+            opacity: 0,
+            animation: "word-reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.9s forwards",
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            gap: "16px",
+            justifyContent: "center",
+            width: "100%",
+          }}
         >
           <button
             className="btn-primary px-6 sm:px-8 py-4 text-sm sm:text-base w-full sm:w-auto"
