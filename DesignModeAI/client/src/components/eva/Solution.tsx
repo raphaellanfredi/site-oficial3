@@ -1,12 +1,43 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
+
+const WhatsAppIcon = () => (
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 3C9.716 3 3 9.716 3 18c0 2.643.693 5.122 1.904 7.272L3 33l7.93-1.875A14.94 14.94 0 0018 33c8.284 0 15-6.716 15-15S26.284 3 18 3z" fill="#25D366"/>
+    <path d="M25.5 21.938c-.375-.188-2.216-1.094-2.56-1.219-.343-.125-.593-.188-.843.188-.25.375-.969 1.219-1.188 1.469-.218.25-.437.281-.812.094-.375-.188-1.582-.583-3.013-1.857-1.113-.993-1.865-2.219-2.083-2.594-.219-.375-.024-.578.163-.765.169-.168.375-.438.563-.657.188-.218.25-.375.375-.624.125-.25.063-.47-.031-.657-.094-.188-.844-2.032-1.157-2.782-.304-.73-.613-.63-.843-.642-.218-.01-.469-.013-.719-.013-.25 0-.656.094-.999.469-.344.375-1.313 1.282-1.313 3.126s1.344 3.626 1.532 3.876c.187.25 2.643 4.032 6.405 5.657 3.761 1.625 3.761 1.083 4.436 1.02.675-.063 2.216-.906 2.53-1.781.313-.875.313-1.625.219-1.781-.094-.157-.344-.25-.719-.438z" fill="white"/>
+  </svg>
+);
+
+const InstagramIcon = () => (
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="ig-grad1" cx="30%" cy="107%" r="150%">
+        <stop offset="0%" stopColor="#fdf497"/>
+        <stop offset="5%" stopColor="#fdf497"/>
+        <stop offset="45%" stopColor="#fd5949"/>
+        <stop offset="60%" stopColor="#d6249f"/>
+        <stop offset="90%" stopColor="#285AEB"/>
+      </radialGradient>
+    </defs>
+    <rect width="36" height="36" rx="9" fill="url(#ig-grad1)"/>
+    <circle cx="18" cy="18" r="6" stroke="white" strokeWidth="2.5" fill="none"/>
+    <circle cx="25.5" cy="10.5" r="1.5" fill="white"/>
+  </svg>
+);
+
+const FacebookIcon = () => (
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="36" height="36" rx="9" fill="#1877F2"/>
+    <path d="M20.5 19h2.5l1-4h-3.5v-2c0-1.1.45-2 1.75-2H24V7.14A18.05 18.05 0 0021.25 7C18.4 7 16.5 8.73 16.5 12.2V15H13v4h3.5v9h4v-9z" fill="white"/>
+  </svg>
+);
 
 const CHANNELS = [
-  { icon: "💚", label: "WhatsApp" },
-  { icon: "📸", label: "Instagram" },
+  { icon: <WhatsAppIcon />, label: "WhatsApp" },
+  { icon: <InstagramIcon />, label: "Instagram" },
+  { icon: <FacebookIcon />, label: "Facebook" },
   { icon: "📧", label: "E-mail" },
   { icon: "📞", label: "Telefone" },
   { icon: "💻", label: "Chat do Site" },
-  { icon: "👥", label: "Facebook" },
   { icon: "🎵", label: "TikTok" },
   { icon: "🛒", label: "E-commerce" },
 ];

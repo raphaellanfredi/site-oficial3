@@ -5,7 +5,7 @@ const STEPS = [
     number: "01",
     title: "Reunião de Arquitetura",
     desc: "Entendemos seu negócio a fundo. Processos, objeções, produtos, tom de voz. A Eva vai ser uma extensão da sua marca.",
-    icon: "🏗️",
+    icon: "🗂️",
     color: "#FF0080",
   },
   {

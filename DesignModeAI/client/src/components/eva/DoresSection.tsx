@@ -9,7 +9,7 @@ export function DoresSection() {
     },
     {
       numero: "DOR 02",
-      titulo: "Você paga salário para responder 'qual o horário?'",
+      titulo: "Você paga um funcionário para responder 'quanto custa?'",
       descricao:
         "80% das mensagens são perguntas repetitivas. Sua equipe gasta horas nisso ao invés de focar no que realmente importa.",
       urgencia: "Calculou quanto isso custa por mês?",
@@ -208,7 +208,7 @@ export function DoresSection() {
               backgroundClip: "text",
             }}
           >
-            Automaticamente. 24 horas. Sem contratar ninguém.
+            Automaticamente.<br />24 horas. Sem contratar ninguém.
           </span>
         </p>
       </div>
