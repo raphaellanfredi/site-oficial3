@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { SocialProof } from "./SocialProof";
 
 const PARTICLES = Array.from({ length: 40 }, (_, i) => ({
   id: i,
@@ -181,7 +182,7 @@ export function Hero() {
               animation: "word-reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards",
             }}
           >
-            Enquanto você vive,
+            Seu atendimento no nível das grandes empresas.
           </span>
           <span
             className="hero-headline block"
@@ -190,9 +191,8 @@ export function Hero() {
               animation: "word-reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards",
             }}
           >
-            <span className="text-white">a </span>
-            <span className="gradient-text">Eva</span>
-            <span className="text-white"> trabalha.</span>
+            <span className="text-white">Por uma </span>
+            <span className="gradient-text">fração do custo.</span>
           </span>
         </h1>
 
@@ -208,14 +208,12 @@ export function Hero() {
             marginBottom: "40px",
           }}
         >
-          Atendimento inteligente no WhatsApp, Instagram, E-mail, Telefone e muito mais.
-          <br className="hidden sm:block" />
-          <strong className="text-white/80"> 24 horas. Sem pausa. Sem processo trabalhista.</strong>
+          A Eva é sua primeira contratação de IA — inteligente o suficiente pra entender contexto, responder com personalidade e nunca deixar um cliente sem resposta.
         </p>
 
         {/* CTAs */}
         <div
-          className="word-reveal flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto"
+          className="word-reveal flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
           style={{ animationDelay: "0.9s", justifyContent: "center" }}
         >
           <button
@@ -223,19 +221,19 @@ export function Hero() {
             style={{ borderRadius: "8px" }}
             onClick={() => (window.location.href = "/planos")}
           >
-            Quero minha IA agora →
+            Conhecer a Eva
           </button>
           <button
             className="btn-outline px-6 sm:px-8 py-4 text-sm sm:text-base w-full sm:w-auto"
             style={{ borderRadius: "8px" }}
             onClick={() => document.getElementById("solucao")?.scrollIntoView({ behavior: "smooth" })}
           >
-            Ver como funciona
+            ▶ Assistir demo (60s)
           </button>
         </div>
 
-        {/* Animated stats */}
-        <HeroStats />
+        {/* Social proof */}
+        <SocialProof />
       </div>
 
       {/* Bottom border */}
