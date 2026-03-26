@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { SocialProof } from "./SocialProof";
 
 const PARTICLES = Array.from({ length: 40 }, (_, i) => ({
   id: i,
@@ -182,7 +181,7 @@ export function Hero() {
               animation: "word-reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards",
             }}
           >
-            Seu atendimento no nível das grandes empresas.
+            Enquanto você vive,
           </span>
           <span
             className="hero-headline block"
@@ -191,8 +190,9 @@ export function Hero() {
               animation: "word-reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards",
             }}
           >
-            <span className="text-white">Por uma </span>
-            <span className="gradient-text">fração do custo.</span>
+            <span className="text-white">a </span>
+            <span className="gradient-text">Eva</span>
+            <span className="text-white"> trabalha.</span>
           </span>
         </h1>
 
@@ -208,7 +208,8 @@ export function Hero() {
             marginBottom: "40px",
           }}
         >
-          A Eva é sua primeira contratação de IA — inteligente o suficiente pra entender contexto, responder com personalidade e nunca deixar um cliente sem resposta.
+          Atendimento inteligente no WhatsApp, Instagram, E-mail, Telefone e muito mais.{" "}
+          <strong>24 horas. Sem pausa. Sem processo trabalhista.</strong>
         </p>
 
         {/* CTAs */}
@@ -229,19 +230,17 @@ export function Hero() {
             style={{ borderRadius: "8px" }}
             onClick={() => (window.location.href = "/planos")}
           >
-            Conhecer a Eva
+            Quero minha IA agora →
           </button>
           <button
             className="btn-outline px-6 sm:px-8 py-4 text-sm sm:text-base w-full sm:w-auto"
             style={{ borderRadius: "8px" }}
             onClick={() => document.getElementById("solucao")?.scrollIntoView({ behavior: "smooth" })}
           >
-            ▶ Assistir demo (60s)
+            Ver como funciona
           </button>
         </div>
 
-        {/* Social proof */}
-        <SocialProof />
       </div>
 
       {/* Bottom border */}
