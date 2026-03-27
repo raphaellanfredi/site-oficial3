@@ -77,6 +77,7 @@ export function DoresSection() {
 
       {/* Grid de dores */}
       <div
+        className="dores-grid"
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(2, 1fr)",

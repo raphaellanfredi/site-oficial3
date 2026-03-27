@@ -318,5 +318,8 @@
       font-size: clamp(40px, 8vw, 56px);
       white-space: normal;
     }
+    .dores-grid {
+      grid-template-columns: 1fr !important;
+    }
   }
 }
