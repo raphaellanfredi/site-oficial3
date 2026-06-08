@@ -54,7 +54,7 @@ export default function Navbar() {
         }}
       >
         <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
-          <img src="/logo-eva.png" alt="Eva" style={{ height: "38px" }} />
+          <img src="/logo-eva.webp" alt="Eva" style={{ height: "38px" }} />
         </Link>
 
         <div

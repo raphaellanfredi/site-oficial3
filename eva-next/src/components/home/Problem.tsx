@@ -98,6 +98,7 @@ export default function Problem() {
                   display: "flex",
                   gap: "16px",
                   alignItems: "flex-start",
+                  position: "relative",
                   opacity: cardsInView ? 1 : 0,
                   transform: cardsInView ? "translateY(0)" : "translateY(30px)",
                   transition: `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`,
@@ -107,6 +108,22 @@ export default function Problem() {
                   borderRadius: "12px",
                 }}
               >
+                {/* X vermelho */}
+                <div style={{
+                  position: "absolute",
+                  top: "12px",
+                  right: "14px",
+                  width: "22px",
+                  height: "22px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}>
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <circle cx="11" cy="11" r="11" fill="rgba(200,0,0,0.1)"/>
+                    <path d="M7 7l8 8M15 7l-8 8" stroke="#cc0000" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
                 <span style={{ fontSize: "28px", flexShrink: 0 }}>{p.emoji}</span>
                 <div>
                   <h3 style={{ fontWeight: 700, fontSize: "16px", marginBottom: "4px", color: "#111" }}>{p.title}</h3>

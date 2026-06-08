@@ -60,12 +60,12 @@ export default function ProductsPlatform() {
           }}
         >
           <Image
-            src="/platform-screenshot.png"
+            src="/platform-screenshot.webp"
             alt="Plataforma Eva Inteligência"
             width={1422}
             height={683}
             style={{ width: "100%", height: "auto", display: "block" }}
-            priority={false}
+            loading="lazy"
           />
         </div>
       </div>

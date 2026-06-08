@@ -99,21 +99,21 @@ export default function HeroVideo() {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
       >
         <source src="/video/hero.mp4" type="video/mp4" />
       </video>
 
       {/* ── Overlays ─────────────────────────────────────────────────────── */}
       {/* White veil: keeps text readable, gives video an ethereal quality */}
-      <div className="absolute inset-0 bg-white/72" />
+      <div className="absolute inset-0 bg-white/[0.82]" />
 
       {/* Vignette: fades edges to white, holds focus on center content */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at center, transparent 30%, rgba(255,255,255,0.6) 100%)",
+            "radial-gradient(ellipse at center, transparent 20%, rgba(255,255,255,0.75) 100%)",
         }}
       />
 
@@ -141,12 +141,18 @@ export default function HeroVideo() {
         {/* Headline */}
         <h1 className="mb-8">
           <span className="block overflow-hidden leading-[1.05]">
-            <span className="hero-line block text-[clamp(2.8rem,7.5vw,7rem)] font-black tracking-tight">
+            <span
+              className="hero-line block text-[clamp(2.8rem,7.5vw,7rem)] font-black tracking-tight"
+              style={{ textShadow: "0 2px 24px rgba(255,255,255,0.9), 0 1px 4px rgba(255,255,255,0.8)" }}
+            >
               Enquanto você vive,
             </span>
           </span>
           <span className="block overflow-hidden leading-[1.05]">
-            <span className="hero-line block text-[clamp(2.8rem,7.5vw,7rem)] font-black tracking-tight">
+            <span
+              className="hero-line block text-[clamp(2.8rem,7.5vw,7rem)] font-black tracking-tight"
+              style={{ textShadow: "0 2px 24px rgba(255,255,255,0.9), 0 1px 4px rgba(255,255,255,0.8)" }}
+            >
               a Eva trabalha.
             </span>
           </span>

@@ -5,10 +5,7 @@ import { useEffect, useRef, useState } from "react";
 const stats = [
   { value: "300+", label: "Empresas com Eva" },
   { value: "20000000+", label: "Atendimentos com IA", display: "20M+" },
-  { value: "7 dias", label: "Para estar no ar" },
   { value: "99,9%", label: "Precisão nas respostas" },
-  { value: "0", label: "Processos trabalhistas" },
-  { value: "24h", label: "Por dia, 365 dias" },
 ];
 
 function StatItem({ stat, inView, delay }: { stat: typeof stats[0]; inView: boolean; delay: number }) {
@@ -25,7 +22,7 @@ function StatItem({ stat, inView, delay }: { stat: typeof stats[0]; inView: bool
         className="gradient-text"
         style={{
           fontWeight: 900,
-          fontSize: "clamp(28px, 5vw, 64px)",
+          fontSize: "clamp(22px, 5vw, 64px)",
           lineHeight: 1,
           marginBottom: "12px",
           letterSpacing: "-1px",
@@ -82,8 +79,8 @@ export default function Numbers() {
 
         <div
           ref={ref}
-          className="grid grid-cols-2 md:grid-cols-3"
-          style={{ gap: "40px 24px" }}
+          className="grid grid-cols-3"
+          style={{ gap: "24px" }}
         >
           {stats.map((s, i) => (
             <StatItem key={s.label} stat={s} inView={inView} delay={i * 0.1} />
