@@ -58,7 +58,7 @@ export default function Navbar() {
         </Link>
 
         <div
-          style={{ display: "flex", gap: "32px", alignItems: "center" }}
+          style={{ gap: "32px", alignItems: "center" }}
           className="hidden md:flex"
         >
           {navLinks.map((link) => (
@@ -80,7 +80,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="hidden md:flex" style={{ alignItems: "center", gap: "12px" }}>
+        <div className="hidden md:flex" style={{ gap: "12px", alignItems: "center" }}>
           <a
             href="https://app.evainteligencia.com.br/"
             target="_blank"

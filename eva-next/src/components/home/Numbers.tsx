@@ -25,7 +25,7 @@ function StatItem({ stat, inView, delay }: { stat: typeof stats[0]; inView: bool
         className="gradient-text"
         style={{
           fontWeight: 900,
-          fontSize: "clamp(36px, 5vw, 64px)",
+          fontSize: "clamp(28px, 5vw, 64px)",
           lineHeight: 1,
           marginBottom: "12px",
           letterSpacing: "-1px",
@@ -82,11 +82,8 @@ export default function Numbers() {
 
         <div
           ref={ref}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "48px",
-          }}
+          className="grid grid-cols-2 md:grid-cols-3"
+          style={{ gap: "40px 24px" }}
         >
           {stats.map((s, i) => (
             <StatItem key={s.label} stat={s} inView={inView} delay={i * 0.1} />
