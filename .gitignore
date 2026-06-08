@@ -37,3 +37,8 @@ yarn-error.log*
 
 # Vite cache
 .vite/
+
+# Next.js
+.next/
+eva-next/out/
+eva-next/.next/
