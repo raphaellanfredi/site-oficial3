@@ -12,7 +12,7 @@ function StatItem({ stat, inView, delay }: { stat: typeof stats[0]; inView: bool
   return (
     <div
       style={{
-        textAlign: "center",
+        textAlign: "left",
         opacity: inView ? 1 : 0,
         transform: inView ? "translateY(0)" : "translateY(30px)",
         transition: `opacity 0.7s ease ${delay}s, transform 0.7s ease ${delay}s`,
@@ -68,8 +68,8 @@ export default function Numbers() {
             fontFamily: "Inter",
             fontWeight: 900,
             fontSize: "clamp(36px, 5vw, 56px)",
-            textAlign: "center",
-            marginBottom: "80px",
+            textAlign: "left",
+            marginBottom: "64px",
             letterSpacing: "-2px",
             color: "#111",
           }}
@@ -79,8 +79,8 @@ export default function Numbers() {
 
         <div
           ref={ref}
-          className="grid grid-cols-3"
-          style={{ gap: "24px" }}
+          className="grid grid-cols-1 md:grid-cols-3"
+          style={{ gap: "32px 24px" }}
         >
           {stats.map((s, i) => (
             <StatItem key={s.label} stat={s} inView={inView} delay={i * 0.1} />
