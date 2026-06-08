@@ -3,11 +3,9 @@ version: "3.8"
 services:
   nginx:
     image: nginx:alpine
-    configs:
-      - source: nginx_spa_conf
-        target: /etc/nginx/conf.d/default.conf
     volumes:
       - /var/www/eva/dist/public:/usr/share/nginx/html:ro
+      - /opt/stacks/eva/nginx.conf:/etc/nginx/conf.d/default.conf:ro
     networks:
       - network_public
     deploy:
@@ -19,10 +17,6 @@ services:
         - "traefik.http.routers.eva.rule=Host(`www.evainteligencia.com.br`)"
         - "traefik.http.routers.eva.entrypoints=web"
         - "traefik.http.services.eva.loadbalancer.server.port=80"
-
-configs:
-  nginx_spa_conf:
-    file: ./nginx.conf
 
 networks:
   network_public:

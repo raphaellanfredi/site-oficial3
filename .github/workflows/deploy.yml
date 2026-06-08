@@ -53,6 +53,8 @@ jobs:
           ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no \
             ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "
               cd /opt/stacks/eva
+              docker stack rm eva 2>/dev/null || true
+              sleep 5
               docker config rm eva_nginx_spa_conf 2>/dev/null || true
               docker stack deploy -c eva_site.yaml eva
             "
