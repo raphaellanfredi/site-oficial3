@@ -118,14 +118,12 @@ export default function Navbar() {
         </div>
 
         <button
-          className="md:hidden"
+          className="md:hidden flex flex-col"
           onClick={() => setMenuOpen(!menuOpen)}
           style={{
             background: "none",
             border: "none",
             cursor: "pointer",
-            display: "flex",
-            flexDirection: "column",
             gap: "5px",
             padding: "8px",
           }}
