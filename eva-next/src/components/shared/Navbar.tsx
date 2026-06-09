@@ -28,6 +28,7 @@ export default function Navbar() {
   ];
 
   return (
+    <>
     <nav
       style={{
         position: "fixed",
@@ -151,11 +152,13 @@ export default function Navbar() {
         </button>
       </div>
 
+    </nav>
+
       {menuOpen && (
         <div
           style={{
             position: "fixed",
-            top: "72px",
+            top: 0,
             left: 0,
             right: 0,
             bottom: 0,
@@ -167,7 +170,7 @@ export default function Navbar() {
             alignItems: "center",
             justifyContent: "center",
             gap: "32px",
-            zIndex: 49,
+            zIndex: 100,
           }}
         >
           {navLinks.map((link) => (
@@ -213,6 +216,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-    </nav>
+    </>
   );
 }
