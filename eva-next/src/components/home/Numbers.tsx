@@ -12,7 +12,7 @@ function StatItem({ stat, inView, delay }: { stat: typeof stats[0]; inView: bool
   return (
     <div
       style={{
-        textAlign: "left",
+        textAlign: "center",
         opacity: inView ? 1 : 0,
         transform: inView ? "translateY(0)" : "translateY(30px)",
         transition: `opacity 0.7s ease ${delay}s, transform 0.7s ease ${delay}s`,
