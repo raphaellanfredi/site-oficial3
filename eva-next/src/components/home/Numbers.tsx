@@ -68,7 +68,7 @@ export default function Numbers() {
             fontFamily: "Inter",
             fontWeight: 900,
             fontSize: "clamp(36px, 5vw, 56px)",
-            textAlign: "left",
+            textAlign: "center",
             marginBottom: "64px",
             letterSpacing: "-2px",
             color: "#111",
