@@ -35,7 +35,7 @@ export default function Navbar() {
         top: 0,
         left: 0,
         right: 0,
-        zIndex: 50,
+        zIndex: 101,
         transition: "all 0.3s ease",
         backdropFilter: scrolled ? "blur(20px)" : "none",
         WebkitBackdropFilter: scrolled ? "blur(20px)" : "none",
