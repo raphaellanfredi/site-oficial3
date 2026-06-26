@@ -5,15 +5,15 @@ import { useEffect, useState } from "react";
 const testimonials = [
   {
     quote: "No primeiro dia, a Eva já converteu dois clientes novos para a loja. Estamos adorando!",
-    author: "Loja da Caru",
+    author: "Loja de Roupas do Rio de Janeiro",
   },
   {
     quote: "Nossa equipe adora a Eva. Foram mais de 20 mil clientes atendidos com IA no último ano. Aumento de 25% nas conversões e zeramos o tempo de espera pelo WhatsApp. A Eva atende 24 horas.",
-    author: "Boate Boas Intenções",
+    author: "Casa de Eventos em São Paulo",
   },
   {
     quote: "Contratamos a Eva para todos os clientes da nossa agência. Temos tranquilidade de saber que os leads dos anúncios serão respondidos e qualificados de forma profissional.",
-    author: "Agência Alexakis",
+    author: "Agência de Propaganda em São Paulo",
   },
 ];
 

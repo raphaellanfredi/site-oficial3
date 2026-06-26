@@ -1,25 +1,26 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { ShieldIcon, UserShieldIcon, GlobeLockIcon, MapPinIcon } from "./icons";
 
 const secFeatures = [
   {
-    icon: "🔒",
+    Icon: ShieldIcon,
     title: "Logs de Auditoria",
     text: "Trilha forense de tudo: quem fez o que, quando e de onde. Conformidade total.",
   },
   {
-    icon: "👤",
+    Icon: UserShieldIcon,
     title: "Controle de Acesso",
     text: "Papéis personalizados com permissões granulares. Cada usuário vê apenas o que precisa.",
   },
   {
-    icon: "🌐",
+    Icon: GlobeLockIcon,
     title: "SSO / SAML",
     text: "Integração com sistemas corporativos de identidade. Acesso revogado instantaneamente ao desligar um funcionário.",
   },
   {
-    icon: "📊",
+    Icon: MapPinIcon,
     title: "Roteamento Geográfico",
     text: "Direcione clientes para equipes pelo idioma ou localização. Atendimento global, toque local.",
   },
@@ -43,6 +44,19 @@ export default function ProductsSecurity() {
   return (
     <section style={{ backgroundColor: "#fff", padding: "120px 24px" }}>
       <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+        <p
+          style={{
+            textAlign: "center",
+            fontSize: "13px",
+            fontWeight: 600,
+            letterSpacing: "0.3em",
+            textTransform: "uppercase",
+            color: "#FF0080",
+            marginBottom: "16px",
+          }}
+        >
+          Segurança
+        </p>
         <h2
           style={{
             fontFamily: "Inter",
@@ -78,7 +92,21 @@ export default function ProductsSecurity() {
                 transition: `opacity 0.7s ease ${i * 0.1}s, transform 0.7s ease ${i * 0.1}s`,
               }}
             >
-              <div style={{ fontSize: "32px", marginBottom: "16px" }}>{f.icon}</div>
+              <div
+                style={{
+                  width: "48px",
+                  height: "48px",
+                  borderRadius: "12px",
+                  background: "linear-gradient(135deg, #FF0080, #FF6B00)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: "16px",
+                  color: "#fff",
+                }}
+              >
+                <f.Icon className="h-5 w-5" />
+              </div>
               <h3 style={{ fontWeight: 700, fontSize: "20px", marginBottom: "12px", color: "#111" }}>{f.title}</h3>
               <p style={{ color: "#888", fontSize: "15px", lineHeight: 1.7, margin: 0 }}>{f.text}</p>
             </div>

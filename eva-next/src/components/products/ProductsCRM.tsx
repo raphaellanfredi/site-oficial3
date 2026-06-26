@@ -1,106 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 const features = [
-  { icon: "→", label: "Visão única do cliente", desc: "Histórico completo independente do canal" },
-  { icon: "→", label: "Atributos personalizados", desc: "Campos customizados para seu negócio" },
-  { icon: "→", label: "Gestão B2B", desc: "Agrupe contatos por empresa" },
-  { icon: "→", label: "Funil de vendas integrado", desc: "Acompanhe cada lead" },
-  { icon: "→", label: "Follow-up automático", desc: "Até 15 etapas de recuperação" },
-  { icon: "→", label: "Anti no Show", desc: "Confirmações automáticas de compromissos" },
+  { label: "Visão única do cliente", desc: "Histórico completo independente do canal" },
+  { label: "Atributos personalizados", desc: "Campos customizados para seu negócio" },
+  { label: "Gestão B2B", desc: "Agrupe contatos por empresa" },
+  { label: "Funil de vendas integrado", desc: "Acompanhe cada lead" },
+  { label: "Follow-up automático", desc: "Até 15 etapas de recuperação" },
+  { label: "Anti no Show", desc: "Confirmações automáticas de compromissos" },
 ];
-
-function DashboardMock() {
-  return (
-    <div
-      style={{
-        backgroundColor: "#f0f0f0",
-        border: "1px solid rgba(0,0,0,0.08)",
-        borderRadius: "16px",
-        padding: "24px",
-        overflow: "hidden",
-      }}
-    >
-      <div style={{ display: "flex", gap: "8px", marginBottom: "20px" }}>
-        {["#FF5F57", "#FEBC2E", "#28C840"].map((c) => (
-          <div key={c} style={{ width: "12px", height: "12px", borderRadius: "50%", backgroundColor: c }} />
-        ))}
-      </div>
-
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "12px", marginBottom: "20px" }}>
-        {[
-          { label: "Ativos", value: "1.284", color: "#FF0080" },
-          { label: "Conversões", value: "342", color: "#FF6B00" },
-          { label: "Resp. Média", value: "47s", color: "#00AA55" },
-        ].map((s) => (
-          <div
-            key={s.label}
-            style={{
-              backgroundColor: "#e8e8e8",
-              borderRadius: "8px",
-              padding: "12px",
-              textAlign: "center",
-            }}
-          >
-            <div style={{ color: s.color, fontWeight: 900, fontSize: "18px" }}>{s.value}</div>
-            <div style={{ color: "#888", fontSize: "11px", marginTop: "2px" }}>{s.label}</div>
-          </div>
-        ))}
-      </div>
-
-      {[
-        { name: "Maria S.", tag: "Lead quente", tagColor: "#FF0080" },
-        { name: "João P.", tag: "Em negociação", tagColor: "#FF6B00" },
-        { name: "Ana L.", tag: "Fechado", tagColor: "#00AA55" },
-        { name: "Carlos M.", tag: "Follow-up", tagColor: "#8B5CF6" },
-      ].map((contact) => (
-        <div
-          key={contact.name}
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: "12px 0",
-            borderBottom: "1px solid rgba(0,0,0,0.05)",
-          }}
-        >
-          <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
-            <div
-              style={{
-                width: "36px",
-                height: "36px",
-                borderRadius: "50%",
-                background: "linear-gradient(135deg, #FF0080, #FF6B00)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "14px",
-                fontWeight: 700,
-                color: "#fff",
-              }}
-            >
-              {contact.name[0]}
-            </div>
-            <span style={{ color: "#333", fontSize: "14px" }}>{contact.name}</span>
-          </div>
-          <span
-            style={{
-              backgroundColor: `${contact.tagColor}18`,
-              color: contact.tagColor,
-              fontSize: "11px",
-              fontWeight: 600,
-              padding: "4px 10px",
-              borderRadius: "100px",
-            }}
-          >
-            {contact.tag}
-          </span>
-        </div>
-      ))}
-    </div>
-  );
-}
 
 export default function ProductsCRM() {
   const ref = useRef<HTMLDivElement>(null);
@@ -137,6 +47,18 @@ export default function ProductsCRM() {
             transition: "opacity 0.8s ease, transform 0.8s ease",
           }}
         >
+          <p
+            style={{
+              fontSize: "13px",
+              fontWeight: 600,
+              letterSpacing: "0.3em",
+              textTransform: "uppercase",
+              color: "#FF0080",
+              marginBottom: "16px",
+            }}
+          >
+            CRM
+          </p>
           <h2
             style={{
               fontFamily: "Inter",
@@ -155,7 +77,7 @@ export default function ProductsCRM() {
           <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
             {features.map((f) => (
               <div key={f.label} style={{ display: "flex", gap: "12px" }}>
-                <span className="gradient-text" style={{ fontWeight: 700, flexShrink: 0 }}>{f.icon}</span>
+                <span className="gradient-text" style={{ fontWeight: 700, flexShrink: 0 }}>→</span>
                 <div>
                   <span style={{ fontWeight: 600, fontSize: "15px", color: "#111" }}>{f.label}</span>
                   <span style={{ color: "#888", fontSize: "15px" }}> — {f.desc}</span>
@@ -170,9 +92,20 @@ export default function ProductsCRM() {
             opacity: inView ? 1 : 0,
             transform: inView ? "translateX(0)" : "translateX(40px)",
             transition: "opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s",
+            borderRadius: "16px",
+            overflow: "hidden",
+            border: "1px solid rgba(0,0,0,0.08)",
+            boxShadow: "0 32px 70px rgba(0,0,0,0.12)",
           }}
         >
-          <DashboardMock />
+          <Image
+            src="/products/crm-ia.png"
+            alt="CRM com IA mostrando funil de vendas em formato Kanban"
+            width={1004}
+            height={571}
+            style={{ width: "100%", height: "auto", display: "block" }}
+            loading="lazy"
+          />
         </div>
       </div>
     </section>

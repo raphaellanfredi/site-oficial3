@@ -96,35 +96,34 @@ export default function Problem() {
                 style={{
                   padding: "24px 28px",
                   display: "flex",
-                  gap: "16px",
-                  alignItems: "flex-start",
-                  position: "relative",
+                  gap: "20px",
+                  alignItems: "center",
                   opacity: cardsInView ? 1 : 0,
                   transform: cardsInView ? "translateY(0)" : "translateY(30px)",
                   transition: `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`,
-                  background: "rgba(220,0,0,0.03)",
-                  border: "1px solid rgba(200,0,0,0.18)",
-                  borderLeft: "3px solid rgba(200,0,0,0.55)",
+                  background: "rgba(220,0,0,0.05)",
+                  border: "1px solid rgba(200,0,0,0.25)",
+                  borderLeft: "4px solid #cc0000",
                   borderRadius: "12px",
                 }}
               >
-                {/* X vermelho */}
-                <div style={{
-                  position: "absolute",
-                  top: "12px",
-                  right: "14px",
-                  width: "22px",
-                  height: "22px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}>
-                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                    <circle cx="11" cy="11" r="11" fill="rgba(200,0,0,0.1)"/>
-                    <path d="M7 7l8 8M15 7l-8 8" stroke="#cc0000" strokeWidth="2" strokeLinecap="round"/>
+                {/* X vermelho — primeiro elemento, gera alerta imediato */}
+                <div
+                  style={{
+                    flexShrink: 0,
+                    width: "40px",
+                    height: "40px",
+                    borderRadius: "50%",
+                    background: "rgba(204,0,0,0.12)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
+                    <path d="M5 5l12 12M17 5L5 17" stroke="#cc0000" strokeWidth="3" strokeLinecap="round" />
                   </svg>
                 </div>
-                <span style={{ fontSize: "28px", flexShrink: 0 }}>{p.emoji}</span>
                 <div>
                   <h3 style={{ fontWeight: 700, fontSize: "16px", marginBottom: "4px", color: "#111" }}>{p.title}</h3>
                   <p style={{ color: "#777", fontSize: "14px", margin: 0 }}>{p.text}</p>

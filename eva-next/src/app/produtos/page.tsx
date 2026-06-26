@@ -5,6 +5,7 @@ import ProductsHero from "@/components/products/ProductsHero";
 import ProductsChannels from "@/components/products/ProductsChannels";
 import ProductsCRM from "@/components/products/ProductsCRM";
 import ProductsAutomation from "@/components/products/ProductsAutomation";
+import ProductsTranscription from "@/components/products/ProductsTranscription";
 import ProductsSecurity from "@/components/products/ProductsSecurity";
 import ProductsIntegrations from "@/components/products/ProductsIntegrations";
 import ProductsPlatform from "@/components/products/ProductsPlatform";
@@ -22,6 +23,7 @@ export default function ProductsPage() {
       <ProductsChannels />
       <ProductsCRM />
       <ProductsAutomation />
+      <ProductsTranscription />
       <ProductsSecurity />
       <ProductsIntegrations />
       <ProductsPlatform />
