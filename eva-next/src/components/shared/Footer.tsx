@@ -40,7 +40,7 @@ export default function Footer() {
             </p>
             <div style={{ display: "flex", gap: "12px" }}>
               {[
-                { label: "IG", href: "https://www.instagram.com/eva.inteligencia.art/" },
+                { label: "IG", href: "https://www.instagram.com/eva_tecnologia/" },
                 { label: "WA", href: "https://wa.me/5511961163777" },
               ].map((s) => (
                 <a
