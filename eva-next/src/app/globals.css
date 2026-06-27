@@ -87,6 +87,11 @@ a {
   border-radius: 16px;
 }
 
+.eva-input:focus {
+  border-color: #FF0080 !important;
+  box-shadow: 0 0 0 3px rgba(255, 0, 128, 0.12);
+}
+
 .gradient-border::before {
   content: '';
   position: absolute;
