@@ -6,7 +6,15 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    # Runs on a self-hosted runner installed directly on the VPS.
+    # Hostinger's network-edge anti-abuse protection was silently dropping
+    # inbound SSH from GitHub-hosted runners (Azure IP ranges), even though
+    # no rule existed in iptables/ufw or the hPanel firewall — connections
+    # timed out before reaching sshd. Running the job on the VPS itself
+    # removes the inbound-SSH dependency entirely: the runner polls GitHub
+    # over an outbound HTTPS connection, so "deploy" becomes local
+    # filesystem + docker commands instead of rsync/ssh over the network.
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
 
@@ -24,36 +32,20 @@ jobs:
         run: npm run build
         working-directory: eva-next
 
-      - name: Setup SSH key
+      - name: Copy site files
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.VPS_SSH_KEY }}" | base64 -d > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
+          mkdir -p /var/www/eva/dist/public
+          rsync -avz --delete eva-next/out/ /var/www/eva/dist/public/
 
-      - name: Copy site files to VPS
+      - name: Copy deploy config
         run: |
-          rsync -avz --delete \
-            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
-            eva-next/out/ \
-            ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/eva/dist/public/
-
-      - name: Copy deploy config to VPS
-        run: |
-          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no \
-            ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} \
-            "mkdir -p /opt/stacks/eva"
-          rsync -avz \
-            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
-            deploy/ \
-            ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/opt/stacks/eva/
+          mkdir -p /opt/stacks/eva
+          rsync -avz deploy/ /opt/stacks/eva/
 
       - name: Deploy Docker stack
         run: |
-          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no \
-            ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "
-              cd /opt/stacks/eva
-              docker stack rm eva 2>/dev/null || true
-              sleep 5
-              docker config rm eva_nginx_spa_conf 2>/dev/null || true
-              docker stack deploy -c eva_site.yaml eva
-            "
+          cd /opt/stacks/eva
+          docker stack rm eva 2>/dev/null || true
+          sleep 5
+          docker config rm eva_nginx_spa_conf 2>/dev/null || true
+          docker stack deploy -c eva_site.yaml eva
