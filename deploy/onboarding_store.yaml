@@ -19,7 +19,8 @@ services:
       labels:
         - "traefik.enable=true"
         - "traefik.http.routers.onboarding-store.rule=Host(`onboarding-api.evainteligencia.com.br`)"
-        - "traefik.http.routers.onboarding-store.entrypoints=web"
+        - "traefik.http.routers.onboarding-store.entrypoints=websecure"
+        - "traefik.http.routers.onboarding-store.tls.certresolver=letsencryptresolver"
         - "traefik.http.services.onboarding-store.loadbalancer.server.port=3000"
 
 networks:
