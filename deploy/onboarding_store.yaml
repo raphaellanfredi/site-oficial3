@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  onboarding-store:
+    image: eva-onboarding-store:latest
+    volumes:
+      - /opt/data/eva-onboarding:/data
+    environment:
+      - DB_PATH=/data/submissions.db
+      - API_KEY=${ONBOARDING_API_KEY}
+      - ADMIN_USER=${ONBOARDING_ADMIN_USER}
+      - ADMIN_PASS=${ONBOARDING_ADMIN_PASS}
+    networks:
+      - network_public
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.onboarding-store.rule=Host(`onboarding-api.evainteligencia.com.br`)"
+        - "traefik.http.routers.onboarding-store.entrypoints=web"
+        - "traefik.http.services.onboarding-store.loadbalancer.server.port=3000"
+
+networks:
+  network_public:
+    external: true

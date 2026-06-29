@@ -10,7 +10,7 @@ import {
   buildOutput,
   deriveFlowDraft,
   getPresetItems,
-  sendBriefToWebhook,
+  submitOnboarding,
 } from "./onboarding-utils";
 
 const STORAGE_KEY = "eva-onboarding-draft";
@@ -55,6 +55,7 @@ export default function OnboardingWizard() {
   const [data, setData] = useState<FormData>({});
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [done, setDone] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     const draft = loadDraft();
@@ -128,12 +129,14 @@ export default function OnboardingWizard() {
     return Object.keys(nextErrors).length === 0;
   }
 
-  function goNext() {
+  async function goNext() {
     if (!validateStep()) return;
     if (isLast) {
       const output = buildOutput(data);
       autoDownloadBrief(data, output);
-      void sendBriefToWebhook(data, output);
+      setSubmitting(true);
+      await submitOnboarding(data, output);
+      setSubmitting(false);
       clearDraft();
       setDone(true);
       return;
@@ -225,7 +228,7 @@ export default function OnboardingWizard() {
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "20px", gap: "12px" }}>
               <button
                 onClick={goBack}
-                disabled={current === 0}
+                disabled={current === 0 || submitting}
                 className="cursor-pointer"
                 style={{
                   padding: "13px 22px",
@@ -237,8 +240,8 @@ export default function OnboardingWizard() {
                   background: "transparent",
                   color: current === 0 ? "rgba(0,0,0,0.25)" : "#555",
                   minHeight: "48px",
-                  opacity: current === 0 ? 0.5 : 1,
-                  cursor: current === 0 ? "not-allowed" : "pointer",
+                  opacity: current === 0 || submitting ? 0.5 : 1,
+                  cursor: current === 0 || submitting ? "not-allowed" : "pointer",
                   transition: "all 0.2s",
                 }}
               >
@@ -246,10 +249,18 @@ export default function OnboardingWizard() {
               </button>
               <button
                 onClick={goNext}
+                disabled={submitting}
                 className="cta-primary cursor-pointer"
-                style={{ flex: 1, minHeight: "48px", fontSize: "15px", animation: "none" }}
+                style={{
+                  flex: 1,
+                  minHeight: "48px",
+                  fontSize: "15px",
+                  animation: "none",
+                  opacity: submitting ? 0.7 : 1,
+                  cursor: submitting ? "not-allowed" : "pointer",
+                }}
               >
-                {isLast ? "Gerar brief" : "Continuar →"}
+                {submitting ? "Enviando…" : isLast ? "Gerar brief" : "Continuar →"}
               </button>
             </div>
           </>

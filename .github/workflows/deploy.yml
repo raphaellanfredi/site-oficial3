@@ -49,3 +49,26 @@ jobs:
           sleep 5
           docker config rm eva_nginx_spa_conf 2>/dev/null || true
           docker stack deploy -c eva_site.yaml eva
+
+      # Independent stack: stores every onboarding submission directly on
+      # the VPS (SQLite file under /opt/data/eva-onboarding), in parallel
+      # with the n8n webhook call made from the browser. This removes the
+      # single point of failure where a lost/unavailable webhook meant the
+      # submission was gone for good.
+      - name: Build onboarding-store image
+        run: docker build -t eva-onboarding-store:latest onboarding-store
+
+      - name: Copy onboarding-store deploy config
+        run: |
+          mkdir -p /opt/stacks/eva-onboarding-store
+          rsync -avz deploy/onboarding_store.yaml /opt/stacks/eva-onboarding-store/
+
+      - name: Deploy onboarding-store stack
+        env:
+          ONBOARDING_API_KEY: ${{ secrets.ONBOARDING_API_KEY }}
+          ONBOARDING_ADMIN_USER: ${{ secrets.ONBOARDING_ADMIN_USER }}
+          ONBOARDING_ADMIN_PASS: ${{ secrets.ONBOARDING_ADMIN_PASS }}
+        run: |
+          mkdir -p /opt/data/eva-onboarding
+          cd /opt/stacks/eva-onboarding-store
+          docker stack deploy -c onboarding_store.yaml eva-onboarding-store

@@ -149,21 +149,51 @@ export function slugify(str: string | undefined): string {
 }
 
 const ONBOARDING_WEBHOOK_URL = "https://webhookn8n.evainteligencia.com.br/webhook/onboarding-eva";
+const ONBOARDING_STORE_URL = "https://onboarding-api.evainteligencia.com.br/submit";
+const ONBOARDING_STORE_KEY = "eva-onb-9f3c7a1e2b4d6f80";
 
-export async function sendBriefToWebhook(data: FormData, text: string): Promise<void> {
+function buildPayload(data: FormData, text: string) {
+  return {
+    submittedAt: new Date().toISOString(),
+    brief: text,
+    data,
+  };
+}
+
+async function sendBriefToWebhook(data: FormData, text: string): Promise<boolean> {
   try {
-    await fetch(ONBOARDING_WEBHOOK_URL, {
+    const res = await fetch(ONBOARDING_WEBHOOK_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        submittedAt: new Date().toISOString(),
-        brief: text,
-        data,
-      }),
+      body: JSON.stringify(buildPayload(data, text)),
     });
+    return res.ok;
   } catch (err) {
     console.error("Falha ao enviar brief para o webhook de onboarding", err);
+    return false;
   }
+}
+
+// Independent durable copy, stored directly on our own VPS — does not go
+// through n8n, so it survives even if the webhook above is unreachable.
+async function sendBriefToStore(data: FormData, text: string): Promise<boolean> {
+  try {
+    const res = await fetch(ONBOARDING_STORE_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-api-key": ONBOARDING_STORE_KEY },
+      body: JSON.stringify(buildPayload(data, text)),
+    });
+    return res.ok;
+  } catch (err) {
+    console.error("Falha ao salvar submissão no servidor de backup", err);
+    return false;
+  }
+}
+
+// Fires both destinations in parallel — neither waits on nor depends on
+// the other succeeding, so a webhook outage never costs us the submission.
+export async function submitOnboarding(data: FormData, text: string): Promise<void> {
+  await Promise.allSettled([sendBriefToStore(data, text), sendBriefToWebhook(data, text)]);
 }
 
 export function autoDownloadBrief(data: FormData, text: string): void {
