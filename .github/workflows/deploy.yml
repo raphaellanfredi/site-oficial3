@@ -72,3 +72,4 @@ jobs:
           mkdir -p /opt/data/eva-onboarding
           cd /opt/stacks/eva-onboarding-store
           docker stack deploy -c onboarding_store.yaml eva-onboarding-store
+          docker service update --force eva-onboarding-store_onboarding-store
