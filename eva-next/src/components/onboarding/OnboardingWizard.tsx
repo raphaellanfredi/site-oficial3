@@ -56,6 +56,7 @@ export default function OnboardingWizard() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [done, setDone] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   useEffect(() => {
     const draft = loadDraft();
@@ -133,10 +134,12 @@ export default function OnboardingWizard() {
     if (!validateStep()) return;
     if (isLast) {
       const output = buildOutput(data);
-      autoDownloadBrief(data, output);
       setSubmitting(true);
-      await submitOnboarding(data, output);
+      setSubmitError(false);
+      const ok = await submitOnboarding(data, output);
       setSubmitting(false);
+      if (!ok) { setSubmitError(true); return; }
+      autoDownloadBrief(data, output);
       clearDraft();
       setDone(true);
       return;
@@ -225,6 +228,11 @@ export default function OnboardingWizard() {
         ) : (
           <>
             <StepCard step={step} data={data} errors={errors} setField={setField} clearError={clearError} />
+            {submitError && (
+              <p style={{ fontSize: "13px", color: "#E0334F", textAlign: "center", marginTop: "16px" }}>
+                Falha ao enviar. Verifique sua conexão e tente novamente.
+              </p>
+            )}
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "20px", gap: "12px" }}>
               <button
                 onClick={goBack}

@@ -190,10 +190,10 @@ async function sendBriefToStore(data: FormData, text: string): Promise<boolean> 
   }
 }
 
-// Fires both destinations in parallel — neither waits on nor depends on
-// the other succeeding, so a webhook outage never costs us the submission.
-export async function submitOnboarding(data: FormData, text: string): Promise<void> {
-  await Promise.allSettled([sendBriefToStore(data, text), sendBriefToWebhook(data, text)]);
+// Returns true if at least one destination confirmed receipt.
+export async function submitOnboarding(data: FormData, text: string): Promise<boolean> {
+  const results = await Promise.allSettled([sendBriefToStore(data, text), sendBriefToWebhook(data, text)]);
+  return results.some((r) => r.status === "fulfilled" && r.value === true);
 }
 
 export function autoDownloadBrief(data: FormData, text: string): void {

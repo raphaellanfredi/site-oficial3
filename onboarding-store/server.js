@@ -21,7 +21,18 @@ db.exec(`
   )
 `);
 
+const ALLOWED_ORIGIN = "https://www.evainteligencia.com.br";
+
 const app = express();
+
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", ALLOWED_ORIGIN);
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, x-api-key");
+  if (req.method === "OPTIONS") return res.sendStatus(204);
+  next();
+});
+
 app.use(express.json({ limit: "1mb" }));
 
 app.get("/health", (req, res) => res.json({ ok: true }));
