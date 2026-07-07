@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 import {
   PLANS,
   INSTALLMENTS,
@@ -70,7 +71,7 @@ function Header() {
         justifyContent: "space-between",
       }}
     >
-      <a href="/" style={{ textDecoration: "none" }}>
+      <Link href="/" style={{ textDecoration: "none" }}>
         <span
           style={{
             background: ACCENT,
@@ -84,7 +85,7 @@ function Header() {
         >
           Eva Inteligência
         </span>
-      </a>
+      </Link>
       <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
         <LockIcon />
         <span style={{ fontSize: "13px", color: "#22c55e", fontWeight: 600 }}>
