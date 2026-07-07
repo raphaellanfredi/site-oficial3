@@ -110,9 +110,7 @@ export default function PlansCards() {
           </div>
 
           <a
-            href="https://wa.me/5511961163777"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/checkout?plano=one"
             className="cta-secondary"
             style={{ display: "block", width: "100%", textAlign: "center" }}
           >
@@ -163,9 +161,7 @@ export default function PlansCards() {
           </p>
 
           <a
-            href="https://wa.me/5511961163777"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/checkout?plano=pro"
             className="cta-primary"
             style={{ display: "block", width: "100%", textAlign: "center" }}
           >
@@ -213,9 +209,7 @@ export default function PlansCards() {
           </p>
 
           <a
-            href="https://wa.me/5511961163777"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/checkout?plano=black"
             className="cta-secondary"
             style={{ display: "block", width: "100%", textAlign: "center" }}
           >
