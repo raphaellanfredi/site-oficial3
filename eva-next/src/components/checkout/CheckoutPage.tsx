@@ -61,8 +61,7 @@ function Header() {
         position: "sticky",
         top: 0,
         zIndex: 50,
-        backgroundColor: "rgba(255,255,255,0.95)",
-        backdropFilter: "blur(12px)",
+        backgroundColor: "rgba(255,255,255,0.98)",
         borderBottom: "1px solid rgba(0,0,0,0.06)",
         padding: "0 24px",
         height: "60px",
@@ -131,7 +130,8 @@ function PlanTabs({
               fontFamily: "inherit",
               fontSize: "14px",
               fontWeight: 700,
-              transition: "all 0.2s",
+              transition: "background 0.2s, color 0.2s, box-shadow 0.2s",
+              touchAction: "manipulation",
               background: active ? "#fff" : "transparent",
               boxShadow: active ? "0 1px 4px rgba(0,0,0,0.1)" : "none",
               color: active ? "#111" : "#888",
@@ -231,7 +231,7 @@ function InstallmentPicker({
       <p style={{ fontSize: "13px", fontWeight: 600, color: "#555", marginBottom: "12px", letterSpacing: "0.5px", textTransform: "uppercase" }}>
         Parcelar implantação em
       </p>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "8px" }}>
+      <div className="installment-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "8px" }}>
         {INSTALLMENTS.map((n) => {
           const active = selected === n;
           const val = calcInstallmentValue(setupTotal, n);
@@ -247,7 +247,8 @@ function InstallmentPicker({
                 background: active ? "rgba(255,0,128,0.04)" : "#fff",
                 cursor: "pointer",
                 fontFamily: "inherit",
-                transition: "all 0.18s",
+                transition: "background 0.18s, border-color 0.18s, color 0.18s",
+                touchAction: "manipulation",
                 textAlign: "center",
               }}
             >
@@ -593,17 +594,11 @@ export default function CheckoutPage() {
   const [planKey, setPlanKey] = useState<PlanKey>(initialPlan);
   const [installments, setInstallments] = useState<Installment>(1);
   const [testimonialIdx, setTestimonialIdx] = useState(0);
-  const [linksConfigured, setLinksConfigured] = useState(false);
+  const [linksConfigured] = useState(() =>
+    PLANS.some((p) => Object.values(PAYMENT_LINKS[p.key]).some((v) => v !== "#"))
+  );
 
   const plan = PLANS.find((p) => p.key === planKey)!;
-
-  useEffect(() => {
-    const anyConfigured = PLANS.some((p) =>
-      Object.values(p).length > 0 &&
-      Object.values(PAYMENT_LINKS[p.key]).some((v) => v !== "#")
-    );
-    setLinksConfigured(anyConfigured);
-  }, []);
 
   useEffect(() => {
     const timer = setInterval(
@@ -621,7 +616,7 @@ export default function CheckoutPage() {
     <>
       <Header />
 
-      <main style={{ maxWidth: "1080px", margin: "0 auto", padding: "40px 20px 80px" }}>
+      <main className="checkout-main" style={{ maxWidth: "1080px", margin: "0 auto", padding: "40px 20px 80px" }}>
         {/* Page headline */}
         <div style={{ textAlign: "center", marginBottom: "32px" }}>
           <h1
@@ -744,6 +739,9 @@ export default function CheckoutPage() {
           .mobile-sticky-cta {
             display: none;
           }
+          .installment-grid {
+            grid-template-columns: repeat(4, 1fr) !important;
+          }
         }
         @media (max-width: 767px) {
           .checkout-summary {
@@ -755,6 +753,13 @@ export default function CheckoutPage() {
             left: 0;
             right: 0;
             z-index: 40;
+            padding-bottom: env(safe-area-inset-bottom);
+          }
+          .checkout-main {
+            padding-bottom: calc(80px + env(safe-area-inset-bottom)) !important;
+          }
+          .installment-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
           }
         }
       `}</style>
