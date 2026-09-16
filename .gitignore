@@ -29,8 +29,9 @@ yarn-error.log*
 *.sln
 *.sw?
 
-# Claude AI context
-.claude/
+# Claude AI context (skills versionadas ficam de fora do ignore)
+.claude/*
+!.claude/skills/
 
 # Archives
 *.zip
