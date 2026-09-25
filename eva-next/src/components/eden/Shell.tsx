@@ -19,6 +19,7 @@ import {
   WA_SUPORTE,
   wa,
 } from "./site";
+import { SEGMENT_LIST } from "./pages/segments";
 import s from "./eden.module.css";
 
 const EdenScene = dynamic(() => import("./EdenScene"), { ssr: false });
@@ -149,6 +150,12 @@ function Footer() {
             <Link href="/eva-ia">Eva IA</Link>
             <Link href="/central-de-ajuda">Central de Ajuda própria</Link>
             <Link href="/planos">Planos</Link>
+          </div>
+          <div>
+            <p className={s.footHead}>Para quem</p>
+            {SEGMENT_LIST.map((g) => (
+              <Link key={g.key} href={g.path}>{g.label}</Link>
+            ))}
           </div>
           <div>
             <p className={s.footHead}>Empresa</p>

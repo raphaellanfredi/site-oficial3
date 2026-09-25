@@ -7,8 +7,13 @@ import d from "./demos.module.css";
 
 const reduced = () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/** The agent resolving, not just answering: it calls the store's system mid-conversation. */
-export function AgentDemo() {
+export type ChatStep =
+  | { kind: "in" | "out"; text: string }
+  | { kind: "fn"; text: string }
+  | { kind: "result"; text: string };
+
+/** A conversation framed as a phone, revealed step by step as it scrolls in. */
+export function ChatDemo({ name, label, steps }: { name: string; label: string; steps: ChatStep[] }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const el = ref.current;
@@ -24,25 +29,46 @@ export function AgentDemo() {
     };
   }, []);
   return (
-    <div ref={ref} className={d.phone} aria-label="Exemplo de conversa: a Eva IA consulta um pedido no sistema da loja">
+    <div ref={ref} className={d.phone} aria-label={label}>
       <div className={d.phoneHead}>
         <span className={d.avatar}>E</span>
         <div>
-          <p className={d.phoneName}>Eva · Loja</p>
+          <p className={d.phoneName}>{name}</p>
           <p className={d.phoneStatus}><span className={d.live} />online agora</p>
         </div>
       </div>
-      <p className={`${d.msg} ${d.in}`} data-step>Oi! Meu pedido 4812 já saiu?</p>
-      <p className={d.fn} data-step>
-        <span className={d.fnDot} />
-        Função personalizada · consultar_pedido(4812)
-      </p>
-      <p className={d.fnResult} data-step>status: enviado · 14h02 · previsão: amanhã</p>
-      <p className={`${d.msg} ${d.out}`} data-step>Saiu hoje às 14h e chega amanhã. Quer que eu te mande o código de rastreio aqui?</p>
-      <p className={`${d.msg} ${d.in}`} data-step>Quero sim!</p>
-      <p className={`${d.msg} ${d.out}`} data-step>Pronto, enviei. Qualquer coisa é só chamar. 😊</p>
+      {steps.map((st, i) =>
+        st.kind === "fn" ? (
+          <p key={i} className={d.fn} data-step>
+            <span className={d.fnDot} />
+            {st.text}
+          </p>
+        ) : st.kind === "result" ? (
+          <p key={i} className={d.fnResult} data-step>{st.text}</p>
+        ) : (
+          <p key={i} className={`${d.msg} ${st.kind === "in" ? d.in : d.out}`} data-step>{st.text}</p>
+        ),
+      )}
       <p className={d.caption}>Exemplo ilustrativo</p>
     </div>
+  );
+}
+
+/** The agent resolving, not just answering: it calls the store's system mid-conversation. */
+export function AgentDemo() {
+  return (
+    <ChatDemo
+      name="Eva · Loja"
+      label="Exemplo de conversa: a Eva IA consulta um pedido no sistema da loja"
+      steps={[
+        { kind: "in", text: "Oi! Meu pedido 4812 já saiu?" },
+        { kind: "fn", text: "Função personalizada · consultar_pedido(4812)" },
+        { kind: "result", text: "status: enviado · 14h02 · previsão: amanhã" },
+        { kind: "out", text: "Saiu hoje às 14h e chega amanhã. Quer que eu te mande o código de rastreio aqui?" },
+        { kind: "in", text: "Quero sim!" },
+        { kind: "out", text: "Pronto, enviei. Qualquer coisa é só chamar. 😊" },
+      ]}
+    />
   );
 }
 

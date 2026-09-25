@@ -288,5 +288,8 @@ Fase 0, item 1: o hotfix das promessas proibidas no site atual e no checkout. É
 
 - **Imagens de compartilhamento** (`eva-next/public/og/*.png`, 1200×630) para as 9 páginas públicas, no visual Gênesis. Para regenerar depois de mudar um título: `npm run build` e `node scripts/generate-og.mjs` (precisa do Playwright)
 - **SEO técnico:** endereço canônico e metadados de compartilhamento por página, `sitemap.xml`, `robots.txt` (checkout e onboarding fora do Google), dados estruturados de Organização (home), Produto com as 3 ofertas e FAQ (planos)
-- **Pendente com você:** cadastrar o site no Google Search Console e enviar o sitemap
+- **Search Console:** site verificado e sitemap enviado; o Google colocou o sitemap na fila de rastreamento prioritário
+- **HTTPS:** o site tem certificado próprio (Let's Encrypt, www e sem www), http vai para https e o endereço sem www vai para o www. O serviço antigo `eva_site`, que disputava o domínio, foi removido; nenhum outro serviço do servidor foi tocado. Diagnóstico sob demanda em `.github/workflows/diagnose-https.yml`
+- **GA4:** eventos principais marcados: `whatsapp_click`, `ir_para_pagamento`, `onboarding_concluido`
+- **Páginas por segmento:** `/para-empresas`, `/para-clinicas` e `/para-escritorios`, com a dor do segmento, um dia de 24 horas, o que a Eva faz, uma conversa de exemplo, a garantia, perguntas frequentes (com dados estruturados de FAQ) e links entre si. Entram no sitemap, no rodapé ("Para quem") e nos cartões da página Sobre. O menu do topo não mudou
 
