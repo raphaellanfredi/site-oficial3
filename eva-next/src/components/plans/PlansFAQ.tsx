@@ -5,7 +5,7 @@ import { useState } from "react";
 const faqs = [
   {
     q: "O que está incluído na implantação?",
-    a: "Nossa equipe de especialistas configura toda a sua IA: treinamento com o conhecimento do seu negócio, integração com seus canais, testes e ajustes. Você recebe tudo pronto em até 24 horas.",
+    a: "A Eva IA monta a arquitetura a partir do formulário de configuração e treina o agente com o conhecimento do seu negócio. Especialistas validam tudo antes de entrar no ar. Você recebe pronto, conectado aos seus canais, em até 24 horas depois do pagamento e do formulário preenchido.",
   },
   {
     q: "Preciso saber programar?",
@@ -37,13 +37,13 @@ export default function PlansFAQ() {
       <div style={{ maxWidth: "700px", margin: "0 auto" }}>
         <h2
           style={{
-            fontFamily: "Inter",
-            fontWeight: 900,
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
             fontSize: "clamp(32px, 4.5vw, 48px)",
             textAlign: "center",
             marginBottom: "64px",
             letterSpacing: "-1.5px",
-            color: "#111",
+            color: "var(--ink)",
           }}
         >
           Perguntas frequentes
@@ -71,8 +71,8 @@ export default function PlansFAQ() {
                   justifyContent: "space-between",
                   alignItems: "center",
                   gap: "16px",
-                  color: "#111",
-                  fontFamily: "Inter",
+                  color: "var(--ink)",
+                  fontFamily: "var(--font-text)",
                   fontSize: "16px",
                   fontWeight: 600,
                 }}
@@ -90,7 +90,7 @@ export default function PlansFAQ() {
                     justifyContent: "center",
                     fontSize: "16px",
                     fontWeight: 300,
-                    color: open === i ? "#FF0080" : "#555",
+                    color: open === i ? "var(--link)" : "var(--ink-2)",
                     transition: "all 0.2s",
                     transform: open === i ? "rotate(45deg)" : "rotate(0)",
                   }}
@@ -108,7 +108,7 @@ export default function PlansFAQ() {
               >
                 <p
                   style={{
-                    color: "#888",
+                    color: "var(--ink-2)",
                     fontSize: "15px",
                     lineHeight: 1.7,
                     paddingBottom: "24px",

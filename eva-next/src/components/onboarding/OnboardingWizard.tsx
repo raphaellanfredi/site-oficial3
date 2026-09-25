@@ -16,7 +16,7 @@ import { track } from "@/lib/analytics";
 
 const STORAGE_KEY = "eva-onboarding-draft";
 
-const ACCENT = "linear-gradient(135deg, #FF0080, #FF6B00)";
+const ACCENT = "var(--gradient-action)";
 
 function fieldVisible(field: FieldConfig, data: FormData): boolean {
   if (!field.showWhen) return true;
@@ -185,17 +185,17 @@ export default function OnboardingWizard() {
           <div style={{ marginBottom: "20px" }}>
             <span
               className="gradient-text"
-              style={{ fontSize: "20px", fontWeight: 800, letterSpacing: "-0.3px" }}
+              style={{ fontSize: "20px", fontWeight: 700, letterSpacing: "-0.3px" }}
             >
               Eva Inteligência
             </span>
           </div>
           {!done && (
             <>
-              <h1 style={{ fontSize: "26px", fontWeight: 800, letterSpacing: "-0.5px", marginBottom: "8px", color: "#111" }}>
+              <h1 style={{ fontSize: "26px", fontWeight: 700, letterSpacing: "-0.5px", marginBottom: "8px", color: "var(--ink)" }}>
                 Configuração do seu agente
               </h1>
-              <p style={{ fontSize: "14px", color: "#888", lineHeight: 1.6 }}>
+              <p style={{ fontSize: "14px", color: "var(--ink-2)", lineHeight: 1.6 }}>
                 Responda as perguntas abaixo. Seu brief será gerado automaticamente no padrão Eva.
               </p>
             </>
@@ -218,7 +218,7 @@ export default function OnboardingWizard() {
                 }}
               />
             ))}
-            <span style={{ fontSize: "12px", color: "#888", whiteSpace: "nowrap", marginLeft: "4px" }}>
+            <span style={{ fontSize: "12px", color: "var(--ink-2)", whiteSpace: "nowrap", marginLeft: "4px" }}>
               {current + 1} / {STEPS.length}
             </span>
           </div>
@@ -232,7 +232,7 @@ export default function OnboardingWizard() {
           <>
             <StepCard step={step} data={data} errors={errors} setField={setField} clearError={clearError} />
             {submitError && (
-              <p style={{ fontSize: "13px", color: "#E0334F", textAlign: "center", marginTop: "16px" }}>
+              <p style={{ fontSize: "13px", color: "var(--danger)", textAlign: "center", marginTop: "16px" }}>
                 Falha ao enviar. Verifique sua conexão e tente novamente.
               </p>
             )}
@@ -249,7 +249,7 @@ export default function OnboardingWizard() {
                   fontWeight: 600,
                   border: "1px solid rgba(0,0,0,0.12)",
                   background: "transparent",
-                  color: current === 0 ? "rgba(0,0,0,0.25)" : "#555",
+                  color: current === 0 ? "rgba(0,0,0,0.25)" : "var(--ink-2)",
                   minHeight: "48px",
                   opacity: current === 0 || submitting ? 0.5 : 1,
                   cursor: current === 0 || submitting ? "not-allowed" : "pointer",
@@ -299,7 +299,7 @@ function StepCard({
   return (
     <div
       className="glass-card p-5 sm:p-8"
-      style={{ backgroundColor: "#fafafa" }}
+      style={{ backgroundColor: "var(--surface)" }}
     >
       <span
         style={{
@@ -308,16 +308,16 @@ function StepCard({
           fontWeight: 700,
           letterSpacing: "0.2em",
           textTransform: "uppercase",
-          color: "#FF0080",
+          color: "var(--link)",
           marginBottom: "14px",
         }}
       >
         {step.badge}
       </span>
-      <h2 style={{ fontSize: "19px", fontWeight: 800, marginBottom: "6px", color: "#111", letterSpacing: "-0.3px" }}>
+      <h2 style={{ fontSize: "19px", fontWeight: 700, marginBottom: "6px", color: "var(--ink)", letterSpacing: "-0.3px" }}>
         {step.title}
       </h2>
-      <p style={{ fontSize: "13px", color: "#888", marginBottom: "26px", lineHeight: 1.6 }}>{step.desc}</p>
+      <p style={{ fontSize: "13px", color: "var(--ink-2)", marginBottom: "26px", lineHeight: 1.6 }}>{step.desc}</p>
 
       {step.fields.map((f) =>
         fieldVisible(f, data) ? (
@@ -342,13 +342,13 @@ function FieldLabel({ field }: { field: FieldConfig }) {
   return (
     <label
       htmlFor={field.key}
-      style={{ display: "block", fontSize: "13px", fontWeight: 600, color: "#444", marginBottom: "8px" }}
+      style={{ display: "block", fontSize: "13px", fontWeight: 600, color: "var(--ink-2)", marginBottom: "8px" }}
     >
       {field.label}
       {field.req ? (
-        <span style={{ color: "#FF0080", marginLeft: "2px" }}>*</span>
+        <span style={{ color: "var(--link)", marginLeft: "2px" }}>*</span>
       ) : (
-        <span style={{ color: "#aaa", fontWeight: 400, marginLeft: "4px", fontSize: "11px" }}>opcional</span>
+        <span style={{ color: "var(--ink-2)", fontWeight: 400, marginLeft: "4px", fontSize: "11px" }}>opcional</span>
       )}
     </label>
   );
@@ -360,11 +360,11 @@ function Hint({ text }: { text?: string }) {
     <div
       style={{
         fontSize: "12px",
-        color: "#777",
+        color: "var(--ink-2)",
         marginBottom: "8px",
         lineHeight: 1.5,
         background: "rgba(255,0,128,0.05)",
-        borderLeft: "2px solid #FF0080",
+        borderLeft: "2px solid var(--brand-pink)",
         padding: "8px 12px",
         borderRadius: "0 6px 6px 0",
       }}
@@ -379,7 +379,7 @@ const inputBaseStyle: React.CSSProperties = {
   background: "#fff",
   border: "1px solid rgba(0,0,0,0.12)",
   borderRadius: "10px",
-  color: "#111",
+  color: "var(--ink)",
   fontFamily: "inherit",
   fontSize: "16px",
   padding: "13px 14px",
@@ -405,7 +405,7 @@ function Field({
       <FieldLabel field={field} />
       <Hint text={field.hint} />
       <FieldInput field={field} value={value} data={data} onChange={onChange} />
-      {error && <div style={{ fontSize: "12px", color: "#E0334F", marginTop: "6px" }}>{error}</div>}
+      {error && <div style={{ fontSize: "12px", color: "var(--danger)", marginTop: "6px" }}>{error}</div>}
     </div>
   );
 }
@@ -463,7 +463,7 @@ function FieldInput({
                 display: "block",
                 padding: "18px 16px",
                 background: checked ? "rgba(255,0,128,0.05)" : "#fff",
-                border: `1.5px solid ${checked ? "#FF0080" : "rgba(0,0,0,0.12)"}`,
+                border: `1.5px solid ${checked ? "var(--brand-pink)" : "rgba(0,0,0,0.12)"}`,
                 borderRadius: "10px",
                 transition: "all 0.2s",
               }}
@@ -476,10 +476,10 @@ function FieldInput({
                 onChange={() => onChange(o.value)}
                 style={{ display: "none" }}
               />
-              <div style={{ fontSize: "15px", fontWeight: 700, marginBottom: "5px", color: checked ? "#FF0080" : "#111" }}>
+              <div style={{ fontSize: "15px", fontWeight: 700, marginBottom: "5px", color: checked ? "var(--link)" : "var(--ink)" }}>
                 {o.name}
               </div>
-              <div style={{ fontSize: "12px", color: checked ? "#d6006b" : "#888", lineHeight: 1.5 }}>{o.desc}</div>
+              <div style={{ fontSize: "12px", color: checked ? "var(--link)" : "var(--ink-2)", lineHeight: 1.5 }}>{o.desc}</div>
             </label>
           );
         })}
@@ -502,13 +502,13 @@ function FieldInput({
                 padding: "14px 16px",
                 minHeight: "48px",
                 background: checked ? "rgba(255,0,128,0.05)" : "#fff",
-                border: `1.5px solid ${checked ? "#FF0080" : "rgba(0,0,0,0.12)"}`,
+                border: `1.5px solid ${checked ? "var(--brand-pink)" : "rgba(0,0,0,0.12)"}`,
                 borderRadius: "10px",
                 cursor: "pointer",
                 transition: "all 0.2s",
                 fontSize: "14px",
                 fontWeight: 600,
-                color: checked ? "#FF0080" : "#333",
+                color: checked ? "var(--link)" : "var(--ink)",
               }}
             >
               <input
@@ -544,11 +544,11 @@ function FieldInput({
                 padding: "11px 18px",
                 minHeight: "44px",
                 background: checked ? "rgba(255,0,128,0.05)" : "#fff",
-                border: `1px solid ${checked ? "#FF0080" : "rgba(0,0,0,0.12)"}`,
+                border: `1px solid ${checked ? "var(--brand-pink)" : "rgba(0,0,0,0.12)"}`,
                 borderRadius: "99px",
                 fontSize: "14px",
                 fontWeight: 500,
-                color: checked ? "#FF0080" : "#666",
+                color: checked ? "var(--link)" : "var(--ink-2)",
                 transition: "all 0.2s",
               }}
             >
@@ -591,7 +591,7 @@ function FieldInput({
             className="eva-input"
             style={{ ...inputBaseStyle, width: "auto", flex: 1 }}
           />
-          <span style={{ color: "#888", fontSize: "13px" }}>até</span>
+          <span style={{ color: "var(--ink-2)", fontSize: "13px" }}>até</span>
           <input
             type="time"
             value={sched.fim}
@@ -611,7 +611,7 @@ function FieldInput({
         <div
           style={{
             fontSize: "13px",
-            color: "#888",
+            color: "var(--ink-2)",
             padding: "18px",
             textAlign: "center",
             background: "#fff",
@@ -650,13 +650,13 @@ function FieldInput({
                 onChange={() => onChange({ ...state, [idx]: !checked })}
                 style={{ display: "none" }}
               />
-              <span style={{ fontSize: "13px", color: "#222", lineHeight: 1.45 }}>{item}</span>
+              <span style={{ fontSize: "13px", color: "var(--ink)", lineHeight: 1.45 }}>{item}</span>
               <span style={{ position: "relative", width: "44px", height: "26px", flexShrink: 0 }}>
                 <span
                   style={{
                     position: "absolute",
                     inset: 0,
-                    background: checked ? "#FF0080" : "rgba(0,0,0,0.15)",
+                    background: checked ? "var(--brand-pink)" : "rgba(0,0,0,0.15)",
                     borderRadius: "99px",
                     transition: "background 0.2s",
                   }}
@@ -699,11 +699,11 @@ function ResumeCard({
   onFresh: () => void;
 }) {
   return (
-    <div className="glass-card p-6 sm:p-10" style={{ textAlign: "center", backgroundColor: "#fafafa" }}>
-      <h2 style={{ fontSize: "20px", fontWeight: 800, marginBottom: "8px", color: "#111" }}>
+    <div className="glass-card p-6 sm:p-10" style={{ textAlign: "center", backgroundColor: "var(--surface)" }}>
+      <h2 style={{ fontSize: "20px", fontWeight: 700, marginBottom: "8px", color: "var(--ink)" }}>
         Continuar de onde parou?
       </h2>
-      <p style={{ fontSize: "13px", color: "#888", marginBottom: "24px", lineHeight: 1.6 }}>
+      <p style={{ fontSize: "13px", color: "var(--ink-2)", marginBottom: "24px", lineHeight: 1.6 }}>
         Encontramos um cadastro em andamento na etapa {stepIndex + 1} de {total}.
       </p>
       <div className="flex flex-col sm:flex-row gap-3">
@@ -719,7 +719,7 @@ function ResumeCard({
             fontWeight: 600,
             border: "1px solid rgba(0,0,0,0.15)",
             background: "transparent",
-            color: "#666",
+            color: "var(--ink-2)",
             minHeight: "48px",
           }}
         >
@@ -735,7 +735,7 @@ function ResumeCard({
 
 function SuccessCard({ nome }: { nome: string }) {
   return (
-    <div className="glass-card gradient-border p-7 sm:p-12" style={{ textAlign: "center", backgroundColor: "#fafafa" }}>
+    <div className="glass-card gradient-border p-7 sm:p-12" style={{ textAlign: "center", backgroundColor: "var(--surface)" }}>
       <div
         style={{
           width: "56px",
@@ -745,14 +745,14 @@ function SuccessCard({ nome }: { nome: string }) {
           margin: "0 auto 20px",
         }}
       />
-      <h2 style={{ fontSize: "22px", fontWeight: 800, marginBottom: "10px", color: "#111" }}>
+      <h2 style={{ fontSize: "22px", fontWeight: 700, marginBottom: "10px", color: "var(--ink)" }}>
         Obrigado{nome ? `, ${nome}` : ""}!
       </h2>
-      <p style={{ fontSize: "14px", color: "#555", lineHeight: 1.7, marginBottom: "6px" }}>
+      <p style={{ fontSize: "14px", color: "var(--ink-2)", lineHeight: 1.7, marginBottom: "6px" }}>
         Seu cadastro foi concluído com sucesso.
       </p>
-      <p style={{ fontSize: "13px", color: "#999" }}>
-        Nossa equipe já recebeu as informações e vai entrar em contato em breve para finalizar a configuração do seu agente.
+      <p style={{ fontSize: "13px", color: "var(--ink-2)" }}>
+        Seu agente entra no ar em até 24 horas, montado pela Eva IA e validado pelos nossos especialistas. Se precisarmos de algo, entramos em contato.
       </p>
     </div>
   );

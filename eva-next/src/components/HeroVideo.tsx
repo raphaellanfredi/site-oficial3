@@ -129,11 +129,11 @@ export default function HeroVideo() {
       />
 
       {/* ── Content ──────────────────────────────────────────────────────── */}
-      <div className="relative z-20 flex h-full flex-col items-center justify-center px-6 text-center text-neutral-900">
+      <div className="relative z-20 flex h-full flex-col items-center justify-center px-6 text-center text-ink">
 
         {/* Tagline */}
         <div className="overflow-hidden mb-6">
-          <p className="hero-meta tagline text-[0.7rem] font-semibold tracking-[0.45em] uppercase text-neutral-900/50">
+          <p className="hero-meta tagline text-[0.7rem] font-semibold tracking-[0.45em] uppercase text-ink-2">
             IA Omnichannel
           </p>
         </div>
@@ -142,7 +142,7 @@ export default function HeroVideo() {
         <h1 className="mb-8">
           <span className="block overflow-hidden leading-[1.05]">
             <span
-              className="hero-line block text-[clamp(2.8rem,7.5vw,7rem)] font-black tracking-tight"
+              className="hero-line block text-[clamp(2.8rem,7.5vw,7rem)] font-bold font-display tracking-tight"
               style={{ textShadow: "0 2px 24px rgba(255,255,255,0.9), 0 1px 4px rgba(255,255,255,0.8)" }}
             >
               Enquanto você vive,
@@ -150,7 +150,7 @@ export default function HeroVideo() {
           </span>
           <span className="block overflow-hidden leading-[1.05]">
             <span
-              className="hero-line block text-[clamp(2.8rem,7.5vw,7rem)] font-black tracking-tight"
+              className="hero-line block text-[clamp(2.8rem,7.5vw,7rem)] font-bold font-display tracking-tight"
               style={{ textShadow: "0 2px 24px rgba(255,255,255,0.9), 0 1px 4px rgba(255,255,255,0.8)" }}
             >
               a Eva trabalha.
@@ -159,7 +159,7 @@ export default function HeroVideo() {
         </h1>
 
         {/* Subtitle */}
-        <p className="hero-meta subtitle max-w-md text-[clamp(0.9rem,1.8vw,1.15rem)] font-light tracking-wide text-neutral-900/55">
+        <p className="hero-meta subtitle max-w-md text-[clamp(0.9rem,1.8vw,1.15rem)] font-light tracking-wide text-ink-2">
           Atendimento inteligente 24h — WhatsApp, Instagram,<br className="hidden sm:block" /> E-mail e Telefone. Pronta em 24 horas.
         </p>
       </div>
@@ -169,7 +169,7 @@ export default function HeroVideo() {
         ref={indicatorRef}
         className="absolute bottom-10 left-1/2 z-20 -translate-x-1/2 flex flex-col items-center gap-2.5"
       >
-        <span className="text-[0.6rem] font-medium tracking-[0.4em] uppercase text-black/35">
+        <span className="text-[0.6rem] font-medium tracking-[0.4em] uppercase text-ink-2">
           Scroll
         </span>
         {/* Track */}

@@ -21,13 +21,13 @@ function useInView() {
 const steps = [
   {
     num: "01",
-    title: "Reunião de Arquitetura",
-    text: "Entendemos seu negócio a fundo. Processos, tom de voz, objeções, metas. Sua IA começa a tomar forma.",
+    title: "Formulário de configuração",
+    text: "Você conta como seu negócio funciona: processos, tom de voz, objeções, metas. Sem reunião, no seu tempo.",
   },
   {
     num: "02",
-    title: "Treinamento da IA",
-    text: "Nossa equipe de especialistas treina sua IA com seu conhecimento. Você transmite, eles executam.",
+    title: "Arquitetura e treinamento",
+    text: "A Eva IA monta a arquitetura e treina o agente com o conhecimento do seu negócio. Especialistas validam tudo antes de entrar no ar.",
   },
   {
     num: "03",
@@ -40,18 +40,18 @@ export default function HowItWorks() {
   const { ref, inView } = useInView();
 
   return (
-    <section style={{ backgroundColor: "#f8f8f8", padding: "120px 24px" }}>
+    <section style={{ backgroundColor: "var(--surface)", padding: "120px 24px" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
         <h2
           style={{
-            fontFamily: "Inter",
-            fontWeight: 900,
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
             fontSize: "clamp(36px, 5vw, 56px)",
             textAlign: "center",
             marginBottom: "80px",
             letterSpacing: "-2px",
             lineHeight: 1.1,
-            color: "#111",
+            color: "var(--ink)",
           }}
         >
           Da contratação à IA funcionando<br />
@@ -81,7 +81,7 @@ export default function HowItWorks() {
                 <div
                   className="gradient-text"
                   style={{
-                    fontWeight: 900,
+                    fontWeight: 700,
                     fontSize: "72px",
                     lineHeight: 1,
                     opacity: 0.3,
@@ -104,15 +104,15 @@ export default function HowItWorks() {
                     backgroundColor: "#fff",
                   }}
                 >
-                  <span className="gradient-text" style={{ fontWeight: 900, fontSize: "20px" }}>
+                  <span className="gradient-text" style={{ fontWeight: 700, fontSize: "20px" }}>
                     {step.num}
                   </span>
                 </div>
 
-                <h3 style={{ fontWeight: 700, fontSize: "22px", marginBottom: "12px", color: "#111" }}>
+                <h3 style={{ fontWeight: 700, fontSize: "22px", marginBottom: "12px", color: "var(--ink)" }}>
                   {step.title}
                 </h3>
-                <p style={{ color: "#888", fontSize: "15px", lineHeight: 1.7, margin: 0 }}>
+                <p style={{ color: "var(--ink-2)", fontSize: "15px", lineHeight: 1.7, margin: 0 }}>
                   {step.text}
                 </p>
               </div>
@@ -127,7 +127,7 @@ export default function HowItWorks() {
               fontSize: "clamp(18px, 2.5vw, 24px)",
               position: "relative",
               display: "inline-block",
-              color: "#111",
+              color: "var(--ink)",
             }}
           >
             Você não programa nada. Recebe pronto.
@@ -138,7 +138,7 @@ export default function HowItWorks() {
                 left: 0,
                 right: 0,
                 height: "3px",
-                background: "linear-gradient(135deg, #FF0080, #FF6B00)",
+                background: "var(--gradient-action)",
                 borderRadius: "2px",
               }}
             />

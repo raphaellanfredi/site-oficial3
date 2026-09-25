@@ -55,14 +55,14 @@ export default function AffiliatesOpportunity() {
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <h2
           style={{
-            fontFamily: "Inter",
-            fontWeight: 900,
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
             fontSize: "clamp(28px, 4.5vw, 56px)",
             textAlign: "center",
             marginBottom: "64px",
             letterSpacing: "-2px",
             lineHeight: 1.1,
-            color: "#111",
+            color: "var(--ink)",
           }}
         >
           Por que indicar a Eva<br />
@@ -90,8 +90,8 @@ export default function AffiliatesOpportunity() {
               }}
             >
               <div style={{ fontSize: "32px", marginBottom: "16px" }}>{o.icon}</div>
-              <h3 style={{ fontWeight: 700, fontSize: "18px", marginBottom: "10px", color: "#111" }}>{o.title}</h3>
-              <p style={{ color: "#888", fontSize: "14px", lineHeight: 1.7, margin: 0 }}>{o.text}</p>
+              <h3 style={{ fontWeight: 700, fontSize: "18px", marginBottom: "10px", color: "var(--ink)" }}>{o.title}</h3>
+              <p style={{ color: "var(--ink-2)", fontSize: "14px", lineHeight: 1.7, margin: 0 }}>{o.text}</p>
             </div>
           ))}
         </div>

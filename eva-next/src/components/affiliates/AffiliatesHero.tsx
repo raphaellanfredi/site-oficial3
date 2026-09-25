@@ -84,8 +84,8 @@ export default function AffiliatesHero() {
         <h1
           className="animate-fade-up"
           style={{
-            fontFamily: "Inter",
-            fontWeight: 900,
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
             fontSize: "clamp(40px, 7vw, 72px)",
             lineHeight: 1.05,
             letterSpacing: "-3px",
@@ -93,7 +93,7 @@ export default function AffiliatesHero() {
             animationDelay: "0.3s",
             opacity: 0,
             animationFillMode: "forwards",
-            color: "#111",
+            color: "var(--ink)",
           }}
         >
           Na corrida do ouro,<br />
@@ -105,7 +105,7 @@ export default function AffiliatesHero() {
           className="animate-fade-up"
           style={{
             fontSize: "22px",
-            color: "#888",
+            color: "var(--ink-2)",
             maxWidth: "600px",
             margin: "0 auto 40px",
             lineHeight: 1.7,
@@ -152,10 +152,10 @@ export default function AffiliatesHero() {
             { value: "R$ 14.122/mês", label: "Com 105 clientes ativos" },
           ].map((m) => (
             <div key={m.value}>
-              <div className="gradient-text" style={{ fontWeight: 900, fontSize: "clamp(20px, 3vw, 32px)", lineHeight: 1, marginBottom: "8px" }}>
+              <div className="gradient-text" style={{ fontWeight: 700, fontSize: "clamp(20px, 3vw, 32px)", lineHeight: 1, marginBottom: "8px" }}>
                 {m.value}
               </div>
-              <div style={{ color: "#888", fontSize: "13px", textTransform: "uppercase", letterSpacing: "2px" }}>
+              <div style={{ color: "var(--ink-2)", fontSize: "13px", textTransform: "uppercase", letterSpacing: "2px" }}>
                 {m.label}
               </div>
             </div>

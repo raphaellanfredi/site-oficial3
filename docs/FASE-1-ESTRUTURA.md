@@ -290,13 +290,21 @@ Nenhuma página é beco sem saída.
 
 ---
 
-## 8. Ponto para a Fase 5
+## 8. Implantação em 24 horas (decidido em 25/09)
 
-**O que cabe em 24 horas.** A implantação tem 5 etapas no brief (reunião de arquitetura, treinamento, integração dos canais, bateria de validação, aprovação e go-live). Na copy de `/planos` preciso mostrar essas etapas dentro de 24 horas sem contradição. Duas perguntas para a Fase 5:
-- As 24 horas contam a partir de quê: do pagamento, da reunião de arquitetura, ou do formulário de onboarding preenchido?
-- A reunião de arquitetura continua existindo, ou o formulário do `/novo-cliente` passou a fazer esse papel?
+- **As 24 horas contam a partir de dois eventos juntos:** pagamento confirmado **e** formulário de onboarding (`/novo-cliente`) preenchido
+- **A arquitetura é montada pela Super-Eva**, sem reunião. O formulário substitui a reunião de arquitetura
 
----
+As 5 etapas que `/planos` passa a mostrar:
+1. Você contrata (pagamento)
+2. Você preenche o formulário de configuração (processos, tom de voz, objeções, metas)
+3. A inteligência da Eva monta a arquitetura e treina o agente com o conhecimento do seu negócio
+4. Canais integrados e bateria de validação
+5. Você aprova e a IA entra no ar, **em até 24 horas** depois das etapas 1 e 2
+
+**Decidido em 25/09:**
+- No site, quem monta a arquitetura é **a Eva IA**. "Super-Eva" fica como nome interno
+- A frase da implantação é **"montada pela Eva IA, validada por especialistas"**, já aplicada no site
 
 ## 9. Próximo passo
 

@@ -47,7 +47,7 @@ export default function ProductsTranscription() {
             width: "56px",
             height: "56px",
             borderRadius: "16px",
-            background: "linear-gradient(135deg, #FF0080, #FF6B00)",
+            background: "var(--gradient-action)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -64,7 +64,7 @@ export default function ProductsTranscription() {
             fontWeight: 700,
             letterSpacing: "0.3em",
             textTransform: "uppercase",
-            color: "#FF0080",
+            color: "var(--link)",
             marginBottom: "16px",
           }}
         >
@@ -73,20 +73,20 @@ export default function ProductsTranscription() {
 
         <h2
           style={{
-            fontFamily: "Inter",
-            fontWeight: 900,
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
             fontSize: "clamp(32px, 4.5vw, 48px)",
             marginBottom: "20px",
             letterSpacing: "-1.5px",
             lineHeight: 1.2,
-            color: "#111",
+            color: "var(--ink)",
           }}
         >
           Áudios virados em texto.<br />
           <span className="gradient-text">Automaticamente.</span>
         </h2>
 
-        <p style={{ color: "#888", fontSize: "18px", lineHeight: 1.7, maxWidth: "520px", margin: "0 auto 48px" }}>
+        <p style={{ color: "var(--ink-2)", fontSize: "18px", lineHeight: 1.7, maxWidth: "520px", margin: "0 auto 48px" }}>
           Recebeu um áudio no WhatsApp? A Eva transcreve em segundos. Sua equipe lê em vez de ouvir, e nenhuma informação importante fica perdida num áudio de 3 minutos.
         </p>
 

@@ -65,7 +65,7 @@ export default function ProductsAutomation() {
   const { ref: highlightRef, inView: highlightInView } = useInView();
 
   return (
-    <section style={{ backgroundColor: "#f8f8f8", padding: "120px 24px" }}>
+    <section style={{ backgroundColor: "var(--surface)", padding: "120px 24px" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <p
           style={{
@@ -74,7 +74,7 @@ export default function ProductsAutomation() {
             fontWeight: 600,
             letterSpacing: "0.3em",
             textTransform: "uppercase",
-            color: "#FF0080",
+            color: "var(--link)",
             marginBottom: "16px",
           }}
         >
@@ -82,14 +82,14 @@ export default function ProductsAutomation() {
         </p>
         <h2
           style={{
-            fontFamily: "Inter",
-            fontWeight: 900,
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
             fontSize: "clamp(32px, 4.5vw, 48px)",
             textAlign: "center",
             marginBottom: "64px",
             letterSpacing: "-1.5px",
             lineHeight: 1.2,
-            color: "#111",
+            color: "var(--ink)",
           }}
         >
           Automação que trabalha<br />
@@ -121,7 +121,7 @@ export default function ProductsAutomation() {
                   width: "44px",
                   height: "44px",
                   borderRadius: "12px",
-                  background: "linear-gradient(135deg, #FF0080, #FF6B00)",
+                  background: "var(--gradient-action)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -131,8 +131,8 @@ export default function ProductsAutomation() {
               >
                 <a.Icon className="h-5 w-5" />
               </div>
-              <h3 style={{ fontWeight: 700, fontSize: "18px", marginBottom: "12px", color: "#111" }}>{a.title}</h3>
-              <p style={{ color: "#888", fontSize: "14px", lineHeight: 1.7, margin: 0 }}>{a.text}</p>
+              <h3 style={{ fontWeight: 700, fontSize: "18px", marginBottom: "12px", color: "var(--ink)" }}>{a.title}</h3>
+              <p style={{ color: "var(--ink-2)", fontSize: "14px", lineHeight: 1.7, margin: 0 }}>{a.text}</p>
             </div>
           ))}
         </div>
@@ -157,10 +157,10 @@ export default function ProductsAutomation() {
               transition: "opacity 0.7s ease, transform 0.7s ease",
             }}
           >
-            <h3 style={{ fontWeight: 700, fontSize: "22px", marginBottom: "8px", color: "#111", letterSpacing: "-0.3px" }}>
+            <h3 style={{ fontWeight: 700, fontSize: "22px", marginBottom: "8px", color: "var(--ink)", letterSpacing: "-0.3px" }}>
               Agendamento de mensagens (follow-up)
             </h3>
-            <p style={{ color: "#888", fontSize: "15px", lineHeight: 1.7, marginBottom: "28px" }}>
+            <p style={{ color: "var(--ink-2)", fontSize: "15px", lineHeight: 1.7, marginBottom: "28px" }}>
               Programe o follow-up com data e hora certas. A Eva envia no momento ideal, sem depender de alguém lembrar.
             </p>
             <div
@@ -196,10 +196,10 @@ export default function ProductsAutomation() {
             }}
           >
             <div>
-              <h3 style={{ fontWeight: 700, fontSize: "22px", marginBottom: "8px", color: "#111", letterSpacing: "-0.3px" }}>
+              <h3 style={{ fontWeight: 700, fontSize: "22px", marginBottom: "8px", color: "var(--ink)", letterSpacing: "-0.3px" }}>
                 Contador de mensagens não lidas
               </h3>
-              <p style={{ color: "#888", fontSize: "15px", lineHeight: 1.7, marginBottom: "28px" }}>
+              <p style={{ color: "var(--ink-2)", fontSize: "15px", lineHeight: 1.7, marginBottom: "28px" }}>
                 Ninguém fica pra trás. Veja de imediato quantas conversas ainda precisam de resposta, em todos os canais.
               </p>
             </div>
@@ -208,7 +208,7 @@ export default function ProductsAutomation() {
                 flex: 1,
                 borderRadius: "12px",
                 border: "1px solid rgba(0,0,0,0.08)",
-                backgroundColor: "#fafafa",
+                backgroundColor: "var(--surface)",
                 padding: "28px 24px",
                 display: "flex",
                 alignItems: "center",

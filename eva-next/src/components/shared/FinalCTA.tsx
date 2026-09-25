@@ -4,7 +4,7 @@ export default function FinalCTA() {
   return (
     <section
       style={{
-        background: "linear-gradient(135deg, #FF0080, #FF6B00)",
+        background: "var(--gradient-action)",
         position: "relative",
         padding: "160px 24px",
         textAlign: "center",
@@ -14,8 +14,8 @@ export default function FinalCTA() {
       <div style={{ position: "relative", zIndex: 1, maxWidth: "800px", margin: "0 auto" }}>
         <h2
           style={{
-            fontFamily: "Inter",
-            fontWeight: 900,
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
             fontSize: "clamp(40px, 7vw, 72px)",
             color: "#fff",
             lineHeight: 1.1,
@@ -30,7 +30,7 @@ export default function FinalCTA() {
         <p
           style={{
             fontSize: "22px",
-            color: "rgba(255,255,255,0.8)",
+            color: "#fff",
             marginBottom: "48px",
             lineHeight: 1.6,
           }}
@@ -46,10 +46,10 @@ export default function FinalCTA() {
           style={{
             display: "inline-block",
             backgroundColor: "#fff",
-            color: "#111",
+            color: "var(--ink)",
             padding: "20px 48px",
             borderRadius: "12px",
-            fontWeight: 800,
+            fontWeight: 700,
             fontSize: "18px",
             cursor: "pointer",
             transition: "all 0.3s ease",
@@ -68,7 +68,7 @@ export default function FinalCTA() {
           Quero minha IA agora
         </a>
 
-        <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "15px", marginTop: "24px", letterSpacing: "0.5px" }}>
+        <p style={{ color: "#fff", fontSize: "15px", marginTop: "24px", letterSpacing: "0.5px" }}>
           IA pronta em 24 horas &nbsp;&bull;&nbsp; Zero programação &nbsp;&bull;&nbsp; Zero caos
         </p>
       </div>

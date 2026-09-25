@@ -51,7 +51,7 @@ export default function ProductsSecurity() {
             fontWeight: 600,
             letterSpacing: "0.3em",
             textTransform: "uppercase",
-            color: "#FF0080",
+            color: "var(--link)",
             marginBottom: "16px",
           }}
         >
@@ -59,14 +59,14 @@ export default function ProductsSecurity() {
         </p>
         <h2
           style={{
-            fontFamily: "Inter",
-            fontWeight: 900,
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
             fontSize: "clamp(28px, 4vw, 48px)",
             textAlign: "center",
             marginBottom: "64px",
             letterSpacing: "-1.5px",
             lineHeight: 1.2,
-            color: "#111",
+            color: "var(--ink)",
           }}
         >
           Segurança enterprise.<br />
@@ -97,7 +97,7 @@ export default function ProductsSecurity() {
                   width: "48px",
                   height: "48px",
                   borderRadius: "12px",
-                  background: "linear-gradient(135deg, #FF0080, #FF6B00)",
+                  background: "var(--gradient-action)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -107,8 +107,8 @@ export default function ProductsSecurity() {
               >
                 <f.Icon className="h-5 w-5" />
               </div>
-              <h3 style={{ fontWeight: 700, fontSize: "20px", marginBottom: "12px", color: "#111" }}>{f.title}</h3>
-              <p style={{ color: "#888", fontSize: "15px", lineHeight: 1.7, margin: 0 }}>{f.text}</p>
+              <h3 style={{ fontWeight: 700, fontSize: "20px", marginBottom: "12px", color: "var(--ink)" }}>{f.title}</h3>
+              <p style={{ color: "var(--ink-2)", fontSize: "15px", lineHeight: 1.7, margin: 0 }}>{f.text}</p>
             </div>
           ))}
         </div>

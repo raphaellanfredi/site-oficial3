@@ -48,13 +48,13 @@ export default function Testimonials() {
       <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
         <h2
           style={{
-            fontFamily: "Inter",
-            fontWeight: 900,
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
             fontSize: "clamp(32px, 4.5vw, 48px)",
             marginBottom: "64px",
             letterSpacing: "-1.5px",
             lineHeight: 1.2,
-            color: "#111",
+            color: "var(--ink)",
           }}
         >
           Quem já tem a Eva,<br />
@@ -77,17 +77,17 @@ export default function Testimonials() {
             style={{
               fontSize: "clamp(16px, 2vw, 20px)",
               lineHeight: 1.7,
-              color: "#555",
+              color: "var(--ink-2)",
               fontStyle: "italic",
               marginBottom: "32px",
               position: "relative",
             }}
           >
-            <span style={{ color: "#FF0080", fontSize: "40px", lineHeight: 0, verticalAlign: "-12px", marginRight: "4px" }}>{'"'}</span>
+            <span style={{ color: "var(--link)", fontSize: "40px", lineHeight: 0, verticalAlign: "-12px", marginRight: "4px" }}>{'"'}</span>
             {t.quote}
-            <span style={{ color: "#FF6B00", fontSize: "40px", lineHeight: 0, verticalAlign: "-12px", marginLeft: "4px" }}>{'"'}</span>
+            <span style={{ color: "var(--orange-text)", fontSize: "40px", lineHeight: 0, verticalAlign: "-12px", marginLeft: "4px" }}>{'"'}</span>
           </blockquote>
-          <p style={{ color: "#aaa", fontWeight: 700, fontSize: "15px", letterSpacing: "1px" }}>
+          <p style={{ color: "var(--ink-2)", fontWeight: 700, fontSize: "15px", letterSpacing: "1px" }}>
             — {t.author}
           </p>
         </div>
@@ -103,7 +103,7 @@ export default function Testimonials() {
                 borderRadius: "4px",
                 border: "none",
                 cursor: "pointer",
-                background: i === active ? "linear-gradient(135deg, #FF0080, #FF6B00)" : "rgba(0,0,0,0.15)",
+                background: i === active ? "var(--gradient-action)" : "rgba(0,0,0,0.15)",
                 transition: "all 0.3s ease",
                 padding: 0,
               }}
