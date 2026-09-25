@@ -32,7 +32,7 @@ const steps = [
   {
     num: "03",
     title: "Aprovação e Go Live",
-    text: "Você testa, aprova e sua IA entra ao vivo. Em 7 dias, trabalhando 24h por você.",
+    text: "Você testa, aprova e sua IA entra ao vivo. Em 24 horas, trabalhando 24h por você.",
   },
 ];
 
@@ -55,7 +55,7 @@ export default function HowItWorks() {
           }}
         >
           Da contratação à IA funcionando<br />
-          em 7 dias.
+          em 24 horas.
         </h2>
 
         <div ref={ref} style={{ position: "relative" }}>

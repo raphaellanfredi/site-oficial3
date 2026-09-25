@@ -79,7 +79,7 @@ export default function Solution() {
               transition: "opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s",
             }}
           >
-            Treinada por especialistas, entregue pronta em 7 dias.<br />
+            Treinada por especialistas, entregue pronta em 24 horas.<br />
             Você não programa nada.
           </p>
         </div>

@@ -7,7 +7,7 @@ import PlansFAQ from "@/components/plans/PlansFAQ";
 
 export const metadata = {
   title: "Planos — Eva Inteligência",
-  description: "Escolha o plano ideal para o seu negócio. Implantação em 7 dias, sem programação.",
+  description: "Escolha o plano ideal para o seu negócio. Implantação em 24 horas, sem programação.",
 };
 
 export default function PlansPage() {

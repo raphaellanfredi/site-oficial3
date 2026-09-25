@@ -160,7 +160,7 @@ export default function HeroVideo() {
 
         {/* Subtitle */}
         <p className="hero-meta subtitle max-w-md text-[clamp(0.9rem,1.8vw,1.15rem)] font-light tracking-wide text-neutral-900/55">
-          Atendimento inteligente 24h — WhatsApp, Instagram,<br className="hidden sm:block" /> E-mail e Telefone. Pronta em 7 dias.
+          Atendimento inteligente 24h — WhatsApp, Instagram,<br className="hidden sm:block" /> E-mail e Telefone. Pronta em 24 horas.
         </p>
       </div>
 

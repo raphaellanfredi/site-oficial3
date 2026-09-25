@@ -167,7 +167,7 @@ export const STEPS: StepConfig[] = [
     title: "Sobre o seu negócio",
     desc: "Descreva o que a empresa faz e o que o agente pode dizer com certeza.",
     fields: [
-      { key: "nome_empresa", label: "Nome da empresa ou marca", req: true, type: "text", placeholder: "Ex: Petiatria, SaúdeMax, Grupo SS Consultoria..." },
+      { key: "nome_empresa", label: "Nome da empresa ou marca", req: true, type: "text", placeholder: "Ex: Clínica Sorriso, Loja Bella, Grupo Alfa Consultoria..." },
       {
         key: "descricao_negocio",
         label: "O que a empresa faz?",
@@ -266,7 +266,7 @@ export const STEPS: StepConfig[] = [
         label: "Mensagem de abertura exata",
         req: true,
         type: "textarea",
-        placeholder: "Ex:\nOlá! Sou a Carolina, assistente virtual da SaúdeMax 😊\n\nPosso te ajudar a encontrar a melhor opção para você!",
+        placeholder: "Ex:\nOlá! Sou a Carolina, assistente virtual da Clínica Sorriso 😊\n\nPosso te ajudar a encontrar a melhor opção para você!",
         hint: "No WhatsApp, use linhas em branco para separar blocos — cada bloco vira uma mensagem separada.",
       },
       {

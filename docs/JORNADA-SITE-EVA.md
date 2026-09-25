@@ -93,9 +93,9 @@ Sem número, "melhor" vira opinião. Estas são as metas que o site novo precisa
 
 ```
 DESCOBRE → ENTENDE → ACREDITA → COMPARA → DECIDE → COMPRA → ENTRA → CRESCE
-   /        /produtos   /cases     /planos    implantação  /checkout  /novo-cliente  /eva-club
-            /eva-ia     /sobre     FAQ        validação              /suporte       /afiliados
-            subpáginas  números               90 dias                               /parceiros
+   /        /produtos   /sobre     /planos    implantação  /checkout  /novo-cliente  /eva-club
+            /eva-ia     números    FAQ        validação              /suporte       /afiliados
+            subpáginas  depoimentos           90 dias                               /parceiros
 ```
 
 Para cada etapa a Fase 1 define: a pergunta que o visitante tem na cabeça, a página que responde, a prova que sustenta, e **um único próximo passo principal**.
@@ -109,7 +109,7 @@ Para cada etapa a Fase 1 define: a pergunta que o visitante tem na cabeça, a p�
 
 **Portão:** você aprova o mapa, o menu e os 18 wireframes em texto.
 
-**Decisões suas nesta fase** (do brief, seção 4.3 e 12): oferecer ou não o teste de 15 dias; quais clientes podem aparecer em `/cases`; se a CTA principal é WhatsApp, checkout ou os dois conforme a página.
+**Decisões suas nesta fase** (do brief, seção 4.3 e 12): oferecer ou não o teste de 15 dias; se a CTA principal é WhatsApp, checkout ou os dois conforme a página.
 
 ---
 
@@ -129,7 +129,7 @@ Minha recomendação é **C**: a cor da IA vira um sinal. Toda vez que o visitan
 1. **Tokens de design** (em `tailwind.config.js` e variáveis CSS): cores com papéis (fundo, superfície, texto, borda, marca, IA, sucesso, alerta), tipografia (escala, pesos, altura de linha), espaçamento, raios, sombras, e os tokens de movimento que a Fase 4 usa
 2. **Tipografia**: par de fontes (título e texto), com escala para celular e desktop
 3. **Linguagem de ícones**: um único conjunto, mesma espessura de traço (hoje há ícones próprios em `products/icons.tsx`)
-4. **Direção de imagem**: telas reais do painel em moldura padronizada, sem banco de imagem genérico; regra para fotos de clientes em `/cases`
+4. **Direção de imagem**: telas reais do painel em moldura padronizada, sem banco de imagem genérico
 5. **Assinatura visual da Eva IA**: o elemento gráfico que aparece sempre que a IA age (brilho, pulso, cursor, onda de voz)
 6. **Modo escuro**: decidir se existe; se sim, definido nos tokens desde já
 7. **Guia de marca de uma página**: logo, espaço de respiro, o que não fazer
@@ -149,7 +149,7 @@ Minha recomendação é **C**: a cor da IA vira um sinal. Toda vez que o visitan
 | **Produto** (recurso por recurso, com tela do painel) | `/produtos/ia`, `/crm`, `/automacao`, `/gestao`, `/central-de-ajuda` |
 | **Índice** (visão geral que leva às subpáginas) | `/produtos` |
 | **Oferta** (preço, comparação, FAQ, fechamento) | `/planos`, `/afiliados`, `/parceiros`, `/eva-club` |
-| **Utilitário** (informação direta, pouco movimento) | `/suporte`, `/cases`, legais, 404, `/checkout`, `/novo-cliente` |
+| **Utilitário** (informação direta, pouco movimento) | `/suporte`, legais, 404, `/checkout`, `/novo-cliente` |
 
 ### 3.2 Blocos (biblioteca)
 Hero (4 variações) · cena de dor · pilares · como funciona em etapas · recurso com tela · grade de recursos · canais · integrações · números · depoimento · case · tabela de planos · linha do tempo da implantação · "validada antes, acompanhada depois" · simulador de comissão · comparação · FAQ · CTA final · faixa de confiança · barra de navegação · rodapé · demonstração de conversa (o `ChatSimulator` evoluído) · demonstração da Eva IA no painel · tabela de SLA de suporte · formulário.
@@ -175,7 +175,7 @@ Hero (4 variações) · cena de dor · pilares · como funciona em etapas · rec
 | **Entende** | mostrar como funciona, não contar | a mesma mensagem entrando por WhatsApp, Instagram e e-mail e caindo numa única tela de Conversas |
 | **Acredita** | dar peso à prova | números contando uma vez, depoimento surgindo com calma |
 | **Compara** | clareza acima de tudo | quase nenhum movimento; destaque suave em conexões e usuários ao passar o dedo |
-| **Decide** | reduzir o medo | as 5 etapas da implantação preenchendo em sequência até o "no ar em 7 dias" |
+| **Decide** | reduzir o medo | as 5 etapas da implantação preenchendo em sequência até o "no ar em 24 horas" |
 | **Compra / Entra** | segurança e progresso | barra de etapas, confirmação clara, nada que distraia |
 
 ### 4.2 Transição entre páginas
@@ -195,7 +195,7 @@ Continuidade entre páginas com a **View Transitions API** (suportada no Next.js
 **Por que argumento antes do texto:** a copy é a última camada. Se o argumento está certo, o texto sai rápido; se não está, reescreve-se infinitamente.
 
 ### 5.1 Argumentação
-1. **Mensagem central** em uma frase, a partir do posicionamento do brief (1.4): *não é chatbot, é uma funcionária treinada, entregue pronta em 7 dias*
+1. **Mensagem central** em uma frase, a partir do posicionamento do brief (1.4): *não é chatbot, é uma funcionária treinada, entregue pronta em 24 horas*
 2. **Três pilares de prova:**
    - **Pronta:** implantação feita por especialistas, você não programa nada
    - **Não erra:** validada antes do go-live, acompanhada por 90 dias depois (brief seção 7)
@@ -210,7 +210,7 @@ Continuidade entre páginas com a **View Transitions API** (suportada no Next.js
    | "Vou pagar por mensagem?" | atendimento não é cobrado por mensagem; só disparo é | `/planos` |
    | "Não tenho tempo de configurar" | você não programa nada, recebe pronto | home, `/planos` |
    | "E quando der problema?" | primeira resposta em até 1 hora, 15 minutos se parou | `/suporte`, `/eva-club` |
-4. **Arquitetura da prova**: onde entram os números (300+ empresas, 20M+ atendimentos, 99,9%), cases e depoimentos
+4. **Arquitetura da prova**: onde entram os números (300+ empresas, 20M+ atendimentos, 99,9%) e os depoimentos, sempre anônimos por estratégia (nenhum cliente é nomeado no site)
 5. **Upgrade vendido pelo que aperta**: usuários e conexões (brief 4.1), não atendimentos
 
 ### 5.2 Copy
@@ -233,7 +233,7 @@ Construção na ordem do brief (seção 11), para que o que dá dinheiro chegue 
 | 2 | **`/afiliados`** com a escada nova e simulador corrigido |
 | 3 | **`/produtos`** + as 4 subpáginas |
 | 4 | **`/eva-ia`** + **`/central-de-ajuda`** |
-| 5 | **`/parceiros`** + **`/suporte`** + **`/cases`** |
+| 5 | **`/parceiros`** + **`/suporte`** |
 | 6 | **`/sobre`** + home refeita + 404 + legais |
 
 **QA por página, antes de sair do sprint**
@@ -262,10 +262,10 @@ Juntei aqui para não travarem o andamento. Cada uma está marcada com a fase em
 
 | decisão | fase |
 |---|---|
-| Ferramenta de analytics | 0 |
-| Oferecer teste de 15 dias sem cartão | 1 |
-| Clientes autorizados para `/cases` | 1 |
-| CTA principal por página: WhatsApp, checkout ou ambos | 1 |
+| Ferramenta de analytics | 0 · **decidido: GA4, no ar desde 25/09** |
+| Oferecer teste de 15 dias sem cartão | 1 · **decidido: não** |
+| Prazo de entrega da IA | 1 · **decidido: no ar em até 24 horas** (site atualizado em 25/09) |
+| CTA principal por página: WhatsApp, checkout ou ambos | 1 · **decidido: WhatsApp fora de `/planos`, checkout em `/planos`** |
 | Cor: caminho A, B ou C | 2 |
 | Modo escuro: sim ou não | 2 |
 | Cota de disparo por plano | 5 |
