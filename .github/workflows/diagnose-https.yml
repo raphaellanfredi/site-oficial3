@@ -14,9 +14,6 @@ jobs:
   diagnose:
     runs-on: self-hosted
     steps:
-      - name: Give Traefik time to request the certificate
-        run: sleep 60
-
       - name: DNS
         run: |
           echo "VPS public IP: $(curl -s -m 10 https://api.ipify.org || echo unknown)"
@@ -29,7 +26,7 @@ jobs:
           for h in www.evainteligencia.com.br evainteligencia.com.br onboarding-api.evainteligencia.com.br; do
             echo "== $h"
             echo | timeout 15 openssl s_client -connect 127.0.0.1:443 -servername "$h" 2>/dev/null \
-              | openssl x509 -noout -subject -issuer -dates 2>/dev/null || echo "no certificate"
+              | openssl x509 -noout -subject -issuer -dates -ext subjectAltName 2>/dev/null || echo "no certificate"
           done
 
       - name: Redirects
@@ -40,6 +37,28 @@ jobs:
             h=$(echo "$u" | cut -d/ -f3); p=$([ "${u%%:*}" = https ] && echo 443 || echo 80)
             echo "== $u"
             curl -skI -m 15 --resolve "$h:$p:127.0.0.1" "$u" | grep -iE '^(HTTP|location|content-type)' || echo "no answer"
+          done
+
+      - name: Which build each address serves
+        run: |
+          echo "deployed index.html: $(md5sum < /var/www/eva/dist/public/index.html | cut -c1-12)"
+          for h in www.evainteligencia.com.br evainteligencia.com.br; do
+            f=$(mktemp); curl -sk -m 15 --resolve "$h:443:127.0.0.1" "https://$h/" -o "$f"
+            echo "$h: $(md5sum < "$f" | cut -c1-12) $(grep -o '<title>[^<]*' "$f" | head -1)"
+            echo "  insecure references: $(grep -oE '(src|href)="http://[^"]*"' "$f" | sort -u | xargs)"
+            rm -f "$f"
+          done
+
+      - name: Services that serve the domain
+        run: |
+          for s in $(docker service ls -q); do
+            docker service inspect "$s" --format '{{json .Spec.Labels}}' \
+              | grep -qE 'Host\(`(www\.)?evainteligencia\.com\.br`\)' || continue
+            docker service inspect "$s" --format \
+              'service={{.Spec.Name}} stack={{index .Spec.Labels "com.docker.stack.namespace"}} image={{.Spec.TaskTemplate.ContainerSpec.Image}} created={{.CreatedAt}} updated={{.UpdatedAt}}'
+            docker service inspect "$s" --format '{{range .Spec.TaskTemplate.ContainerSpec.Mounts}}  mount {{.Source}} -> {{.Target}}{{"\n"}}{{end}}'
+            docker service inspect "$s" --format '{{json .Spec.Labels}}' | tr ',' '\n' \
+              | grep -E 'traefik\.http\.(routers|services|middlewares)' | grep -viE 'basicauth|users|password|secret|token' || true
           done
 
       - name: Routers that mention the domain
