@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import { gsap } from "@/lib/gsap";
 import Shell from "../Shell";
 import Magnetic from "../Magnetic";
@@ -15,16 +16,19 @@ const scene = (t: SceneTarget) => JSON.stringify(t);
 const FOR_WHOM = [
   {
     who: "Do empresário",
+    href: "/para-empresas",
     title: "Enquanto você decide, ela executa.",
     text: "Atende, vende, cobra e agenda no WhatsApp, no Instagram e no telefone. Você volta a cuidar do que só você pode fazer.",
   },
   {
     who: "Da clínica",
+    href: "/para-clinicas",
     title: "Nenhum paciente sem resposta.",
     text: "Responde a qualquer hora, marca a consulta, confirma no dia e reduz as faltas com o Anti No Show.",
   },
   {
     who: "Do escritório",
+    href: "/para-escritorios",
     title: "Cada pedido no lugar certo.",
     text: "Recebe, organiza e encaminha para quem entende do assunto, com a equipe no controle e o histórico de cada cliente à mão.",
   },
@@ -132,11 +136,11 @@ export default function AboutPage() {
           <h2 className={s.verse} data-reveal>Criada para quem não pode parar.</h2>
           <div className={m.who}>
             {FOR_WHOM.map((f) => (
-              <article key={f.who} className={s.card} data-fade data-spot>
+              <Link key={f.who} href={f.href} className={s.card} data-fade data-spot>
                 <span className={s.cardTag}>{f.who}</span>
                 <h3 className={s.cardTitle}>{f.title}</h3>
                 <p className={s.cardText}>{f.text}</p>
-              </article>
+              </Link>
             ))}
           </div>
           <p className={s.body} data-fade>
