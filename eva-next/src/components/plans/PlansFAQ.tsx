@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "Posso trocar de plano depois?",
-    a: "Sim. Você pode fazer upgrade a qualquer momento conforme seu negócio cresce.",
+    a: "Sim. O upgrade vale na hora, com cobrança proporcional ao tempo que falta no período. O downgrade vale no fim do período já pago e nunca apaga atendente nem conexão.",
   },
   {
     q: "O que são as 'conexões'?",

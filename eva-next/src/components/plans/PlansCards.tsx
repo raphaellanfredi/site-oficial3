@@ -11,7 +11,7 @@ const evaOneFeatures = [
 const evaProFeatures = [
   "Até 3.500 atendimentos/mês",
   "7 etapas de recuperação de cliente",
-  "Disparo em massa ilimitado",
+  "Disparo em massa com segmentação e agendamento (envios cobrados por mensagem — consulte valores)",
   "Anti no Show (confirmação automática)",
   "5 conexões",
   "10 usuários",
@@ -24,7 +24,7 @@ const evaBlackFeatures = [
   "Até 15.200 atendimentos/mês",
   "Suporte Premium",
   "15 etapas de recuperação de cliente",
-  "Disparo em massa ilimitado",
+  "Disparo em massa com segmentação e agendamento (envios cobrados por mensagem — consulte valores)",
   "10 conexões",
   "30 usuários",
   "Integração Asaas / PagarMe / Conta Azul",

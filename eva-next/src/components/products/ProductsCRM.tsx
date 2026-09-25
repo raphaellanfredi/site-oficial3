@@ -100,7 +100,7 @@ export default function ProductsCRM() {
         >
           <Image
             src="/products/crm-ia.png"
-            alt="CRM com IA mostrando funil de vendas em formato Kanban"
+            alt="CRM com IA mostrando funil de vendas organizado por etapas"
             width={1004}
             height={571}
             style={{ width: "100%", height: "auto", display: "block" }}
