@@ -281,3 +281,12 @@ Juntei aqui para não travarem o andamento. Cada uma está marcada com a fase em
 ## Próximo passo
 
 Fase 0, item 1: o hotfix das promessas proibidas no site atual e no checkout. É pequeno, reversível, e cada dia no ar é uma venda feita com uma promessa que não se sustenta. Em paralelo, você responde as decisões da Fase 0 e da Fase 1, e eu começo o mapa do site e os wireframes em texto.
+
+---
+
+## Registro · Fase 7 (25/09/2026)
+
+- **Imagens de compartilhamento** (`eva-next/public/og/*.png`, 1200×630) para as 9 páginas públicas, no visual Gênesis. Para regenerar depois de mudar um título: `npm run build` e `node scripts/generate-og.mjs` (precisa do Playwright)
+- **SEO técnico:** endereço canônico e metadados de compartilhamento por página, `sitemap.xml`, `robots.txt` (checkout e onboarding fora do Google), dados estruturados de Organização (home), Produto com as 3 ofertas e FAQ (planos)
+- **Pendente com você:** cadastrar o site no Google Search Console e enviar o sitemap
+
