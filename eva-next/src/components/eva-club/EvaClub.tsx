@@ -30,6 +30,7 @@ const INCLUSIONS = [
   "Agente de IA ativo no WhatsApp, Instagram e site",
   "Customização completa de identidade, tom e fluxos de atendimento",
   "Acesso antecipado a novos agentes verticais",
+  "50% de desconto em todos os novos produtos Eva",
   "Suporte humano dedicado via canal exclusivo (primeira resposta em até 1 hora, e em 15 minutos se sua operação parar)",
   "Sessão mensal de otimização do agente com especialista Eva",
   "Acesso à comunidade fechada + biblioteca de prompts e playbooks",

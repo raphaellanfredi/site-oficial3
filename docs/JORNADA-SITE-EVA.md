@@ -34,7 +34,7 @@ Levantamento feito no repositório. É a linha de base para medir o "100 vezes".
 | **Páginas** | 7 rotas (`/`, `/produtos`, `/planos`, `/afiliados`, `/eva-club`, `/checkout`, `/novo-cliente`). A arquitetura aprovada tem 16 | `src/app/` |
 | **SEO técnico** | sem `sitemap.xml`, `robots.txt`, imagem de compartilhamento (OG) nem dados estruturados. Home sem metadata própria | `src/app/` |
 | **404 falso** | o nginx devolve a home com status 200 para qualquer URL inexistente (`try_files … /index.html`). O Google trata como conteúdo duplicado | `deploy/nginx.conf` |
-| **HTTPS do site** | o roteador do Traefik do site só declara o entrypoint `web` (porta 80); o do onboarding usa `websecure` com certificado. Verificar se há redirecionamento para HTTPS em outro ponto | `deploy/eva_site.yaml` |
+| **HTTPS do site** | confirmado em 25/09/2026: o domínio redireciona sozinho para `https://` | `deploy/eva_site.yaml` |
 | **Medição** | nenhum analytics. Não há como saber de onde vem o cliente nem onde ele desiste | — |
 | **Motion** | GSAP + Lenis já instalados; histórico de correções de instabilidade no mobile | `lib/gsap.ts`, commits recentes |
 
