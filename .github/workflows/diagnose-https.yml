@@ -1,15 +1,22 @@
 name: Diagnose HTTPS
 
-# Manual run from the Actions tab. Read-only: shows which certificate the
+# Runs by hand from the Actions tab, and by itself whenever this file
+# changes on main (after the deploy it triggers, on the same runner). Read-only: shows which certificate the
 # VPS serves for each host, where each address redirects, and what Traefik
 # logged about the site's certificate. Prints no secrets.
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/diagnose-https.yml]
 
 jobs:
   diagnose:
     runs-on: self-hosted
     steps:
+      - name: Give Traefik time to request the certificate
+        run: sleep 60
+
       - name: DNS
         run: |
           echo "VPS public IP: $(curl -s -m 10 https://api.ipify.org || echo unknown)"
