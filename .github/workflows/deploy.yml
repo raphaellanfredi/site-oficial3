@@ -3,6 +3,8 @@ name: Deploy to VPS
 on:
   push:
     branches: [main]
+  # Manual run from the Actions tab, e.g. after setting GA_MEASUREMENT_ID.
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -31,6 +33,11 @@ jobs:
       - name: Build
         run: npm run build
         working-directory: eva-next
+        env:
+          # Google Analytics 4 measurement ID (G-XXXXXXXXXX), set under
+          # Settings → Secrets and variables → Actions → Variables.
+          # Empty means analytics stays off.
+          NEXT_PUBLIC_GA_ID: ${{ vars.GA_MEASUREMENT_ID }}
 
       - name: Copy site files
         run: |

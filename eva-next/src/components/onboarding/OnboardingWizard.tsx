@@ -12,6 +12,7 @@ import {
   getPresetItems,
   submitOnboarding,
 } from "./onboarding-utils";
+import { track } from "@/lib/analytics";
 
 const STORAGE_KEY = "eva-onboarding-draft";
 
@@ -142,9 +143,11 @@ export default function OnboardingWizard() {
       autoDownloadBrief(data, output);
       clearDraft();
       setDone(true);
+      track("onboarding_concluido");
       return;
     }
     const next = current + 1;
+    if (current === 0) track("onboarding_inicio");
     setCurrent(next);
     saveDraft(next, data);
     window.scrollTo({ top: 0, behavior: "smooth" });
