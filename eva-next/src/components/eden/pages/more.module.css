@@ -1,0 +1,310 @@
+/* Styles for Eva IA, Central de Ajuda, Parceiros, Suporte and Sobre. */
+
+/* Where the Eva IA acts, the section darkens and the cyan comes in. */
+.iaBand {
+  position: relative;
+  isolation: isolate;
+}
+.iaBand::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(7, 218, 255, 0.12), transparent 55%),
+    linear-gradient(180deg, transparent, rgba(3, 6, 8, 0.75) 12%, rgba(3, 6, 8, 0.75) 88%, transparent);
+  pointer-events: none;
+}
+.iaBand .kickerIa {
+  color: #5CE6FF;
+}
+
+.places {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+@media (max-width: 900px) {
+  .places {
+    grid-template-columns: 1fr;
+  }
+}
+.place {
+  position: relative;
+  padding: 26px;
+  border-radius: 22px;
+  border: 1px solid rgba(7, 218, 255, 0.22);
+  background: rgba(8, 14, 14, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  overflow: hidden;
+}
+.place::after {
+  content: "";
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #07DAFF;
+  box-shadow: 0 0 14px #07DAFF;
+  animation: breathe 2.4s ease-in-out infinite;
+}
+.place:nth-child(2)::after { animation-delay: 0.4s; }
+.place:nth-child(3)::after { animation-delay: 0.8s; }
+.place:nth-child(4)::after { animation-delay: 1.2s; }
+.place:nth-child(5)::after { animation-delay: 1.6s; }
+.place:nth-child(6)::after { animation-delay: 2s; }
+@keyframes breathe {
+  50% { opacity: 0.25; transform: scale(0.7); }
+}
+.placeWho {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #5CE6FF;
+}
+.placeTitle {
+  margin-top: 12px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+.placeText {
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--e-ink-2);
+}
+
+.list {
+  list-style: none;
+  margin-top: 32px;
+  display: grid;
+  gap: 14px;
+}
+.list li {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 12px;
+  font-size: 17px;
+  line-height: 1.5;
+}
+.list li::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 50%;
+  background: #07DAFF;
+  box-shadow: 0 0 12px rgba(7, 218, 255, 0.8);
+}
+
+/* Help center: article -> knowledge -> answer */
+.flow {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 16px;
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .flow {
+    grid-template-columns: 1fr;
+  }
+  .arrow {
+    transform: rotate(90deg);
+    justify-self: center;
+  }
+}
+.node {
+  padding: 24px;
+  border-radius: 22px;
+  border: 1px solid var(--e-line);
+  background: var(--e-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  text-align: center;
+}
+.nodeMid {
+  border-color: rgba(7, 218, 255, 0.4);
+  box-shadow: 0 0 60px rgba(7, 218, 255, 0.18);
+}
+.nodeEnd {
+  border-color: rgba(255, 77, 166, 0.4);
+  box-shadow: 0 0 60px rgba(255, 0, 128, 0.16);
+}
+.nodeIcon {
+  font-family: var(--verse);
+  font-style: italic;
+  font-size: 40px;
+  line-height: 1;
+}
+.nodeTitle {
+  margin-top: 12px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+}
+.nodeText {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--e-ink-2);
+}
+.arrow {
+  width: 56px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(242, 244, 241, 0.1), #07DAFF);
+  position: relative;
+  overflow: hidden;
+}
+.arrow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 30%;
+  background: #fff;
+  box-shadow: 0 0 10px #07DAFF;
+  animation: travel 1.6s linear infinite;
+}
+@keyframes travel {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(340%); }
+}
+
+/* Help center portal mock */
+.portal {
+  border-radius: 24px;
+  border: 1px solid var(--e-line);
+  background: rgba(10, 17, 13, 0.9);
+  overflow: hidden;
+  box-shadow: 0 50px 120px rgba(0, 0, 0, 0.55);
+}
+.portalTop {
+  padding: 28px 24px;
+  background: radial-gradient(circle at 20% 0%, rgba(255, 0, 128, 0.25), transparent 60%), rgba(20, 30, 24, 0.9);
+}
+.portalBrand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+}
+.portalSearch {
+  margin-top: 14px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(5, 8, 6, 0.7);
+  border: 1px solid var(--e-line);
+  font-size: 14px;
+  color: var(--e-ink-2);
+}
+.portalCats {
+  padding: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.portalCat {
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid var(--e-line);
+  font-size: 14px;
+  font-weight: 600;
+}
+.portalCat small {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--e-ink-2);
+}
+
+/* Support channels */
+.channels {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 14px;
+}
+.contact {
+  display: grid;
+  gap: 8px;
+  padding: 26px;
+  border-radius: 22px;
+  border: 1px solid var(--e-line);
+  background: var(--e-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: border-color 0.3s ease, transform 0.4s ease;
+}
+a.contact:hover {
+  border-color: rgba(255, 77, 166, 0.45);
+  transform: translateY(-3px);
+}
+.contactName {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+}
+.contactValue {
+  font-size: 15px;
+  color: var(--e-ink);
+  word-break: break-word;
+}
+.contactNote {
+  font-size: 13px;
+  color: var(--e-ink-2);
+}
+
+.bigClock {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px 28px;
+  margin-top: 36px;
+}
+.bigClock strong {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 8vw, 110px);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+.bigClock > span {
+  font-size: 15px;
+  color: var(--e-ink-2);
+  max-width: 22ch;
+}
+
+.who {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+@media (max-width: 860px) {
+  .who {
+    grid-template-columns: 1fr;
+  }
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .place::after,
+  .arrow::after {
+    animation: none;
+  }
+}

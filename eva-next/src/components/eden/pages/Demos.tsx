@@ -170,3 +170,90 @@ export function ReportDemo() {
     </div>
   );
 }
+
+const QUESTIONS = [
+  "Quais contatos escreveram mais este mês?",
+  "Como estão minhas caixas hoje?",
+  "Monta um relatório da semana.",
+];
+
+/** The Eva IA in the owner's panel: types a question, answers with a chart, proposes an action. */
+export function PanelDemo() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [typed, setTyped] = useState(QUESTIONS[0]);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || reduced()) return;
+    let q = 0;
+    let timer = 0;
+    let visible = false;
+    const answer = el.querySelector<HTMLElement>("[data-answer]");
+    const type = (text: string, i = 0) => {
+      setTyped(text.slice(0, i));
+      if (i < text.length) timer = window.setTimeout(() => type(text, i + 1), 38);
+      else {
+        if (answer) gsap.fromTo(answer, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" });
+        timer = window.setTimeout(next, 4200);
+      }
+    };
+    const next = () => {
+      if (!visible) {
+        timer = window.setTimeout(next, 800);
+        return;
+      }
+      q = (q + 1) % QUESTIONS.length;
+      if (answer) gsap.to(answer, { opacity: 0.25, duration: 0.3 });
+      type(QUESTIONS[q]);
+    };
+    const st = ScrollTrigger.create({
+      trigger: el,
+      start: "top 85%",
+      end: "bottom 15%",
+      onToggle: (self) => (visible = self.isActive),
+    });
+    timer = window.setTimeout(next, 3000);
+    return () => {
+      window.clearTimeout(timer);
+      st.kill();
+    };
+  }, []);
+  const bars = [
+    { k: "Seg", v: 62 },
+    { k: "Ter", v: 80 },
+    { k: "Qua", v: 71 },
+    { k: "Qui", v: 94 },
+    { k: "Sex", v: 88 },
+  ];
+  return (
+    <div ref={ref} className={d.panel} aria-label="Exemplo da Eva IA no painel respondendo a uma pergunta do dono">
+      <div className={d.panelBar}>
+        <span className={d.panelDot} />
+        Eva IA
+        <kbd className={d.kbd}>Alt + Shift + M</kbd>
+      </div>
+      <p className={d.ask}>
+        {typed}
+        <span className={d.caret} aria-hidden="true" />
+      </p>
+      <div className={d.answer} data-answer>
+        <p className={d.answerText}>Aqui está. Conversas atendidas por dia, com dados reais da sua operação:</p>
+        <div className={d.chart}>
+          {bars.map((b) => (
+            <span key={b.k} className={d.col}>
+              <span className={d.colBar} style={{ height: `${b.v}%` }} />
+              <span className={d.colKey}>{b.k}</span>
+            </span>
+          ))}
+        </div>
+        <div className={d.proposal}>
+          <p>Posso enviar um lembrete para os 12 contatos sem resposta há mais de 2 dias?</p>
+          <div className={d.actions}>
+            <span className={d.confirm}>Confirmar</span>
+            <span className={d.cancel}>Agora não</span>
+          </div>
+        </div>
+      </div>
+      <p className={d.caption}>Exemplo ilustrativo · nenhuma ação acontece sem a sua confirmação</p>
+    </div>
+  );
+}
