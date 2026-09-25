@@ -1,3 +1,5 @@
+import TrackOnView from "@/components/shared/TrackOnView";
+
 const evaOneFeatures = [
   "Até 1.500 atendimentos/mês",
   "3 etapas de recuperação de cliente (follow-up)",
@@ -69,6 +71,7 @@ function PriceBlock({ monthly, setup }: { monthly: string; setup: string }) {
 export default function PlansCards() {
   return (
     <section style={{ backgroundColor: "#f8f8f8", padding: "80px 24px" }}>
+      <TrackOnView event="ver_tabela_planos" />
       <div
         style={{
           maxWidth: "1200px",

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { track } from "@/lib/analytics";
 import {
   PLANS,
   INSTALLMENTS,
@@ -360,6 +361,9 @@ function OrderSummary({
       {/* CTA */}
       <a
         href={linksConfigured ? paymentLink : undefined}
+        data-plan={plan.key}
+        data-installments={installments}
+        data-value={setupTotal}
         onClick={linksConfigured ? undefined : (e) => { e.preventDefault(); onCheckout(); }}
         style={{
           display: "block",
@@ -602,6 +606,11 @@ export default function CheckoutPage() {
   const plan = PLANS.find((p) => p.key === planKey)!;
 
   useEffect(() => {
+    track("begin_checkout", { plano: initialPlan, currency: "BRL" });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
     const timer = setInterval(
       () => setTestimonialIdx((i) => (i + 1) % TESTIMONIALS.length),
       6000
@@ -707,6 +716,9 @@ export default function CheckoutPage() {
           </div>
           <a
             href={PAYMENT_LINKS[planKey][installments] !== "#" ? PAYMENT_LINKS[planKey][installments] : undefined}
+            data-plan={planKey}
+            data-installments={installments}
+            data-value={calcInstallmentTotal(plan.setup, installments)}
             onClick={
               PAYMENT_LINKS[planKey][installments] !== "#"
                 ? undefined
