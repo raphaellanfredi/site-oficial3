@@ -5,7 +5,7 @@ import { useState } from "react";
 const faqs = [
   {
     q: "O que está incluído na implantação?",
-    a: "Nossa equipe de especialistas configura toda a sua IA: treinamento com o conhecimento do seu negócio, integração com seus canais, testes e ajustes. Você recebe tudo pronto em 7 dias.",
+    a: "Nossa equipe de especialistas configura toda a sua IA: treinamento com o conhecimento do seu negócio, integração com seus canais, testes e ajustes. Você recebe tudo pronto em até 24 horas.",
   },
   {
     q: "Preciso saber programar?",

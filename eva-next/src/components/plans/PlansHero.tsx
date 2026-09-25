@@ -49,7 +49,7 @@ export default function PlansHero() {
 
         <p style={{ color: "#888", fontSize: "20px", lineHeight: 1.7, maxWidth: "600px", margin: "0 auto" }}>
           Implantação feita por especialistas. Você recebe sua IA<br />
-          pronta em 7 dias, conectada aos seus canais.
+          pronta em 24 horas, conectada aos seus canais.
         </p>
       </div>
     </section>

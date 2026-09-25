@@ -69,7 +69,7 @@ export default function FinalCTA() {
         </a>
 
         <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "15px", marginTop: "24px", letterSpacing: "0.5px" }}>
-          IA pronta em 7 dias &nbsp;&bull;&nbsp; Zero programação &nbsp;&bull;&nbsp; Zero caos
+          IA pronta em 24 horas &nbsp;&bull;&nbsp; Zero programação &nbsp;&bull;&nbsp; Zero caos
         </p>
       </div>
     </section>

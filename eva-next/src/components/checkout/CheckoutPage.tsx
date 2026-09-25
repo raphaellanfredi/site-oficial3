@@ -314,7 +314,7 @@ function OrderSummary({
       >
         <span style={{ fontSize: "14px" }}>🔥</span>
         <span style={{ fontSize: "13px", color: "#FF0080", fontWeight: 600 }}>
-          Onboarding com especialistas incluso — sua IA operando em até 7 dias
+          Onboarding com especialistas incluso — sua IA operando em até 24 horas
         </span>
       </div>
 
@@ -431,7 +431,7 @@ function SocialProof() {
   const stats = [
     { value: "300+", label: "empresas ativas" },
     { value: "20M+", label: "atendimentos com IA" },
-    { value: "7 dias", label: "para sua IA ficar pronta" },
+    { value: "24h", label: "para sua IA ficar pronta" },
   ];
   return (
     <div
@@ -649,7 +649,7 @@ export default function CheckoutPage() {
                 backgroundClip: "text",
               }}
             >
-              comece em 7 dias
+              comece em 24 horas
             </span>
           </h1>
           <p style={{ color: "#888", fontSize: "16px", margin: 0 }}>

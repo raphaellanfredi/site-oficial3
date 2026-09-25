@@ -4,7 +4,7 @@ import CheckoutPage from "@/components/checkout/CheckoutPage";
 
 export const metadata: Metadata = {
   title: "Checkout — Eva Inteligência",
-  description: "Finalize sua contratação e receba sua IA em 7 dias.",
+  description: "Finalize sua contratação e receba sua IA em 24 horas.",
   robots: { index: false, follow: false },
 };
 

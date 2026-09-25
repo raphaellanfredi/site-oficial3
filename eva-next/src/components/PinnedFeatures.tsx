@@ -16,8 +16,8 @@ const ITEMS = [
   },
   {
     n: "03",
-    title: "Pronta em 7 dias",
-    desc: "Nossa equipe configura tudo. Você transmite o conhecimento. A Eva entra ao vivo em uma semana.",
+    title: "Pronta em 24 horas",
+    desc: "Nossa equipe configura tudo. Você transmite o conhecimento. A Eva entra ao vivo em 24 horas.",
   },
   {
     n: "04",

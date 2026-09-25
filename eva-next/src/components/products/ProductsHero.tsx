@@ -36,7 +36,7 @@ export default function ProductsHero() {
         <p style={{ color: "#888", fontSize: "20px", lineHeight: 1.7, maxWidth: "600px", margin: "0 auto" }}>
           A Eva é um sistema completo de atendimento e gestão
           omnichannel — treinado para o seu negócio,
-          entregue pronto em 7 dias.
+          entregue pronto em 24 horas.
         </p>
       </div>
     </section>

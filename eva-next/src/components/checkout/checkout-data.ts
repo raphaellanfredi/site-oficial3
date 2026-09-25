@@ -153,7 +153,7 @@ export const TESTIMONIALS = [
 export const CHECKOUT_FAQS = [
   {
     q: "Quando minha IA fica pronta?",
-    a: "Nossa equipe entrega sua IA configurada e conectada em até 7 dias. Você não precisa fazer nada técnico.",
+    a: "Nossa equipe entrega sua IA configurada e conectada em até 24 horas. Você não precisa fazer nada técnico.",
   },
   {
     q: "Existe fidelidade ou multa de cancelamento?",

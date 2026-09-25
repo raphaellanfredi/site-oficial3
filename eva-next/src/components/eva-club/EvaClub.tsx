@@ -44,7 +44,7 @@ const FAQS = [
   },
   {
     q: "Em quanto tempo o agente fica no ar?",
-    a: "Em média 5 dias úteis após a coleta de informações do seu negócio.",
+    a: "Em até 24 horas.",
   },
   {
     q: "Posso cancelar a qualquer momento?",
@@ -336,7 +336,7 @@ export default function EvaClub() {
               <span style={{ color: "#FF6B00", fontSize: "40px", lineHeight: 0, verticalAlign: "-12px", marginLeft: "4px" }}>{'"'}</span>
             </blockquote>
             <p style={{ color: "#aaa", fontWeight: 700, fontSize: "14px", letterSpacing: "1px" }}>
-              — Carolina R., SaúdeMax
+              — Cliente Eva, área da saúde
             </p>
           </div>
         </div>
