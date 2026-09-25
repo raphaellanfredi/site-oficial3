@@ -268,6 +268,8 @@ Juntei aqui para não travarem o andamento. Cada uma está marcada com a fase em
 | CTA principal por página: WhatsApp, checkout ou ambos | 1 · **decidido: WhatsApp fora de `/planos`, checkout em `/planos`** |
 | Cor: caminho A, B ou C | 2 · **decidido: C** (marca rosa→laranja, Eva IA em ciano) |
 | Fontes | 2 · **decidido: Sora (títulos) + Inter (texto)** |
+| Conceito de marca | 2 · **decidido: Gênesis** (Eva e o fruto do conhecimento; noite no Éden; capítulos; cena 3D de partículas). Aplicado em todas as páginas em 25/09 |
+| Oferta de entrada | 5 · **decidido: garantia 24 horas**: no ar em até 24 horas depois do pagamento e do formulário, ou a implantação é por nossa conta |
 | Modo escuro: sim ou não | 2 · **decidido: seções escuras onde a Eva IA age, sem alternador** |
 | Cota de disparo por plano | 5 |
 | Modelo de IA mais avançado como diferencial do BLACK | 5 |

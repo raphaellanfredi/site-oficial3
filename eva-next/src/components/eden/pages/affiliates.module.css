@@ -1,0 +1,265 @@
+.story {
+  margin-top: 36px;
+  display: grid;
+  gap: 22px;
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.55;
+  color: var(--e-ink-2);
+}
+.storyEnd {
+  font-family: var(--verse);
+  font-style: italic;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  color: var(--e-ink);
+}
+
+.steps {
+  list-style: none;
+  margin-top: 44px;
+  display: grid;
+  gap: 16px;
+}
+.steps li {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 20px;
+  padding: 24px;
+  border-radius: 22px;
+  border: 1px solid rgba(242, 244, 241, 0.12);
+  background: rgba(14, 22, 17, 0.8);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.stepNum {
+  font-family: var(--verse);
+  font-style: italic;
+  font-size: 44px;
+  line-height: 1;
+  background: var(--e-fruit);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Commission ladder */
+.ladder {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+  align-items: end;
+  height: 340px;
+  max-width: 900px;
+}
+.rung {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 10px;
+  text-align: center;
+}
+.rungRate {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(20px, 2.4vw, 32px);
+  letter-spacing: -0.03em;
+  align-self: end;
+}
+.rungBar {
+  align-self: end;
+  height: var(--h);
+  min-height: 18px;
+  border-radius: 14px 14px 4px 4px;
+  background: linear-gradient(180deg, #FF6B00, #FF0080 60%, rgba(255, 0, 128, 0.25));
+  box-shadow: 0 0 40px rgba(255, 0, 128, 0.25);
+  transform-origin: bottom;
+}
+/* Armed by script so the bars stay visible without it; they grow when the
+   ladder scrolls into view. */
+.ladder[data-armed] .rungBar {
+  animation: grow 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) both paused;
+}
+.ladder[data-go] .rungBar {
+  animation-play-state: running;
+}
+.rung:last-child .rungBar {
+  background: linear-gradient(180deg, #7CEBFF, #07DAFF 60%, rgba(7, 218, 255, 0.25));
+  box-shadow: 0 0 50px rgba(7, 218, 255, 0.45);
+}
+.rung:nth-child(2) .rungBar { animation-delay: 0.08s; }
+.rung:nth-child(3) .rungBar { animation-delay: 0.16s; }
+.rung:nth-child(4) .rungBar { animation-delay: 0.24s; }
+.rung:nth-child(5) .rungBar { animation-delay: 0.32s; }
+.rung:nth-child(6) .rungBar { animation-delay: 0.4s; }
+@keyframes grow {
+  from { transform: scaleY(0); }
+}
+.rungRange {
+  font-size: 13px;
+  color: var(--e-ink-2);
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 560px) {
+  .ladder {
+    height: 260px;
+    gap: 6px;
+  }
+  .rungRange {
+    font-size: 11px;
+  }
+}
+
+/* Simulator */
+.sim {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px;
+  max-width: 980px;
+}
+@media (max-width: 860px) {
+  .sim {
+    grid-template-columns: 1fr;
+  }
+}
+.simInput,
+.simOut {
+  padding: 28px;
+  border-radius: 24px;
+  border: 1px solid rgba(242, 244, 241, 0.12);
+  background: rgba(14, 22, 17, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.simInput {
+  display: grid;
+  gap: 20px;
+  align-content: start;
+}
+.simLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 15px;
+  color: var(--e-ink-2);
+}
+.simLabel output {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--e-ink);
+  font-variant-numeric: tabular-nums;
+}
+.simInput input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #FF0080, #FF6B00, #07DAFF);
+}
+.simInput input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #F2F4F1;
+  border: 4px solid #D6006B;
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.6);
+  cursor: grab;
+}
+.simInput input::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #F2F4F1;
+  border: 4px solid #D6006B;
+  cursor: grab;
+}
+.presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.presets button {
+  min-width: 52px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(242, 244, 241, 0.16);
+  background: transparent;
+  color: var(--e-ink);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.presets button[aria-pressed="true"] {
+  border-color: transparent;
+  background: var(--e-action);
+}
+.simOut {
+  display: grid;
+  align-content: center;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(255, 0, 128, 0.25), transparent 60%),
+    rgba(14, 22, 17, 0.92);
+}
+.simValue {
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.05;
+}
+.simValue small {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--e-ink-2);
+  margin-left: 4px;
+}
+.simRate {
+  margin-top: 10px;
+  color: var(--e-ink-2);
+}
+.simRate strong {
+  color: var(--e-ink);
+}
+.bonusNote {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #5CE6FF;
+  background: rgba(7, 218, 255, 0.08);
+  border: 1px solid rgba(7, 218, 255, 0.3);
+}
+
+.testimonial {
+  padding: 32px;
+  border-radius: 24px;
+  border: 1px solid rgba(242, 244, 241, 0.12);
+  background: rgba(14, 22, 17, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.testimonial blockquote {
+  font-family: var(--verse);
+  font-style: italic;
+  font-size: clamp(22px, 2.2vw, 30px);
+  line-height: 1.3;
+}
+.testimonial figcaption {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--e-ink-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rungBar {
+    animation: none;
+  }
+}

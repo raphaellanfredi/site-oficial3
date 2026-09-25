@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
-import { Inter, Sora } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter, Instrument_Serif, Sora } from "next/font/google";
 import SmoothScrollProvider from "@/providers/SmoothScrollProvider";
 import Analytics from "@/components/shared/Analytics";
+import PageTransition from "@/components/transition/PageTransition";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,13 +17,26 @@ const sora = Sora({
   display: "swap",
 });
 
+// Serif of the chapter verses ("No princípio, era o caos.").
+const verse = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-verse",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "Eva Inteligência",
+  title: "Eva Inteligência · Enquanto você vive, a Eva trabalha",
   description:
-    "IA omnichannel para empresas. Atendimento 24h no WhatsApp, Instagram, E-mail e Telefone.",
+    "Inteligência artificial de atendimento no WhatsApp, Instagram, e-mail e telefone. Montada pela Eva IA, validada por especialistas, no ar em 24 horas.",
   icons: {
     icon: "/favicon.ico",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#050806",
 };
 
 export default function RootLayout({
@@ -31,9 +45,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${sora.variable}`}>
+    <html lang="pt-BR" className={`${inter.variable} ${sora.variable} ${verse.variable}`}>
       <body className="antialiased">
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <PageTransition />
         <Analytics />
       </body>
     </html>
