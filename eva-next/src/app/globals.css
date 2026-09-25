@@ -244,3 +244,26 @@ h1, h2, h3, h4 {
 ::-webkit-scrollbar-thumb:hover {
   background: #FF0080;
 }
+
+/* Eden concept page (/eden): page ground and the fixed WebGL layer */
+html.eden,
+html.eden body {
+  background: #050806;
+}
+
+/* Fixed layers */
+.eden-scene {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.eden-scene canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+.eden-scene[data-fallback] {
+  background: radial-gradient(circle at 72% 45%, rgba(255, 0, 128, 0.35), rgba(255, 107, 0, 0.15) 20%, transparent 45%);
+}
+
