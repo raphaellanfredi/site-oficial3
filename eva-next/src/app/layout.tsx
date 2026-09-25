@@ -3,6 +3,7 @@ import { Inter, Instrument_Serif, Sora } from "next/font/google";
 import SmoothScrollProvider from "@/providers/SmoothScrollProvider";
 import Analytics from "@/components/shared/Analytics";
 import PageTransition from "@/components/transition/PageTransition";
+import { SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
 const inter = Inter({
@@ -27,6 +28,7 @@ const verse = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Eva Inteligência · Enquanto você vive, a Eva trabalha",
   description:
     "Inteligência artificial de atendimento no WhatsApp, Instagram, e-mail e telefone. Montada pela Eva IA, validada por especialistas, no ar em 24 horas.",

@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import HelpCenterPage from "@/components/eden/pages/HelpCenterPage";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
+  path: "/central-de-ajuda/",
+  og: "central-de-ajuda",
   title: "Central de Ajuda própria · Eva Inteligência",
   description:
     "Cada conta Eva ganha um portal público de ajuda com categorias, artigos e busca. E cada artigo publicado ensina a IA.",
-};
+});
 
 export default function Page() {
   return <HelpCenterPage />;
