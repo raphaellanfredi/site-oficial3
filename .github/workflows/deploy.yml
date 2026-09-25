@@ -58,6 +58,23 @@ jobs:
           docker config rm eva_nginx_spa_conf 2>/dev/null || true
           docker stack deploy -c eva_site.yaml eva
 
+      # The old site ran as a standalone service, eva_site, created by hand
+      # outside any stack. Its router answered for the same hosts as this
+      # stack, so Traefik picked between the two. Remove it only when it is
+      # that standalone service; nothing else is touched.
+      - name: Remove the old eva_site service
+        run: |
+          if docker service inspect eva_site >/dev/null 2>&1; then
+            ns=$(docker service inspect eva_site --format '{{index .Spec.Labels "com.docker.stack.namespace"}}')
+            if [ -z "$ns" ] || [ "$ns" = "<no value>" ]; then
+              docker service rm eva_site
+            else
+              echo "eva_site belongs to stack $ns; left in place"
+            fi
+          else
+            echo "eva_site already removed"
+          fi
+
       # Independent stack: stores every onboarding submission directly on
       # the VPS (SQLite file under /opt/data/eva-onboarding), in parallel
       # with the n8n webhook call made from the browser. This removes the

@@ -1,8 +1,9 @@
 name: Diagnose HTTPS
 
 # Runs by hand from the Actions tab, and by itself whenever this file
-# changes on main (after the deploy it triggers, on the same runner). Read-only: shows which certificate the
-# VPS serves for each host, where each address redirects, and what Traefik
+# changes on main (after the deploy it triggers, on the same runner).
+# Read-only: shows which certificate the VPS serves for each host, where
+# each address redirects, which services route the domain and what Traefik
 # logged about the site's certificate. Prints no secrets.
 on:
   workflow_dispatch:
