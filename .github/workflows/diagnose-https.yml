@@ -1,0 +1,58 @@
+name: Diagnose HTTPS
+
+# Manual run from the Actions tab. Read-only: shows which certificate the
+# VPS serves for each host, where each address redirects, and what Traefik
+# logged about the site's certificate. Prints no secrets.
+on:
+  workflow_dispatch:
+
+jobs:
+  diagnose:
+    runs-on: self-hosted
+    steps:
+      - name: DNS
+        run: |
+          echo "VPS public IP: $(curl -s -m 10 https://api.ipify.org || echo unknown)"
+          for h in www.evainteligencia.com.br evainteligencia.com.br; do
+            echo "$h -> $(getent ahostsv4 $h | awk '{print $1}' | sort -u | xargs)"
+          done
+
+      - name: Certificate served by the VPS
+        run: |
+          for h in www.evainteligencia.com.br evainteligencia.com.br onboarding-api.evainteligencia.com.br; do
+            echo "== $h"
+            echo | timeout 15 openssl s_client -connect 127.0.0.1:443 -servername "$h" 2>/dev/null \
+              | openssl x509 -noout -subject -issuer -dates 2>/dev/null || echo "no certificate"
+          done
+
+      - name: Redirects
+        run: |
+          for u in http://www.evainteligencia.com.br/ http://evainteligencia.com.br/ \
+                   https://evainteligencia.com.br/ https://www.evainteligencia.com.br/ \
+                   https://www.evainteligencia.com.br/sitemap.xml; do
+            h=$(echo "$u" | cut -d/ -f3); p=$([ "${u%%:*}" = https ] && echo 443 || echo 80)
+            echo "== $u"
+            curl -skI -m 15 --resolve "$h:$p:127.0.0.1" "$u" | grep -iE '^(HTTP|location|content-type)' || echo "no answer"
+          done
+
+      - name: Routers that mention the domain
+        run: |
+          for s in $(docker service ls -q); do
+            docker service inspect "$s" --format '{{.Spec.Name}} {{json .Spec.Labels}}' \
+              | grep -q evainteligencia || continue
+            name=$(docker service inspect "$s" --format '{{.Spec.Name}}')
+            docker service inspect "$s" --format '{{json .Spec.Labels}}' \
+              | grep -oE '"traefik\.http\.routers\.[^"]*\.(rule|entrypoints|tls[^"]*)":"[^"]*"' \
+              | sed "s/^/$name  /"
+          done
+
+      - name: Traefik configuration and log
+        run: |
+          t=$(docker service ls --format '{{.Name}} {{.Image}}' | awk 'tolower($2) ~ /traefik/ {print $1; exit}')
+          echo "Traefik service: ${t:-not found}"
+          [ -n "$t" ] || exit 0
+          docker service inspect "$t" --format '{{json .Spec.TaskTemplate.ContainerSpec.Args}}' \
+            | tr ',' '\n' | grep -iE 'entrypoints|certificatesresolvers' | grep -viE 'email|token|key' || true
+          echo "---- log (last 2h, site and certificates)"
+          docker service logs --since 2h --no-task-ids "$t" 2>&1 \
+            | grep -iE 'evainteligencia|acme|certificate|letsencrypt' | tail -60 || true
