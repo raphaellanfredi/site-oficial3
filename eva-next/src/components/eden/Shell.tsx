@@ -25,9 +25,16 @@ const EdenScene = dynamic(() => import("./EdenScene"), { ssr: false });
 
 const NAV = [
   { href: "/produtos", label: "Produto" },
+  { href: "/eva-ia", label: "Eva IA" },
   { href: "/planos", label: "Planos" },
+];
+
+const COMPANY = [
+  { href: "/sobre", label: "Sobre" },
   { href: "/eva-club", label: "Eva Club" },
+  { href: "/suporte", label: "Suporte" },
   { href: "/afiliados", label: "Afiliados" },
+  { href: "/parceiros", label: "Parceiros" },
 ];
 
 function Nav() {
@@ -70,6 +77,23 @@ function Nav() {
               {n.label}
             </Link>
           ))}
+          <div className={s.dropdown}>
+            <button
+              type="button"
+              className={s.dropdownToggle}
+              aria-haspopup="true"
+              aria-current={COMPANY.some((c) => pathname?.startsWith(c.href)) ? "page" : undefined}
+            >
+              Empresa
+            </button>
+            <div className={s.dropdownPanel}>
+              {COMPANY.map((c) => (
+                <Link key={c.href} href={c.href} aria-current={pathname?.startsWith(c.href) ? "page" : undefined}>
+                  {c.label}
+                </Link>
+              ))}
+            </div>
+          </div>
         </nav>
         <div className={s.navCta}>
           <a href={LOGIN} className={s.navLogin}>Entrar</a>
@@ -90,7 +114,7 @@ function Nav() {
 
       <div id="menu-eva" ref={menuRef} className={s.menu} hidden={!open}>
         <nav aria-label="Menu" className={s.menuLinks}>
-          {[{ href: "/", label: "Início" }, ...NAV].map((n) => (
+          {[{ href: "/", label: "Início" }, ...NAV, ...COMPANY].map((n) => (
             <span key={n.href} className={s.menuMask}>
               <Link href={n.href} data-menu-item onClick={() => setOpen(false)}>
                 {n.label}
@@ -123,13 +147,18 @@ function Footer() {
             <Link href="/produtos#agente">Agente de IA</Link>
             <Link href="/produtos#crm">CRM</Link>
             <Link href="/produtos#automacao">Automação</Link>
+            <Link href="/eva-ia">Eva IA</Link>
+            <Link href="/central-de-ajuda">Central de Ajuda própria</Link>
             <Link href="/planos">Planos</Link>
           </div>
           <div>
             <p className={s.footHead}>Empresa</p>
+            <Link href="/sobre">Sobre</Link>
             <Link href="/eva-club">Eva Club</Link>
+            <Link href="/suporte">Suporte</Link>
             <Link href="/afiliados">Programa de Afiliados</Link>
-            <a href={HELP_CENTER} target="_blank" rel="noopener noreferrer">Central de Ajuda</a>
+            <Link href="/parceiros">Parceiros (revenda)</Link>
+            <a href={HELP_CENTER} target="_blank" rel="noopener noreferrer">Central de Ajuda da Eva</a>
             <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
           <div>
