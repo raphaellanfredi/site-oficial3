@@ -44,6 +44,7 @@ const TREE_LAYERS = [
     text: "Vendas fechadas na conversa, horários confirmados, clientes que voltam.",
     numbers: [
       { value: 300, suffix: "+", label: "empresas" },
+      { value: 5, suffix: "", label: "países" },
       { value: 20, suffix: "M+", label: "atendimentos" },
       { value: 99.9, suffix: "%", label: "de precisão", decimals: 1 },
     ],
@@ -190,7 +191,7 @@ export default function EdenHome() {
               <Magnetic href="/planos" variant="ghost">Planos a partir de R$ 998/mês</Magnetic>
             </div>
             <ul className={s.trust} data-hero-fade>
-              <li>300+ empresas</li>
+              <li>300+ empresas em 5 países</li>
               <li>Sem fidelidade</li>
               <li>Implantação em até 12x</li>
             </ul>
