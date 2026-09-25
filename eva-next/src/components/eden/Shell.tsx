@@ -34,7 +34,6 @@ const COMPANY = [
   { href: "/eva-club", label: "Eva Club" },
   { href: "/suporte", label: "Suporte" },
   { href: "/afiliados", label: "Afiliados" },
-  { href: "/parceiros", label: "Parceiros" },
 ];
 
 function Nav() {
@@ -157,7 +156,6 @@ function Footer() {
             <Link href="/eva-club">Eva Club</Link>
             <Link href="/suporte">Suporte</Link>
             <Link href="/afiliados">Programa de Afiliados</Link>
-            <Link href="/parceiros">Parceiros (revenda)</Link>
             <a href={HELP_CENTER} target="_blank" rel="noopener noreferrer">Central de Ajuda da Eva</a>
             <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
