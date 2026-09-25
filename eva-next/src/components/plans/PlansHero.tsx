@@ -25,7 +25,7 @@ export default function PlansHero() {
             padding: "8px 20px",
             borderRadius: "100px",
             fontSize: "13px",
-            color: "#888",
+            color: "var(--ink-2)",
             marginBottom: "32px",
           }}
         >
@@ -34,22 +34,22 @@ export default function PlansHero() {
 
         <h1
           style={{
-            fontFamily: "Inter",
-            fontWeight: 900,
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
             fontSize: "clamp(40px, 6vw, 64px)",
             letterSpacing: "-2.5px",
             lineHeight: 1.05,
             marginBottom: "24px",
-            color: "#111",
+            color: "var(--ink)",
           }}
         >
           Escolha o plano certo<br />
           para sua operação.
         </h1>
 
-        <p style={{ color: "#888", fontSize: "20px", lineHeight: 1.7, maxWidth: "600px", margin: "0 auto" }}>
-          Implantação feita por especialistas. Você recebe sua IA<br />
-          pronta em 24 horas, conectada aos seus canais.
+        <p style={{ color: "var(--ink-2)", fontSize: "20px", lineHeight: 1.7, maxWidth: "600px", margin: "0 auto" }}>
+          Montada pela Eva IA, validada por especialistas.<br />
+          Pronta em 24 horas, conectada aos seus canais.
         </p>
       </div>
     </section>

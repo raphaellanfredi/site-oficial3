@@ -25,22 +25,22 @@ export default function AffiliatesCommissions() {
   }, []);
 
   return (
-    <section style={{ backgroundColor: "#f8f8f8", padding: "120px 24px" }}>
+    <section style={{ backgroundColor: "var(--surface)", padding: "120px 24px" }}>
       <div style={{ maxWidth: "900px", margin: "0 auto" }}>
         <h2
           style={{
-            fontFamily: "Inter",
-            fontWeight: 900,
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
             fontSize: "clamp(32px, 4.5vw, 56px)",
             textAlign: "center",
             marginBottom: "16px",
             letterSpacing: "-2px",
-            color: "#111",
+            color: "var(--ink)",
           }}
         >
           Quanto você pode ganhar?
         </h2>
-        <p style={{ color: "#888", fontSize: "20px", textAlign: "center", marginBottom: "64px" }}>
+        <p style={{ color: "var(--ink-2)", fontSize: "20px", textAlign: "center", marginBottom: "64px" }}>
           Baseado no Eva PRO — R$ 2.690/mês por cliente.
         </p>
 
@@ -59,7 +59,7 @@ export default function AffiliatesCommissions() {
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 1fr 1fr",
-              background: "linear-gradient(135deg, #FF0080, #FF6B00)",
+              background: "var(--gradient-action)",
               padding: "20px 32px",
             }}
           >
@@ -82,14 +82,14 @@ export default function AffiliatesCommissions() {
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#f0f0f0")}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = i % 2 === 0 ? "#fff" : "#f8f8f8")}
             >
-              <span style={{ color: "#555", fontSize: "15px" }}>{row.indications}</span>
+              <span style={{ color: "var(--ink-2)", fontSize: "15px" }}>{row.indications}</span>
               <span className="gradient-text" style={{ fontWeight: 700, fontSize: "15px" }}>{row.commission}</span>
-              <span style={{ color: "#111", fontWeight: 700, fontSize: "15px" }}>{row.monthly}</span>
+              <span style={{ color: "var(--ink)", fontWeight: 700, fontSize: "15px" }}>{row.monthly}</span>
             </div>
           ))}
         </div>
 
-        <p style={{ color: "#aaa", fontSize: "13px", marginTop: "16px", textAlign: "center" }}>
+        <p style={{ color: "var(--ink-2)", fontSize: "13px", marginTop: "16px", textAlign: "center" }}>
           *É considerada uma indicação de sucesso quando a venda é fechada e o cliente permanece por 3 meses.
         </p>
 
@@ -106,7 +106,7 @@ export default function AffiliatesCommissions() {
           <div
             style={{
               display: "inline-block",
-              background: "linear-gradient(135deg, #FF0080, #FF6B00)",
+              background: "var(--gradient-action)",
               color: "#fff",
               fontWeight: 700,
               fontSize: "12px",
@@ -120,17 +120,17 @@ export default function AffiliatesCommissions() {
             BÔNUS ESPECIAL
           </div>
 
-          <h3 className="gradient-text" style={{ fontWeight: 900, fontSize: "32px", marginBottom: "16px", letterSpacing: "-1px" }}>
+          <h3 className="gradient-text" style={{ fontWeight: 700, fontSize: "32px", marginBottom: "16px", letterSpacing: "-1px" }}>
             Ao completar 100 indicações ativas:
           </h3>
 
-          <p style={{ fontSize: "22px", fontWeight: 700, marginBottom: "8px", color: "#111" }}>
+          <p style={{ fontSize: "22px", fontWeight: 700, marginBottom: "8px", color: "var(--ink)" }}>
             R$ 15.000,00 de bônus
           </p>
-          <p style={{ color: "#888", fontSize: "18px", marginBottom: "24px" }}>
+          <p style={{ color: "var(--ink-2)", fontSize: "18px", marginBottom: "24px" }}>
             + R$ 14.122,50/mês de comissão recorrente
           </p>
-          <p style={{ color: "#888", fontSize: "16px", lineHeight: 1.6, margin: 0 }}>
+          <p style={{ color: "var(--ink-2)", fontSize: "16px", lineHeight: 1.6, margin: 0 }}>
             Estamos falando de R$ 150.000+ em comissões<br />
             apenas indicando clientes que vão se beneficiar<br />
             da tecnologia.

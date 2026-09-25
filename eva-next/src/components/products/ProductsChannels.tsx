@@ -45,7 +45,7 @@ export default function ProductsChannels() {
   const { ref: highlightRef, inView: highlightInView } = useInView();
 
   return (
-    <section id="canais" style={{ backgroundColor: "#f8f8f8", padding: "120px 24px", position: "relative", overflow: "hidden" }}>
+    <section id="canais" style={{ backgroundColor: "var(--surface)", padding: "120px 24px", position: "relative", overflow: "hidden" }}>
       <div
         style={{
           position: "absolute",
@@ -62,7 +62,7 @@ export default function ProductsChannels() {
             fontWeight: 600,
             letterSpacing: "0.3em",
             textTransform: "uppercase",
-            color: "#FF0080",
+            color: "var(--link)",
             marginBottom: "16px",
           }}
         >
@@ -70,14 +70,14 @@ export default function ProductsChannels() {
         </p>
         <h2
           style={{
-            fontFamily: "Inter",
-            fontWeight: 900,
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
             fontSize: "clamp(32px, 4.5vw, 48px)",
             textAlign: "center",
             marginBottom: "64px",
             letterSpacing: "-1.5px",
             lineHeight: 1.2,
-            color: "#111",
+            color: "var(--ink)",
           }}
         >
           Todos os seus canais.<br />
@@ -119,7 +119,7 @@ export default function ProductsChannels() {
                   width: "52px",
                   height: "52px",
                   borderRadius: "14px",
-                  background: "linear-gradient(135deg, #FF0080, #FF6B00)",
+                  background: "var(--gradient-action)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -129,8 +129,8 @@ export default function ProductsChannels() {
               >
                 <ch.Icon className="h-6 w-6" />
               </div>
-              <h3 style={{ fontWeight: 700, fontSize: "18px", marginBottom: "8px", color: "#111" }}>{ch.name}</h3>
-              <p style={{ color: "#888", fontSize: "14px", lineHeight: 1.6, margin: 0 }}>{ch.desc}</p>
+              <h3 style={{ fontWeight: 700, fontSize: "18px", marginBottom: "8px", color: "var(--ink)" }}>{ch.name}</h3>
+              <p style={{ color: "var(--ink-2)", fontSize: "14px", lineHeight: 1.6, margin: 0 }}>{ch.desc}</p>
             </div>
           ))}
         </div>
@@ -154,10 +154,10 @@ export default function ProductsChannels() {
             }}
           >
             <div className="flex-1">
-              <h3 style={{ fontWeight: 700, fontSize: "22px", marginBottom: "8px", color: "#111", letterSpacing: "-0.3px" }}>
+              <h3 style={{ fontWeight: 700, fontSize: "22px", marginBottom: "8px", color: "var(--ink)", letterSpacing: "-0.3px" }}>
                 Gerenciamento unificado de todos os canais
               </h3>
-              <p style={{ color: "#888", fontSize: "15px", lineHeight: 1.7, margin: 0 }}>
+              <p style={{ color: "var(--ink-2)", fontSize: "15px", lineHeight: 1.7, margin: 0 }}>
                 WhatsApp, Instagram, e-mail e mais — todas as conversas da empresa em uma única caixa de entrada. Nenhum canal isolado, nenhum atendimento perdido.
               </p>
             </div>
@@ -193,10 +193,10 @@ export default function ProductsChannels() {
             }}
           >
             <div className="flex-1">
-              <h3 style={{ fontWeight: 700, fontSize: "22px", marginBottom: "8px", color: "#111", letterSpacing: "-0.3px" }}>
+              <h3 style={{ fontWeight: 700, fontSize: "22px", marginBottom: "8px", color: "var(--ink)", letterSpacing: "-0.3px" }}>
                 Tags de interesse do cliente
               </h3>
-              <p style={{ color: "#888", fontSize: "15px", lineHeight: 1.7, margin: 0 }}>
+              <p style={{ color: "var(--ink-2)", fontSize: "15px", lineHeight: 1.7, margin: 0 }}>
                 Cada lead é classificado automaticamente por interesse. Encontre rapidamente quem quer o quê e personalize a abordagem.
               </p>
             </div>

@@ -67,14 +67,14 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               style={{
-                color: pathname === link.href ? "#111" : "#888",
+                color: pathname === link.href ? "var(--ink)" : "var(--ink-2)",
                 fontSize: "14px",
                 fontWeight: 500,
                 transition: "color 0.2s",
                 textDecoration: "none",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#111")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = pathname === link.href ? "#111" : "#888")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--ink)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = pathname === link.href ? "var(--ink)" : "var(--ink-2)")}
             >
               {link.label}
             </Link>
@@ -89,7 +89,7 @@ export default function Navbar() {
             style={{
               fontSize: "14px",
               fontWeight: 500,
-              color: "#888",
+              color: "var(--ink-2)",
               textDecoration: "none",
               padding: "10px 18px",
               borderRadius: "8px",
@@ -97,11 +97,11 @@ export default function Navbar() {
               transition: "all 0.2s",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.color = "#111";
+              e.currentTarget.style.color = "var(--ink)";
               e.currentTarget.style.borderColor = "rgba(0,0,0,0.2)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.color = "#888";
+              e.currentTarget.style.color = "var(--ink-2)";
               e.currentTarget.style.borderColor = "rgba(0,0,0,0.1)";
             }}
           >
@@ -138,7 +138,7 @@ export default function Navbar() {
                 display: "block",
                 width: "22px",
                 height: "2px",
-                backgroundColor: "#111",
+                backgroundColor: "var(--ink)",
                 borderRadius: "2px",
                 transition: "all 0.3s ease",
                 transformOrigin: "center",
@@ -179,7 +179,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               style={{
-                color: "#111",
+                color: "var(--ink)",
                 fontSize: "24px",
                 fontWeight: 700,
                 textDecoration: "none",
@@ -206,7 +206,7 @@ export default function Navbar() {
               style={{
                 fontSize: "15px",
                 fontWeight: 500,
-                color: "#888",
+                color: "var(--ink-2)",
                 textDecoration: "none",
                 padding: "12px 28px",
                 borderRadius: "8px",

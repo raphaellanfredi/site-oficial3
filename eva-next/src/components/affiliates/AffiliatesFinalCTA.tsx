@@ -4,7 +4,7 @@ export default function AffiliatesFinalCTA() {
   return (
     <section
       style={{
-        background: "linear-gradient(135deg, #FF0080, #FF6B00)",
+        background: "var(--gradient-action)",
         position: "relative",
         padding: "160px 24px",
         textAlign: "center",
@@ -14,8 +14,8 @@ export default function AffiliatesFinalCTA() {
       <div style={{ position: "relative", zIndex: 1, maxWidth: "800px", margin: "0 auto" }}>
         <h2
           style={{
-            fontFamily: "Inter",
-            fontWeight: 900,
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
             fontSize: "clamp(40px, 7vw, 72px)",
             color: "#fff",
             lineHeight: 1.1,
@@ -30,7 +30,7 @@ export default function AffiliatesFinalCTA() {
         <p
           style={{
             fontSize: "22px",
-            color: "rgba(255,255,255,0.8)",
+            color: "#fff",
             marginBottom: "48px",
             lineHeight: 1.6,
           }}
@@ -46,7 +46,7 @@ export default function AffiliatesFinalCTA() {
           style={{
             display: "inline-block",
             background: "#fff",
-            color: "#FF0080",
+            color: "var(--link)",
             padding: "20px 48px",
             borderRadius: "12px",
             fontWeight: 700,
@@ -67,7 +67,7 @@ export default function AffiliatesFinalCTA() {
           Quero ser afiliado Eva
         </a>
 
-        <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "15px", marginTop: "24px", letterSpacing: "0.5px" }}>
+        <p style={{ color: "#fff", fontSize: "15px", marginTop: "24px", letterSpacing: "0.5px" }}>
           Cadastro gratuito &bull; Sem taxa de adesão &bull; Comissão vitalícia
         </p>
       </div>

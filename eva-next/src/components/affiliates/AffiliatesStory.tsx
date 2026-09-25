@@ -27,16 +27,16 @@ export default function AffiliatesStory() {
   }, []);
 
   return (
-    <section style={{ backgroundColor: "#f8f8f8", padding: "120px 24px" }}>
+    <section style={{ backgroundColor: "var(--surface)", padding: "120px 24px" }}>
       <div style={{ maxWidth: "800px", margin: "0 auto" }} ref={ref}>
         <h2
           style={{
-            fontFamily: "Inter",
-            fontWeight: 900,
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
             fontSize: "clamp(32px, 4.5vw, 48px)",
             marginBottom: "48px",
             letterSpacing: "-1.5px",
-            color: "#111",
+            color: "var(--ink)",
             opacity: inView ? 1 : 0,
             transform: inView ? "translateY(0)" : "translateY(30px)",
             transition: "opacity 0.7s ease, transform 0.7s ease",
@@ -51,7 +51,7 @@ export default function AffiliatesStory() {
               key={i}
               style={{
                 fontSize: "18px",
-                color: "#555",
+                color: "var(--ink-2)",
                 lineHeight: 2,
                 margin: 0,
                 opacity: inView ? 1 : 0,
@@ -75,7 +75,7 @@ export default function AffiliatesStory() {
             transition: "opacity 0.7s ease 0.7s, transform 0.7s ease 0.7s",
           }}
         >
-          <p style={{ fontWeight: 700, fontSize: "22px", lineHeight: 1.4, margin: 0, color: "#111" }}>
+          <p style={{ fontWeight: 700, fontSize: "22px", lineHeight: 1.4, margin: 0, color: "var(--ink)" }}>
             {'"'}Na corrida da IA, você pode ser<br />
             o vendedor de pás.{'"'}
           </p>

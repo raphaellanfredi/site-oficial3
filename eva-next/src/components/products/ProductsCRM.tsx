@@ -53,7 +53,7 @@ export default function ProductsCRM() {
               fontWeight: 600,
               letterSpacing: "0.3em",
               textTransform: "uppercase",
-              color: "#FF0080",
+              color: "var(--link)",
               marginBottom: "16px",
             }}
           >
@@ -61,13 +61,13 @@ export default function ProductsCRM() {
           </p>
           <h2
             style={{
-              fontFamily: "Inter",
-              fontWeight: 900,
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
               fontSize: "clamp(32px, 4.5vw, 48px)",
               marginBottom: "32px",
               letterSpacing: "-1.5px",
               lineHeight: 1.2,
-              color: "#111",
+              color: "var(--ink)",
             }}
           >
             CRM que entende<br />
@@ -79,8 +79,8 @@ export default function ProductsCRM() {
               <div key={f.label} style={{ display: "flex", gap: "12px" }}>
                 <span className="gradient-text" style={{ fontWeight: 700, flexShrink: 0 }}>→</span>
                 <div>
-                  <span style={{ fontWeight: 600, fontSize: "15px", color: "#111" }}>{f.label}</span>
-                  <span style={{ color: "#888", fontSize: "15px" }}> — {f.desc}</span>
+                  <span style={{ fontWeight: 600, fontSize: "15px", color: "var(--ink)" }}>{f.label}</span>
+                  <span style={{ color: "var(--ink-2)", fontSize: "15px" }}> — {f.desc}</span>
                 </div>
               </div>
             ))}

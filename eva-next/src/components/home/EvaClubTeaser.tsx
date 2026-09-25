@@ -32,7 +32,7 @@ export default function EvaClubTeaser() {
   const { ref: rightRef, inView: rightInView } = useInView();
 
   return (
-    <section style={{ backgroundColor: "#f8f8f8", padding: "120px 24px" }}>
+    <section style={{ backgroundColor: "var(--surface)", padding: "120px 24px" }}>
       <div
         style={{
           maxWidth: "1100px",
@@ -53,19 +53,19 @@ export default function EvaClubTeaser() {
         >
           <h2
             style={{
-              fontFamily: "Inter",
-              fontWeight: 900,
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
               fontSize: "clamp(32px, 4vw, 48px)",
               lineHeight: 1.2,
               marginBottom: "24px",
               letterSpacing: "-1.5px",
-              color: "#111",
+              color: "var(--ink)",
             }}
           >
             Mais do que uma IA.<br />
             Uma comunidade.
           </h2>
-          <p style={{ color: "#888", fontSize: "18px", lineHeight: 1.7, marginBottom: "32px" }}>
+          <p style={{ color: "var(--ink-2)", fontSize: "18px", lineHeight: 1.7, marginBottom: "32px" }}>
             Ao contratar a Eva, você entra no Eva Club — uma comunidade exclusiva de
             empresários que estão na vanguarda da IA.
           </p>
@@ -93,7 +93,7 @@ export default function EvaClubTeaser() {
           <div
             style={{
               display: "inline-block",
-              background: "linear-gradient(135deg, #FF0080, #FF6B00)",
+              background: "var(--gradient-action)",
               color: "#fff",
               fontWeight: 700,
               fontSize: "12px",
@@ -110,14 +110,14 @@ export default function EvaClubTeaser() {
           <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "32px" }}>
             {benefits.map((b) => (
               <div key={b} style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-                <span style={{ color: "#FF0080", fontWeight: 700, flexShrink: 0 }}>✓</span>
-                <span style={{ color: "#555", fontSize: "15px" }}>{b}</span>
+                <span style={{ color: "var(--link)", fontWeight: 700, flexShrink: 0 }}>✓</span>
+                <span style={{ color: "var(--ink-2)", fontSize: "15px" }}>{b}</span>
               </div>
             ))}
           </div>
 
           <div style={{ borderTop: "1px solid rgba(0,0,0,0.07)", paddingTop: "24px" }}>
-            <p style={{ fontStyle: "italic", color: "#999", fontSize: "15px", lineHeight: 1.6, margin: 0 }}>
+            <p style={{ fontStyle: "italic", color: "var(--ink-2)", fontSize: "15px", lineHeight: 1.6, margin: 0 }}>
               {'"'}Você não está comprando uma ferramenta.<br />
               Está entrando para um movimento.{'"'}
             </p>

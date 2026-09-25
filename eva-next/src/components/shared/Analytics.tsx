@@ -108,9 +108,9 @@ export default function Analytics() {
             gap: "12px 16px",
           }}
         >
-          <p style={{ flex: "1 1 260px", fontSize: "14px", lineHeight: 1.5, color: "#555" }}>
+          <p style={{ flex: "1 1 260px", fontSize: "14px", lineHeight: 1.5, color: "var(--ink-2)" }}>
             Usamos cookies de análise para entender como o site é usado e melhorá-lo.{" "}
-            <a href={PRIVACY_URL} target="_blank" rel="noopener noreferrer" style={{ color: "#111", textDecoration: "underline" }}>
+            <a href={PRIVACY_URL} target="_blank" rel="noopener noreferrer" style={{ color: "var(--ink)", textDecoration: "underline" }}>
               Política de Privacidade
             </a>
           </p>
@@ -123,7 +123,7 @@ export default function Analytics() {
                 borderRadius: "10px",
                 border: "1px solid rgba(0,0,0,0.12)",
                 background: "#fff",
-                color: "#555",
+                color: "var(--ink-2)",
                 fontSize: "14px",
                 fontWeight: 600,
                 cursor: "pointer",
@@ -138,7 +138,7 @@ export default function Analytics() {
                 padding: "10px 16px",
                 borderRadius: "10px",
                 border: "none",
-                background: "linear-gradient(135deg, #FF0080, #FF6B00)",
+                background: "var(--gradient-action)",
                 color: "#fff",
                 fontSize: "14px",
                 fontWeight: 700,

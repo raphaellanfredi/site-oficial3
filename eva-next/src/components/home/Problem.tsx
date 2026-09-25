@@ -44,17 +44,17 @@ export default function Problem() {
   const { ref: quoteRef, inView: quoteInView } = useInView();
 
   return (
-    <section id="problema" style={{ backgroundColor: "#f8f8f8", padding: "120px 24px" }}>
+    <section id="problema" style={{ backgroundColor: "var(--surface)", padding: "120px 24px" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <h2
           style={{
-            fontFamily: "Inter",
-            fontWeight: 900,
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
             fontSize: "clamp(36px, 5vw, 56px)",
             textAlign: "center",
             marginBottom: "64px",
             letterSpacing: "-2px",
-            color: "#111",
+            color: "var(--ink)",
           }}
         >
           Você reconhece essa cena?
@@ -74,7 +74,7 @@ export default function Problem() {
                 key={i}
                 style={{
                   fontSize: "20px",
-                  color: "#555",
+                  color: "var(--ink-2)",
                   lineHeight: 2,
                   margin: 0,
                   minHeight: line === "" ? "20px" : undefined,
@@ -125,8 +125,8 @@ export default function Problem() {
                   </svg>
                 </div>
                 <div>
-                  <h3 style={{ fontWeight: 700, fontSize: "16px", marginBottom: "4px", color: "#111" }}>{p.title}</h3>
-                  <p style={{ color: "#777", fontSize: "14px", margin: 0 }}>{p.text}</p>
+                  <h3 style={{ fontWeight: 700, fontSize: "16px", marginBottom: "4px", color: "var(--ink)" }}>{p.title}</h3>
+                  <p style={{ color: "var(--ink-2)", fontSize: "14px", margin: 0 }}>{p.text}</p>
                 </div>
               </div>
             ))}
@@ -146,7 +146,7 @@ export default function Problem() {
           <p
             className="gradient-text"
             style={{
-              fontWeight: 900,
+              fontWeight: 700,
               fontSize: "clamp(24px, 3.5vw, 36px)",
               lineHeight: 1.4,
               letterSpacing: "-1px",

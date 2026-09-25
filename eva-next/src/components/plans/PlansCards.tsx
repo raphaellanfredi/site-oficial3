@@ -33,11 +33,11 @@ const evaBlackFeatures = [
   "Ligações com IA (ativa e passiva)*",
 ];
 
-function FeatureItem({ text, accent = "#FF0080" }: { text: string; accent?: string }) {
+function FeatureItem({ text, accent = "var(--link)" }: { text: string; accent?: string }) {
   return (
     <div style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
       <span style={{ color: accent, fontWeight: 700, flexShrink: 0, marginTop: "2px" }}>✓</span>
-      <span style={{ color: "#555", fontSize: "15px", lineHeight: 1.5 }}>{text}</span>
+      <span style={{ color: "var(--ink-2)", fontSize: "15px", lineHeight: 1.5 }}>{text}</span>
     </div>
   );
 }
@@ -45,23 +45,23 @@ function FeatureItem({ text, accent = "#FF0080" }: { text: string; accent?: stri
 function PriceBlock({ monthly, setup }: { monthly: string; setup: string }) {
   return (
     <div style={{ marginBottom: "24px" }}>
-      <div style={{ color: "#aaa", fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "8px" }}>
+      <div style={{ color: "var(--ink-2)", fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "8px" }}>
         Mensalidade
       </div>
       <div style={{ display: "flex", alignItems: "baseline", gap: "4px", marginBottom: "16px" }}>
-        <span style={{ color: "#888", fontSize: "22px", fontWeight: 700 }}>R$</span>
-        <span style={{ fontWeight: 900, fontSize: "clamp(36px, 4vw, 48px)", letterSpacing: "-1px", color: "#111" }}>
+        <span style={{ color: "var(--ink-2)", fontSize: "22px", fontWeight: 700 }}>R$</span>
+        <span style={{ fontWeight: 700, fontSize: "clamp(36px, 4vw, 48px)", letterSpacing: "-1px", color: "var(--ink)" }}>
           {monthly.replace("R$", "").replace("/mês", "").replace("/mes", "").trim()}
         </span>
-        <span style={{ color: "#aaa", fontSize: "16px" }}>/mês</span>
+        <span style={{ color: "var(--ink-2)", fontSize: "16px" }}>/mês</span>
       </div>
       <div style={{ borderTop: "1px solid rgba(0,0,0,0.06)", paddingTop: "16px" }}>
-        <div style={{ color: "#aaa", fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "8px" }}>
+        <div style={{ color: "var(--ink-2)", fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "8px" }}>
           Implantação (Setup)
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
-          <span style={{ color: "#666", fontSize: "20px", fontWeight: 700 }}>{setup}</span>
-          <span style={{ color: "#aaa", fontSize: "13px" }}>até 12x no cartão</span>
+          <span style={{ color: "var(--ink-2)", fontSize: "20px", fontWeight: 700 }}>{setup}</span>
+          <span style={{ color: "var(--ink-2)", fontSize: "13px" }}>até 12x no cartão</span>
         </div>
       </div>
     </div>
@@ -70,7 +70,7 @@ function PriceBlock({ monthly, setup }: { monthly: string; setup: string }) {
 
 export default function PlansCards() {
   return (
-    <section style={{ backgroundColor: "#f8f8f8", padding: "80px 24px" }}>
+    <section style={{ backgroundColor: "var(--surface)", padding: "80px 24px" }}>
       <TrackOnView event="ver_tabela_planos" />
       <div
         style={{
@@ -88,7 +88,7 @@ export default function PlansCards() {
             style={{
               display: "inline-block",
               border: "1px solid rgba(0,0,0,0.1)",
-              color: "#888",
+              color: "var(--ink-2)",
               fontSize: "12px",
               letterSpacing: "1px",
               textTransform: "uppercase",
@@ -99,8 +99,8 @@ export default function PlansCards() {
           >
             Para começar
           </div>
-          <h3 style={{ fontWeight: 900, fontSize: "32px", marginBottom: "8px", color: "#111" }}>Eva One</h3>
-          <p style={{ color: "#888", fontSize: "15px", marginBottom: "32px", lineHeight: 1.6 }}>
+          <h3 style={{ fontWeight: 700, fontSize: "32px", marginBottom: "8px", color: "var(--ink)" }}>Eva One</h3>
+          <p style={{ color: "var(--ink-2)", fontSize: "15px", marginBottom: "32px", lineHeight: 1.6 }}>
             Ideal para quem está começando e quer profissionalizar o atendimento.
           </p>
 
@@ -134,7 +134,7 @@ export default function PlansCards() {
           <div
             style={{
               display: "inline-block",
-              background: "linear-gradient(135deg, #FF0080, #FF6B00)",
+              background: "var(--gradient-action)",
               color: "#fff",
               fontSize: "12px",
               letterSpacing: "1px",
@@ -147,8 +147,8 @@ export default function PlansCards() {
           >
             ⭐ Mais Popular
           </div>
-          <h3 style={{ fontWeight: 900, fontSize: "32px", marginBottom: "8px", color: "#111" }}>Eva PRO</h3>
-          <p style={{ color: "#888", fontSize: "15px", marginBottom: "32px", lineHeight: 1.6 }}>
+          <h3 style={{ fontWeight: 700, fontSize: "32px", marginBottom: "8px", color: "var(--ink)" }}>Eva PRO</h3>
+          <p style={{ color: "var(--ink-2)", fontSize: "15px", marginBottom: "32px", lineHeight: 1.6 }}>
             Para negócios em crescimento que precisam de escala e mais canais.
           </p>
 
@@ -159,7 +159,7 @@ export default function PlansCards() {
           <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "8px" }}>
             {evaProFeatures.map((f) => <FeatureItem key={f} text={f} />)}
           </div>
-          <p style={{ color: "#aaa", fontSize: "13px", marginBottom: "32px" }}>
+          <p style={{ color: "var(--ink-2)", fontSize: "13px", marginBottom: "32px" }}>
             *Custo da IA de ligação é pós-pago conforme uso.
           </p>
 
@@ -184,7 +184,7 @@ export default function PlansCards() {
             style={{
               display: "inline-block",
               border: "1px solid rgba(0,0,0,0.15)",
-              color: "#111",
+              color: "var(--ink)",
               fontSize: "12px",
               letterSpacing: "1px",
               textTransform: "uppercase",
@@ -195,8 +195,8 @@ export default function PlansCards() {
           >
             Máxima potência
           </div>
-          <h3 style={{ fontWeight: 900, fontSize: "32px", marginBottom: "8px", color: "#111" }}>Eva BLACK</h3>
-          <p style={{ color: "#888", fontSize: "15px", marginBottom: "32px", lineHeight: 1.6 }}>
+          <h3 style={{ fontWeight: 700, fontSize: "32px", marginBottom: "8px", color: "var(--ink)" }}>Eva BLACK</h3>
+          <p style={{ color: "var(--ink-2)", fontSize: "15px", marginBottom: "32px", lineHeight: 1.6 }}>
             Potência máxima, infraestrutura dedicada e suporte premium.
           </p>
 
@@ -207,7 +207,7 @@ export default function PlansCards() {
           <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "8px" }}>
             {evaBlackFeatures.map((f) => <FeatureItem key={f} text={f} />)}
           </div>
-          <p style={{ color: "#aaa", fontSize: "13px", marginBottom: "32px" }}>
+          <p style={{ color: "var(--ink-2)", fontSize: "13px", marginBottom: "32px" }}>
             *Custo da IA de ligação é pós-pago conforme uso.
           </p>
 

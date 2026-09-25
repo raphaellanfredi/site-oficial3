@@ -17,7 +17,7 @@ const ITEMS = [
   {
     n: "03",
     title: "Pronta em 24 horas",
-    desc: "Nossa equipe configura tudo. Você transmite o conhecimento. A Eva entra ao vivo em 24 horas.",
+    desc: "A Eva IA monta tudo e especialistas validam. Você só preenche o formulário. No ar em 24 horas.",
   },
   {
     n: "04",
@@ -119,7 +119,7 @@ export default function PinnedFeatures() {
         <span
           aria-hidden
           className="pf-bg absolute -bottom-8 -left-6 select-none
-                     font-black leading-none tracking-tighter text-black"
+                     font-bold font-display leading-none tracking-tighter text-black"
           style={{ fontSize: "clamp(8rem, 26vw, 24rem)" }}
         >
           EVA
@@ -133,13 +133,13 @@ export default function PinnedFeatures() {
           {/* Left column */}
           <div className="flex flex-col justify-center">
             <p className="pf-label mb-5 text-[0.65rem] font-semibold
-                          tracking-[0.45em] uppercase text-black/40">
+                          tracking-[0.45em] uppercase text-ink-2">
               Por que a Eva
             </p>
 
             <div className="overflow-hidden mb-10">
               <h2
-                className="pf-heading font-black leading-[1.06] tracking-tight text-neutral-900"
+                className="pf-heading font-bold font-display leading-[1.06] tracking-tight text-ink"
                 style={{ fontSize: "clamp(2rem, 4.2vw, 4rem)" }}
               >
                 O que muda quando<br />a IA trabalha<br />por você.
@@ -154,14 +154,14 @@ export default function PinnedFeatures() {
             {ITEMS.map((item) => (
               <div key={item.n} className="pf-item flex gap-5">
                 <span className="mt-0.5 shrink-0 font-mono text-[0.6rem]
-                                 font-bold tabular-nums text-black/20">
+                                 font-bold tabular-nums text-ink-2">
                   {item.n}
                 </span>
                 <div>
-                  <p className="mb-1.5 text-sm font-bold leading-snug text-neutral-900">
+                  <p className="mb-1.5 text-sm font-bold leading-snug text-ink">
                     {item.title}
                   </p>
-                  <p className="text-sm leading-relaxed text-black/45">
+                  <p className="text-sm leading-relaxed text-ink-2">
                     {item.desc}
                   </p>
                 </div>
@@ -171,11 +171,11 @@ export default function PinnedFeatures() {
             <a
               href="/planos"
               className="pf-cta mt-1 inline-flex w-fit items-center gap-2
-                         text-xs font-semibold tracking-wide text-black/40
-                         transition-colors duration-200 hover:text-black"
+                         text-xs font-semibold tracking-wide text-ink-2
+                         transition-colors duration-200 hover:text-ink"
             >
               Ver todos os planos
-              <span className="text-black/20">→</span>
+              <span className="text-ink-2">→</span>
             </a>
           </div>
 

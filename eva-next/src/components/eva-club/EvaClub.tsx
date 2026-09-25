@@ -73,8 +73,8 @@ function FAQItem({ q, a }: { q: string; a: string }) {
           justifyContent: "space-between",
           alignItems: "center",
           gap: "12px",
-          color: "#111",
-          fontFamily: "Inter",
+          color: "var(--ink)",
+          fontFamily: "var(--font-text)",
           fontSize: "16px",
           fontWeight: 600,
         }}
@@ -84,7 +84,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
           style={{
             flexShrink: 0,
             fontSize: "20px",
-            color: "#FF0080",
+            color: "var(--link)",
             transition: "transform 0.2s ease",
             transform: open ? "rotate(45deg)" : "rotate(0deg)",
             display: "block",
@@ -97,8 +97,8 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         <p
           style={{
             margin: "0 0 20px",
-            color: "#888",
-            fontFamily: "Inter",
+            color: "var(--ink-2)",
+            fontFamily: "var(--font-text)",
             fontSize: "15px",
             lineHeight: 1.7,
           }}
@@ -169,7 +169,7 @@ export default function EvaClub() {
           <div
             style={{
               display: "inline-block",
-              color: "#FF6B00",
+              color: "var(--orange-text)",
               border: "1px solid rgba(255,107,0,0.3)",
               borderRadius: "4px",
               background: "rgba(255,107,0,0.06)",
@@ -186,13 +186,13 @@ export default function EvaClub() {
 
           <h1
             style={{
-              fontFamily: "Inter",
-              fontWeight: 900,
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
               fontSize: "clamp(36px, 6vw, 64px)",
               letterSpacing: "-2px",
               lineHeight: 1.1,
               marginBottom: "24px",
-              color: "#111",
+              color: "var(--ink)",
             }}
           >
             O clube de quem leva a IA<br />
@@ -201,8 +201,8 @@ export default function EvaClub() {
 
           <p
             style={{
-              color: "#888",
-              fontFamily: "Inter",
+              color: "var(--ink-2)",
+              fontFamily: "var(--font-text)",
               fontSize: "18px",
               lineHeight: 1.7,
               maxWidth: "640px",
@@ -226,7 +226,7 @@ export default function EvaClub() {
       </section>
 
       {/* Benefit cards */}
-      <section style={{ backgroundColor: "#f8f8f8", padding: "120px 24px" }}>
+      <section style={{ backgroundColor: "var(--surface)", padding: "120px 24px" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
           <div
             ref={cardsRef}
@@ -247,11 +247,11 @@ export default function EvaClub() {
                   transition: `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`,
                 }}
               >
-                <div style={{ color: "#FF0080", fontSize: "22px", marginBottom: "16px", fontWeight: 700 }}>
+                <div style={{ color: "var(--link)", fontSize: "22px", marginBottom: "16px", fontWeight: 700 }}>
                   {b.icon}
                 </div>
-                <h3 style={{ fontWeight: 700, fontSize: "17px", marginBottom: "10px", color: "#111" }}>{b.title}</h3>
-                <p style={{ color: "#888", fontSize: "14px", lineHeight: 1.65, margin: 0 }}>
+                <h3 style={{ fontWeight: 700, fontSize: "17px", marginBottom: "10px", color: "var(--ink)" }}>{b.title}</h3>
+                <p style={{ color: "var(--ink-2)", fontSize: "14px", lineHeight: 1.65, margin: 0 }}>
                   {b.desc}
                 </p>
               </div>
@@ -267,9 +267,9 @@ export default function EvaClub() {
             ref={inclusionsRef}
             style={{
               background: "linear-gradient(135deg, #fff 0%, #fff5f8 100%)",
-              border: "2px solid #FF0080",
+              border: "2px solid var(--brand-pink)",
               borderRadius: "8px",
-              boxShadow: "6px 6px 0px 0px #FF0080",
+              boxShadow: "6px 6px 0px 0px var(--brand-pink)",
               padding: "48px",
               opacity: inclusionsInView ? 1 : 0,
               transform: inclusionsInView ? "translateY(0)" : "translateY(30px)",
@@ -278,8 +278,8 @@ export default function EvaClub() {
           >
             <p
               style={{
-                color: "#FF0080",
-                fontFamily: "Inter",
+                color: "var(--link)",
+                fontFamily: "var(--font-text)",
                 fontSize: "11px",
                 fontWeight: 700,
                 letterSpacing: "2px",
@@ -292,8 +292,8 @@ export default function EvaClub() {
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "14px" }}>
               {INCLUSIONS.map((item, i) => (
                 <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
-                  <span style={{ color: "#FF0080", fontWeight: 700, flexShrink: 0, marginTop: "2px" }}>✓</span>
-                  <span style={{ color: "#444", fontFamily: "Inter", fontSize: "15px", lineHeight: 1.6 }}>
+                  <span style={{ color: "var(--link)", fontWeight: 700, flexShrink: 0, marginTop: "2px" }}>✓</span>
+                  <span style={{ color: "var(--ink-2)", fontFamily: "var(--font-text)", fontSize: "15px", lineHeight: 1.6 }}>
                     {item}
                   </span>
                 </li>
@@ -304,7 +304,7 @@ export default function EvaClub() {
       </section>
 
       {/* Testimonial */}
-      <section style={{ backgroundColor: "#f8f8f8", padding: "120px 24px" }}>
+      <section style={{ backgroundColor: "var(--surface)", padding: "120px 24px" }}>
         <div
           ref={testimonialRef}
           style={{
@@ -324,18 +324,18 @@ export default function EvaClub() {
               style={{
                 fontSize: "clamp(16px, 2vw, 20px)",
                 lineHeight: 1.75,
-                color: "#555",
+                color: "var(--ink-2)",
                 fontStyle: "italic",
                 marginBottom: "32px",
                 position: "relative",
               }}
             >
-              <span style={{ color: "#FF0080", fontSize: "40px", lineHeight: 0, verticalAlign: "-12px", marginRight: "4px" }}>{'"'}</span>
+              <span style={{ color: "var(--link)", fontSize: "40px", lineHeight: 0, verticalAlign: "-12px", marginRight: "4px" }}>{'"'}</span>
               A Eva não é só uma ferramenta — é como ter um funcionário que nunca falta, nunca esquece
               e ainda aprende com o tempo. Desde que implementei, meu atendimento virou outro.
-              <span style={{ color: "#FF6B00", fontSize: "40px", lineHeight: 0, verticalAlign: "-12px", marginLeft: "4px" }}>{'"'}</span>
+              <span style={{ color: "var(--orange-text)", fontSize: "40px", lineHeight: 0, verticalAlign: "-12px", marginLeft: "4px" }}>{'"'}</span>
             </blockquote>
-            <p style={{ color: "#aaa", fontWeight: 700, fontSize: "14px", letterSpacing: "1px" }}>
+            <p style={{ color: "var(--ink-2)", fontWeight: 700, fontSize: "14px", letterSpacing: "1px" }}>
               — Cliente Eva, área da saúde
             </p>
           </div>
@@ -356,13 +356,13 @@ export default function EvaClub() {
         >
           <h2
             style={{
-              fontFamily: "Inter",
-              fontWeight: 900,
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
               fontSize: "clamp(28px, 4vw, 48px)",
               textAlign: "center",
               marginBottom: "64px",
               letterSpacing: "-1.5px",
-              color: "#111",
+              color: "var(--ink)",
             }}
           >
             Perguntas frequentes
@@ -376,7 +376,7 @@ export default function EvaClub() {
       {/* Final CTA */}
       <section
         style={{
-          background: "linear-gradient(135deg, #FF0080, #FF6B00)",
+          background: "var(--gradient-action)",
           padding: "120px 24px",
           textAlign: "center",
         }}
@@ -384,8 +384,8 @@ export default function EvaClub() {
         <div style={{ maxWidth: "700px", margin: "0 auto" }}>
           <h2
             style={{
-              fontFamily: "Inter",
-              fontWeight: 900,
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
               fontSize: "clamp(32px, 5vw, 56px)",
               color: "#fff",
               lineHeight: 1.1,
@@ -398,7 +398,7 @@ export default function EvaClub() {
           <p
             style={{
               fontSize: "18px",
-              color: "rgba(255,255,255,0.8)",
+              color: "#fff",
               marginBottom: "40px",
               lineHeight: 1.6,
             }}
@@ -415,7 +415,7 @@ export default function EvaClub() {
               fontWeight: 700,
               fontSize: "17px",
               textDecoration: "none",
-              backgroundImage: "linear-gradient(135deg, #FF0080, #FF6B00)",
+              backgroundImage: "var(--gradient-display)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",

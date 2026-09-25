@@ -21,7 +21,7 @@ function StatItem({ stat, inView, delay }: { stat: typeof stats[0]; inView: bool
       <div
         className="gradient-text"
         style={{
-          fontWeight: 900,
+          fontWeight: 700,
           fontSize: "clamp(22px, 5vw, 64px)",
           lineHeight: 1,
           marginBottom: "12px",
@@ -32,7 +32,7 @@ function StatItem({ stat, inView, delay }: { stat: typeof stats[0]; inView: bool
       </div>
       <div
         style={{
-          color: "#888",
+          color: "var(--ink-2)",
           fontSize: "13px",
           textTransform: "uppercase",
           letterSpacing: "2px",
@@ -65,13 +65,13 @@ export default function Numbers() {
       <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
         <h2
           style={{
-            fontFamily: "Inter",
-            fontWeight: 900,
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
             fontSize: "clamp(36px, 5vw, 56px)",
             textAlign: "center",
             marginBottom: "64px",
             letterSpacing: "-2px",
-            color: "#111",
+            color: "var(--ink)",
           }}
         >
           Números que falam por si.

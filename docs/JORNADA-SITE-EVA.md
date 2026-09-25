@@ -266,8 +266,9 @@ Juntei aqui para não travarem o andamento. Cada uma está marcada com a fase em
 | Oferecer teste de 15 dias sem cartão | 1 · **decidido: não** |
 | Prazo de entrega da IA | 1 · **decidido: no ar em até 24 horas a partir do pagamento + formulário de onboarding; arquitetura montada pela Super-Eva** |
 | CTA principal por página: WhatsApp, checkout ou ambos | 1 · **decidido: WhatsApp fora de `/planos`, checkout em `/planos`** |
-| Cor: caminho A, B ou C | 2 |
-| Modo escuro: sim ou não | 2 |
+| Cor: caminho A, B ou C | 2 · **decidido: C** (marca rosa→laranja, Eva IA em ciano) |
+| Fontes | 2 · **decidido: Sora (títulos) + Inter (texto)** |
+| Modo escuro: sim ou não | 2 · **decidido: seções escuras onde a Eva IA age, sem alternador** |
 | Cota de disparo por plano | 5 |
 | Modelo de IA mais avançado como diferencial do BLACK | 5 |
 | O que fazer com os "50% de desconto em novos produtos" do Eva Club | 5 |

@@ -20,20 +20,20 @@ export default function ProductsHero() {
       <div style={{ position: "relative", zIndex: 1, maxWidth: "800px", margin: "0 auto" }}>
         <h1
           style={{
-            fontFamily: "Inter",
-            fontWeight: 900,
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
             fontSize: "clamp(40px, 6vw, 64px)",
             letterSpacing: "-2.5px",
             lineHeight: 1.05,
             marginBottom: "24px",
-            color: "#111",
+            color: "var(--ink)",
           }}
         >
           Uma IA que não dorme,<br />
           não falta e <span className="gradient-text">não erra</span>.
         </h1>
 
-        <p style={{ color: "#888", fontSize: "20px", lineHeight: 1.7, maxWidth: "600px", margin: "0 auto" }}>
+        <p style={{ color: "var(--ink-2)", fontSize: "20px", lineHeight: 1.7, maxWidth: "600px", margin: "0 auto" }}>
           A Eva é um sistema completo de atendimento e gestão
           omnichannel — treinado para o seu negócio,
           entregue pronto em 24 horas.

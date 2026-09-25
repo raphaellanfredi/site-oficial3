@@ -32,17 +32,17 @@ export default function ProductsPlatform() {
         >
           <h2
             style={{
-              fontFamily: "Inter",
-              fontWeight: 900,
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
               fontSize: "clamp(32px, 4.5vw, 48px)",
               letterSpacing: "-1.5px",
-              color: "#111",
+              color: "var(--ink)",
               marginBottom: "16px",
             }}
           >
             Tudo centralizado em um só lugar.
           </h2>
-          <p style={{ fontSize: "18px", color: "#888", maxWidth: "560px", margin: "0 auto", lineHeight: 1.6 }}>
+          <p style={{ fontSize: "18px", color: "var(--ink-2)", maxWidth: "560px", margin: "0 auto", lineHeight: 1.6 }}>
             Uma plataforma completa para gerenciar todos os seus canais, equipe e clientes.
           </p>
         </div>

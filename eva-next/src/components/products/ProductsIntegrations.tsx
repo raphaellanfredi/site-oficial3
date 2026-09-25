@@ -24,16 +24,16 @@ export default function ProductsIntegrations() {
   }, []);
 
   return (
-    <section id="integracoes" style={{ backgroundColor: "#f8f8f8", padding: "120px 24px" }}>
+    <section id="integracoes" style={{ backgroundColor: "var(--surface)", padding: "120px 24px" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", textAlign: "center" }}>
         <h2
           style={{
-            fontFamily: "Inter",
-            fontWeight: 900,
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
             fontSize: "clamp(32px, 4.5vw, 48px)",
             marginBottom: "64px",
             letterSpacing: "-1.5px",
-            color: "#111",
+            color: "var(--ink)",
           }}
         >
           Integra com o que você já usa.
@@ -59,7 +59,7 @@ export default function ProductsIntegrations() {
                 borderRadius: "100px",
                 fontSize: "15px",
                 fontWeight: 500,
-                color: "#444",
+                color: "var(--ink-2)",
                 opacity: inView ? 1 : 0,
                 transform: inView ? "scale(1)" : "scale(0.9)",
                 transition: `opacity 0.5s ease ${i * 0.04}s, transform 0.5s ease ${i * 0.04}s`,
@@ -70,7 +70,7 @@ export default function ProductsIntegrations() {
           ))}
         </div>
 
-        <p style={{ color: "#888", fontSize: "18px" }}>
+        <p style={{ color: "var(--ink-2)", fontSize: "18px" }}>
           E milhares de outras plataformas via API e integrações nativas.
         </p>
       </div>

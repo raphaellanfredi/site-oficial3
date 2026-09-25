@@ -302,9 +302,9 @@ As 5 etapas que `/planos` passa a mostrar:
 4. Canais integrados e bateria de validação
 5. Você aprova e a IA entra no ar, **em até 24 horas** depois das etapas 1 e 2
 
-**Duas perguntas para a Fase 5 (copy):**
-- **Nome no site.** Pela regra de marca do brief (1.2), para o cliente a inteligência é sempre a **Eva IA**. Recomendo escrever "a Eva IA monta a arquitetura" e manter "Super-Eva" como nome interno. Confirma?
-- **"Implantação feita por especialistas"** é o diferencial central do brief (1.4). Com a arquitetura automática, o que os especialistas passam a fazer? Se eles revisam, conduzem a bateria de validação e aprovam antes do go-live, a frase vira "montada pela Eva IA, validada por especialistas", que é ainda mais forte
+**Decidido em 25/09:**
+- No site, quem monta a arquitetura é **a Eva IA**. "Super-Eva" fica como nome interno
+- A frase da implantação é **"montada pela Eva IA, validada por especialistas"**, já aplicada no site
 
 ## 9. Próximo passo
 

@@ -40,13 +40,13 @@ export default function AffiliatesHowItWorks() {
       <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
         <h2
           style={{
-            fontFamily: "Inter",
-            fontWeight: 900,
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
             fontSize: "clamp(32px, 4.5vw, 48px)",
             textAlign: "center",
             marginBottom: "80px",
             letterSpacing: "-1.5px",
-            color: "#111",
+            color: "var(--ink)",
           }}
         >
           Como funciona na prática?
@@ -71,7 +71,7 @@ export default function AffiliatesHowItWorks() {
                 transition: `opacity 0.7s ease ${i * 0.2}s, transform 0.7s ease ${i * 0.2}s`,
               }}
             >
-              <div className="gradient-text" style={{ fontWeight: 900, fontSize: "72px", lineHeight: 1, opacity: 0.3, marginBottom: "16px" }}>
+              <div className="gradient-text" style={{ fontWeight: 700, fontSize: "72px", lineHeight: 1, opacity: 0.3, marginBottom: "16px" }}>
                 {step.num}
               </div>
               <div
@@ -87,10 +87,10 @@ export default function AffiliatesHowItWorks() {
                   backgroundColor: "#fff",
                 }}
               >
-                <span className="gradient-text" style={{ fontWeight: 900, fontSize: "20px" }}>{step.num}</span>
+                <span className="gradient-text" style={{ fontWeight: 700, fontSize: "20px" }}>{step.num}</span>
               </div>
-              <h3 style={{ fontWeight: 700, fontSize: "22px", marginBottom: "12px", color: "#111" }}>{step.title}</h3>
-              <p style={{ color: "#888", fontSize: "15px", lineHeight: 1.7, margin: 0 }}>{step.text}</p>
+              <h3 style={{ fontWeight: 700, fontSize: "22px", marginBottom: "12px", color: "var(--ink)" }}>{step.title}</h3>
+              <p style={{ color: "var(--ink-2)", fontSize: "15px", lineHeight: 1.7, margin: 0 }}>{step.text}</p>
             </div>
           ))}
         </div>

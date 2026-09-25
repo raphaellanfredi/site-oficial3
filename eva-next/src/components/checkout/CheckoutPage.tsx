@@ -17,7 +17,7 @@ import {
   CHECKOUT_FAQS,
 } from "./checkout-data";
 
-const ACCENT = "linear-gradient(135deg, #FF0080, #FF6B00)";
+const ACCENT = "var(--gradient-action)";
 const fmt = (n: number) =>
   n.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
@@ -75,11 +75,11 @@ function Header() {
       <Link href="/" style={{ textDecoration: "none" }}>
         <span
           style={{
-            background: ACCENT,
+            background: "var(--gradient-display)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
-            fontWeight: 800,
+            fontWeight: 700,
             fontSize: "18px",
             letterSpacing: "-0.3px",
           }}
@@ -89,7 +89,7 @@ function Header() {
       </Link>
       <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
         <LockIcon />
-        <span style={{ fontSize: "13px", color: "#22c55e", fontWeight: 600 }}>
+        <span style={{ fontSize: "13px", color: "var(--ok)", fontWeight: 600 }}>
           Pagamento 100% seguro
         </span>
       </div>
@@ -111,7 +111,7 @@ function PlanTabs({
       style={{
         display: "flex",
         gap: "8px",
-        background: "#f4f4f4",
+        background: "var(--surface)",
         padding: "6px",
         borderRadius: "14px",
         width: "fit-content",
@@ -136,7 +136,7 @@ function PlanTabs({
               touchAction: "manipulation",
               background: active ? "#fff" : "transparent",
               boxShadow: active ? "0 1px 4px rgba(0,0,0,0.1)" : "none",
-              color: active ? "#111" : "#888",
+              color: active ? "var(--ink)" : "var(--ink-2)",
               position: "relative",
             }}
           >
@@ -168,7 +168,7 @@ function PlanDetail({ plan }: { plan: typeof PLANS[0] }) {
     <div
       style={{
         background: "#fff",
-        border: `1.5px solid ${plan.popular ? "#FF0080" : "rgba(0,0,0,0.08)"}`,
+        border: `1.5px solid ${plan.popular ? "var(--brand-pink)" : "rgba(0,0,0,0.08)"}`,
         borderRadius: "16px",
         padding: "28px",
         marginBottom: "24px",
@@ -177,7 +177,7 @@ function PlanDetail({ plan }: { plan: typeof PLANS[0] }) {
       }}
     >
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px" }}>
-        <h3 style={{ fontWeight: 900, fontSize: "22px", color: "#111", margin: 0, letterSpacing: "-0.5px" }}>
+        <h3 style={{ fontWeight: 700, fontSize: "22px", color: "var(--ink)", margin: 0, letterSpacing: "-0.5px" }}>
           {plan.name}
         </h3>
         {plan.popular && (
@@ -197,19 +197,19 @@ function PlanDetail({ plan }: { plan: typeof PLANS[0] }) {
           </span>
         )}
       </div>
-      <p style={{ color: "#888", fontSize: "14px", lineHeight: 1.6, marginBottom: "20px" }}>
+      <p style={{ color: "var(--ink-2)", fontSize: "14px", lineHeight: 1.6, marginBottom: "20px" }}>
         {plan.tagline}
       </p>
       <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
         {plan.features.map((f) => (
           <div key={f} style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
             <span style={{ flexShrink: 0, marginTop: "2px" }}><CheckIcon /></span>
-            <span style={{ color: "#444", fontSize: "14px", lineHeight: 1.5 }}>{f}</span>
+            <span style={{ color: "var(--ink-2)", fontSize: "14px", lineHeight: 1.5 }}>{f}</span>
           </div>
         ))}
       </div>
       {plan.footnote && (
-        <p style={{ color: "#aaa", fontSize: "12px", marginTop: "14px", marginBottom: 0 }}>
+        <p style={{ color: "var(--ink-2)", fontSize: "12px", marginTop: "14px", marginBottom: 0 }}>
           {plan.footnote}
         </p>
       )}
@@ -230,7 +230,7 @@ function InstallmentPicker({
 }) {
   return (
     <div style={{ marginBottom: "24px" }}>
-      <p style={{ fontSize: "13px", fontWeight: 600, color: "#555", marginBottom: "12px", letterSpacing: "0.5px", textTransform: "uppercase" }}>
+      <p style={{ fontSize: "13px", fontWeight: 600, color: "var(--ink-2)", marginBottom: "12px", letterSpacing: "0.5px", textTransform: "uppercase" }}>
         Parcelar implantação em
       </p>
       <div className="installment-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "8px" }}>
@@ -245,7 +245,7 @@ function InstallmentPicker({
               style={{
                 padding: "10px 6px",
                 borderRadius: "10px",
-                border: `1.5px solid ${active ? "#FF0080" : "rgba(0,0,0,0.1)"}`,
+                border: `1.5px solid ${active ? "var(--brand-pink)" : "rgba(0,0,0,0.1)"}`,
                 background: active ? "rgba(255,0,128,0.04)" : "#fff",
                 cursor: "pointer",
                 fontFamily: "inherit",
@@ -254,13 +254,13 @@ function InstallmentPicker({
                 textAlign: "center",
               }}
             >
-              <div style={{ fontWeight: 700, fontSize: "13px", color: active ? "#FF0080" : "#111" }}>
+              <div style={{ fontWeight: 700, fontSize: "13px", color: active ? "var(--link)" : "var(--ink)" }}>
                 {n}x
               </div>
-              <div style={{ fontSize: "11px", color: "#888", marginTop: "2px", lineHeight: 1.3 }}>
+              <div style={{ fontSize: "11px", color: "var(--ink-2)", marginTop: "2px", lineHeight: 1.3 }}>
                 {fmt(val)}
                 {interest && (
-                  <span style={{ display: "block", color: "#bbb", fontSize: "10px" }}>c/ juros</span>
+                  <span style={{ display: "block", color: "var(--ink-2)", fontSize: "10px" }}>c/ juros</span>
                 )}
               </div>
             </button>
@@ -313,17 +313,17 @@ function OrderSummary({
         }}
       >
         <span style={{ fontSize: "14px" }}>🔥</span>
-        <span style={{ fontSize: "13px", color: "#FF0080", fontWeight: 600 }}>
-          Onboarding com especialistas incluso — sua IA operando em até 24 horas
+        <span style={{ fontSize: "13px", color: "var(--link)", fontWeight: 600 }}>
+          Montada pela Eva IA, validada por especialistas: sua IA operando em até 24 horas
         </span>
       </div>
 
       {/* Plan name */}
       <div style={{ marginBottom: "20px" }}>
-        <p style={{ fontSize: "11px", color: "#aaa", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "4px" }}>
+        <p style={{ fontSize: "11px", color: "var(--ink-2)", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "4px" }}>
           Plano selecionado
         </p>
-        <p style={{ fontWeight: 900, fontSize: "20px", color: "#111", letterSpacing: "-0.5px", margin: 0 }}>
+        <p style={{ fontWeight: 700, fontSize: "20px", color: "var(--ink)", letterSpacing: "-0.5px", margin: 0 }}>
           {plan.name}
         </p>
       </div>
@@ -331,27 +331,27 @@ function OrderSummary({
       <div style={{ borderTop: "1px solid rgba(0,0,0,0.06)", paddingTop: "20px", marginBottom: "20px" }}>
         {/* Monthly */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "12px" }}>
-          <span style={{ fontSize: "14px", color: "#666" }}>Mensalidade</span>
-          <span style={{ fontWeight: 700, fontSize: "18px", color: "#111" }}>
-            {fmt(plan.monthly)}<span style={{ fontSize: "13px", fontWeight: 400, color: "#aaa" }}>/mês</span>
+          <span style={{ fontSize: "14px", color: "var(--ink-2)" }}>Mensalidade</span>
+          <span style={{ fontWeight: 700, fontSize: "18px", color: "var(--ink)" }}>
+            {fmt(plan.monthly)}<span style={{ fontSize: "13px", fontWeight: 400, color: "var(--ink-2)" }}>/mês</span>
           </span>
         </div>
 
         {/* Setup */}
         <div style={{ marginBottom: "8px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-            <span style={{ fontSize: "14px", color: "#666" }}>Implantação</span>
-            <span style={{ fontWeight: 700, fontSize: "18px", color: "#111" }}>
+            <span style={{ fontSize: "14px", color: "var(--ink-2)" }}>Implantação</span>
+            <span style={{ fontWeight: 700, fontSize: "18px", color: "var(--ink)" }}>
               {installments}× {fmt(installmentVal)}
             </span>
           </div>
           {interest && (
-            <p style={{ textAlign: "right", fontSize: "11px", color: "#bbb", margin: "2px 0 0" }}>
+            <p style={{ textAlign: "right", fontSize: "11px", color: "var(--ink-2)", margin: "2px 0 0" }}>
               Total: {fmt(setupTotal)} (juros 2,49% a.m.)
             </p>
           )}
           {!interest && installments > 1 && (
-            <p style={{ textAlign: "right", fontSize: "11px", color: "#22c55e", fontWeight: 600, margin: "2px 0 0" }}>
+            <p style={{ textAlign: "right", fontSize: "11px", color: "var(--ok)", fontWeight: 600, margin: "2px 0 0" }}>
               Sem juros
             </p>
           )}
@@ -373,7 +373,7 @@ function OrderSummary({
           background: ACCENT,
           color: "#fff",
           fontFamily: "inherit",
-          fontWeight: 800,
+          fontWeight: 700,
           fontSize: "16px",
           textAlign: "center",
           textDecoration: "none",
@@ -399,19 +399,19 @@ function OrderSummary({
       {/* Security */}
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", marginBottom: "12px" }}>
         <LockIcon />
-        <span style={{ fontSize: "12px", color: "#22c55e", fontWeight: 600 }}>Ambiente 100% seguro</span>
+        <span style={{ fontSize: "12px", color: "var(--ok)", fontWeight: 600 }}>Ambiente 100% seguro</span>
       </div>
 
       {/* Payment methods */}
       <div style={{ textAlign: "center", marginBottom: "16px" }}>
-        <span style={{ fontSize: "12px", color: "#bbb" }}>Pix · Cartão de crédito · Boleto</span>
+        <span style={{ fontSize: "12px", color: "var(--ink-2)" }}>Pix · Cartão de crédito · Boleto</span>
       </div>
 
       {/* Cancel policy */}
       <p
         style={{
           fontSize: "12px",
-          color: "#aaa",
+          color: "var(--ink-2)",
           textAlign: "center",
           lineHeight: 1.6,
           margin: 0,
@@ -446,7 +446,7 @@ function SocialProof() {
         <div
           key={s.label}
           style={{
-            background: "#f8f8f8",
+            background: "var(--surface)",
             borderRadius: "12px",
             padding: "16px 12px",
             textAlign: "center",
@@ -454,10 +454,10 @@ function SocialProof() {
         >
           <div
             style={{
-              fontWeight: 900,
+              fontWeight: 700,
               fontSize: "20px",
               letterSpacing: "-0.5px",
-              background: ACCENT,
+              background: "var(--gradient-display)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -466,7 +466,7 @@ function SocialProof() {
           >
             {s.value}
           </div>
-          <div style={{ fontSize: "11px", color: "#888", lineHeight: 1.4 }}>{s.label}</div>
+          <div style={{ fontSize: "11px", color: "var(--ink-2)", lineHeight: 1.4 }}>{s.label}</div>
         </div>
       ))}
     </div>
@@ -490,10 +490,10 @@ function TestimonialStrip({ index }: { index: number }) {
       <div style={{ display: "flex", gap: "2px", marginBottom: "10px" }}>
         {[0, 1, 2, 3, 4].map((i) => <StarIcon key={i} />)}
       </div>
-      <p style={{ fontSize: "14px", color: "#444", lineHeight: 1.7, fontStyle: "italic", marginBottom: "10px" }}>
+      <p style={{ fontSize: "14px", color: "var(--ink-2)", lineHeight: 1.7, fontStyle: "italic", marginBottom: "10px" }}>
         &ldquo;{t.quote}&rdquo;
       </p>
-      <p style={{ fontSize: "12px", color: "#aaa", fontWeight: 700, margin: 0 }}>
+      <p style={{ fontSize: "12px", color: "var(--ink-2)", fontWeight: 700, margin: 0 }}>
         — {t.author} · {t.location}
       </p>
     </div>
@@ -506,7 +506,7 @@ function MiniFAQ() {
   const [open, setOpen] = useState<number | null>(null);
   return (
     <div style={{ marginBottom: "32px" }}>
-      <p style={{ fontSize: "13px", fontWeight: 700, color: "#888", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "12px" }}>
+      <p style={{ fontSize: "13px", fontWeight: 700, color: "var(--ink-2)", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "12px" }}>
         Dúvidas frequentes
       </p>
       {CHECKOUT_FAQS.map((faq, i) => (
@@ -527,7 +527,7 @@ function MiniFAQ() {
               fontFamily: "inherit",
               fontSize: "14px",
               fontWeight: 600,
-              color: "#111",
+              color: "var(--ink)",
             }}
           >
             {faq.q}
@@ -536,7 +536,7 @@ function MiniFAQ() {
                 flexShrink: 0,
                 fontSize: "18px",
                 fontWeight: 300,
-                color: open === i ? "#FF0080" : "#888",
+                color: open === i ? "var(--link)" : "var(--ink-2)",
                 transform: open === i ? "rotate(45deg)" : "none",
                 transition: "transform 0.2s",
                 display: "inline-block",
@@ -552,7 +552,7 @@ function MiniFAQ() {
               transition: "max-height 0.3s ease",
             }}
           >
-            <p style={{ color: "#888", fontSize: "13px", lineHeight: 1.7, paddingBottom: "14px", margin: 0 }}>
+            <p style={{ color: "var(--ink-2)", fontSize: "13px", lineHeight: 1.7, paddingBottom: "14px", margin: 0 }}>
               {faq.a}
             </p>
           </div>
@@ -631,11 +631,11 @@ export default function CheckoutPage() {
         <div style={{ textAlign: "center", marginBottom: "32px" }}>
           <h1
             style={{
-              fontFamily: "Inter",
-              fontWeight: 900,
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
               fontSize: "clamp(28px, 4vw, 40px)",
               letterSpacing: "-1.5px",
-              color: "#111",
+              color: "var(--ink)",
               marginBottom: "10px",
               lineHeight: 1.1,
             }}
@@ -643,7 +643,7 @@ export default function CheckoutPage() {
             Escolha seu plano e{" "}
             <span
               style={{
-                background: ACCENT,
+                background: "var(--gradient-display)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -652,8 +652,8 @@ export default function CheckoutPage() {
               comece em 24 horas
             </span>
           </h1>
-          <p style={{ color: "#888", fontSize: "16px", margin: 0 }}>
-            Implantação feita por especialistas. Zero programação.
+          <p style={{ color: "var(--ink-2)", fontSize: "16px", margin: 0 }}>
+            Montada pela Eva IA, validada por especialistas. Zero programação.
           </p>
         </div>
 
@@ -707,10 +707,10 @@ export default function CheckoutPage() {
           }}
         >
           <div style={{ flex: 1, minWidth: 0 }}>
-            <p style={{ fontSize: "12px", color: "#888", margin: 0 }}>
+            <p style={{ fontSize: "12px", color: "var(--ink-2)", margin: 0 }}>
               {plan.name} · {fmt(plan.monthly)}/mês
             </p>
-            <p style={{ fontSize: "11px", color: "#aaa", margin: 0 }}>
+            <p style={{ fontSize: "11px", color: "var(--ink-2)", margin: 0 }}>
               + implantação {installments}× {fmt(calcInstallmentValue(plan.setup, installments))}
             </p>
           </div>

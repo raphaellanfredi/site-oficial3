@@ -27,17 +27,17 @@ const pillars = [
   {
     title: "IA Omnichannel",
     text: "Uma IA que atende em todos os canais simultaneamente. Sem perder nenhuma oportunidade, independente do horário.",
-    color: "#FF0080",
+    color: "var(--link)",
   },
   {
     title: "CRM Inteligente",
     text: "Visão completa de cada cliente. Histórico de conversas, funil de vendas e follow-up automático. Tudo num lugar só.",
-    color: "#FF4040",
+    color: "var(--danger)",
   },
   {
     title: "Gestão Total",
     text: "Painel unificado para você e sua equipe. Relatórios em tempo real. Sua equipe humana focada no que importa.",
-    color: "#FF6B00",
+    color: "var(--orange-text)",
   },
 ];
 
@@ -52,13 +52,13 @@ export default function Solution() {
         <div ref={titleRef}>
           <h2
             style={{
-              fontFamily: "Inter",
-              fontWeight: 900,
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
               fontSize: "clamp(36px, 5vw, 56px)",
               letterSpacing: "-2px",
               lineHeight: 1.1,
               marginBottom: "24px",
-              color: "#111",
+              color: "var(--ink)",
               opacity: titleInView ? 1 : 0,
               transform: titleInView ? "translateY(0)" : "translateY(30px)",
               transition: "opacity 0.7s ease, transform 0.7s ease",
@@ -69,7 +69,7 @@ export default function Solution() {
           </h2>
           <p
             style={{
-              color: "#888",
+              color: "var(--ink-2)",
               fontSize: "20px",
               maxWidth: "560px",
               margin: "0 auto",
@@ -79,7 +79,7 @@ export default function Solution() {
               transition: "opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s",
             }}
           >
-            Treinada por especialistas, entregue pronta em 24 horas.<br />
+            Montada pela Eva IA, validada por especialistas, pronta em 24 horas.<br />
             Você não programa nada.
           </p>
         </div>
@@ -106,7 +106,7 @@ export default function Solution() {
                 borderRadius: "100px",
                 fontSize: "14px",
                 fontWeight: 500,
-                color: "#444",
+                color: "var(--ink-2)",
                 cursor: "default",
                 transition: "all 0.2s",
                 opacity: channelsInView ? 1 : 0,
@@ -114,7 +114,7 @@ export default function Solution() {
                 transitionDelay: `${i * 0.05}s`,
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = "#FF0080";
+                e.currentTarget.style.borderColor = "var(--brand-pink)";
                 e.currentTarget.style.backgroundColor = "rgba(255,0,128,0.05)";
               }}
               onMouseLeave={(e) => {
@@ -149,8 +149,8 @@ export default function Solution() {
                 transition: `opacity 0.7s ease ${i * 0.15}s, transform 0.7s ease ${i * 0.15}s`,
               }}
             >
-              <h3 style={{ fontWeight: 700, fontSize: "22px", marginBottom: "12px", color: "#111" }}>{p.title}</h3>
-              <p style={{ color: "#888", fontSize: "15px", lineHeight: 1.7, margin: 0 }}>{p.text}</p>
+              <h3 style={{ fontWeight: 700, fontSize: "22px", marginBottom: "12px", color: "var(--ink)" }}>{p.title}</h3>
+              <p style={{ color: "var(--ink-2)", fontSize: "15px", lineHeight: 1.7, margin: 0 }}>{p.text}</p>
             </div>
           ))}
         </div>
