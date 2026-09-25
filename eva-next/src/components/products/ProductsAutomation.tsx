@@ -20,7 +20,7 @@ const automations = [
   {
     Icon: MegaphoneIcon,
     title: "Campanhas em Massa",
-    text: "Envie mensagens segmentadas para sua base. Templates aprovados, respeitando as regras dos canais. Zero banimento.",
+    text: "Envie mensagens segmentadas por etiqueta e interesse para sua base, com agendamento. A mensagem certa chega para quem quer receber.",
   },
   {
     Icon: TargetIcon,

@@ -111,6 +111,7 @@ export default function Navbar() {
             href="https://wa.me/5511961163777"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Quero minha IA: falar com o comercial no WhatsApp"
             className="cta-primary"
             style={{ padding: "12px 24px", fontSize: "14px" }}
           >
@@ -193,6 +194,7 @@ export default function Navbar() {
               href="https://wa.me/5511961163777"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Quero minha IA: falar com o comercial no WhatsApp"
               className="cta-primary"
             >
               Quero minha IA

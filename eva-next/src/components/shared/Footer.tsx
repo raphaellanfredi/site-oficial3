@@ -9,14 +9,14 @@ export default function Footer() {
   ];
 
   const companyLinks = [
-    { label: "Nossa história", href: "#" },
-    { label: "Cases", href: "#" },
     { label: "Eva Club", href: "/eva-club" },
+    { label: "Programa de Afiliados", href: "/afiliados" },
   ];
 
-  const partnerLinks = [
-    { label: "Programa de Afiliados", href: "/afiliados", external: false },
-    { label: "Suporte", href: "https://wa.me/5521993924639", external: true },
+  const contactLinks = [
+    { label: "WhatsApp comercial", detail: "+55 11 96116-3777", href: "https://wa.me/5511961163777", external: true },
+    { label: "WhatsApp suporte", detail: "+55 21 99392-4639 · também atende ligação, 24h", href: "https://wa.me/5521993924639", external: true },
+    { label: "E-mail suporte", detail: "suporte@evainteligencia.com.br", href: "mailto:suporte@evainteligencia.com.br", external: false },
   ];
 
   return (
@@ -40,12 +40,14 @@ export default function Footer() {
             </p>
             <div style={{ display: "flex", gap: "12px" }}>
               {[
-                { label: "IG", href: "https://www.instagram.com/eva.inteligencia.art/" },
-                { label: "WA", href: "https://wa.me/5511961163777" },
+                { label: "IG", title: "Instagram", href: "https://www.instagram.com/eva.inteligencia.art/" },
+                { label: "WA", title: "WhatsApp comercial", href: "https://wa.me/5511961163777" },
               ].map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
+                  title={s.title}
+                  aria-label={s.title}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -109,20 +111,21 @@ export default function Footer() {
             ))}
           </div>
 
-          {/* Parceiros */}
+          {/* Contato */}
           <div>
-            <h4 style={{ color: "#111", fontWeight: 700, fontSize: "14px", marginBottom: "20px", letterSpacing: "0.5px" }}>Parceiros</h4>
-            {partnerLinks.map((item) => (
+            <h4 style={{ color: "#111", fontWeight: 700, fontSize: "14px", marginBottom: "20px", letterSpacing: "0.5px" }}>Contato</h4>
+            {contactLinks.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noopener noreferrer" : undefined}
-                style={{ display: "block", color: "#888", fontSize: "14px", marginBottom: "12px", transition: "color 0.2s" }}
+                style={{ display: "block", color: "#888", fontSize: "14px", marginBottom: "12px", transition: "color 0.2s", lineHeight: 1.5 }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#111")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "#888")}
               >
                 {item.label}
+                <span style={{ display: "block", color: "#aaa", fontSize: "13px" }}>{item.detail}</span>
               </a>
             ))}
           </div>
