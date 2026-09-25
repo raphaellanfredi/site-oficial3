@@ -34,10 +34,11 @@ jobs:
         run: npm run build
         working-directory: eva-next
         env:
-          # Google Analytics 4 measurement ID (G-XXXXXXXXXX), set under
-          # Settings → Secrets and variables → Actions → Variables.
-          # Empty means analytics stays off.
-          NEXT_PUBLIC_GA_ID: ${{ vars.GA_MEASUREMENT_ID }}
+          # Google Analytics 4 measurement ID. It is public (it ships in the
+          # page source), so it lives here; the GA_MEASUREMENT_ID repository
+          # variable, when set, overrides it. Local builds have no ID, so
+          # development traffic never reaches the report.
+          NEXT_PUBLIC_GA_ID: ${{ vars.GA_MEASUREMENT_ID || 'G-CVKBZMP64W' }}
 
       - name: Copy site files
         run: |
