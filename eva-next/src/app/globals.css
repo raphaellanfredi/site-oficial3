@@ -2,35 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Eva design tokens (Fase 2, aprovados em 25/09/2026) ──────────────────
-   Marca: rosa→laranja no logo e em fundos grandes. Ação: tons mais fundos
-   do mesmo gradiente, com texto branco em AA. IA: o ciano só aparece onde a
-   Eva IA está agindo, sobre as seções escuras. */
+/* ── Eva design tokens · Gênesis ──────────────────────────────────────────
+   Noite no Éden: fundo quase preto esverdeado. Marca: rosa→laranja, a pele
+   da maçã, no logo e em fundos grandes. Ação: tons mais fundos do mesmo
+   gradiente, com texto branco em AA. IA: o ciano é a bioluminescência da
+   Eva IA. Todas as cores de texto passam em AA sobre --bg e --surface. */
 :root {
-  --bg: #FFFFFF;
-  --surface: #F6F5F8;
-  --line: #E7E4EB;
-  --ink: #0E0D12;
-  --ink-2: #5C5A66;
+  color-scheme: dark;
+  --bg: #050806;
+  --surface: #0E1611;
+  --line: rgba(242, 244, 241, 0.12);
+  --ink: #F2F4F1;
+  --ink-2: #A7B5AD;
 
   --brand-pink: #FF0080;
   --brand-orange: #FF6B00;
   --gradient-brand: linear-gradient(135deg, #FF0080, #FF6B00);
   --gradient-action: linear-gradient(135deg, #D6006B, #C25100);
   --gradient-display: linear-gradient(135deg, #FF0080, #E05A00);
-  --link: #C8005F;
-  --orange-text: #C25100;
+  --link: #FF4DA6;
+  --orange-text: #FF8A3D;
 
   --ia: #07DAFF;
-  --ia-text: #006B85;
+  --ia-text: #5CE6FF;
   --ia-bg: #0B0B10;
   --ia-surface: #15141B;
   --ia-ink: #F4F3F6;
   --ia-ink-2: #A1A1AA;
   --ia-glow: #5CE6FF;
 
-  --ok: #15803D;
-  --danger: #C0262D;
+  --ok: #4ADE80;
+  --danger: #FF6B6B;
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -130,10 +132,10 @@ h1, h2, h3, h4 {
 }
 
 .glass-card {
-  background: rgba(0, 0, 0, 0.02);
+  background: rgba(14, 22, 17, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(242, 244, 241, 0.12);
   border-radius: 16px;
 }
 
@@ -246,10 +248,6 @@ h1, h2, h3, h4 {
 }
 
 /* Eden concept page (/eden): page ground and the fixed WebGL layer */
-html.eden,
-html.eden body {
-  background: #050806;
-}
 
 /* Fixed layers */
 .eden-scene {

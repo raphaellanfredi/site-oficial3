@@ -2,21 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { buildShapes, type ShapeName } from "./shapes";
-
-export type SceneTarget = {
-  shape: ShapeName;
-  /** Horizontal placement on wide screens. Phones always center. */
-  align?: "left" | "center" | "right";
-  /** -1 (look at the bottom of the shape) … 1 (look at the top). */
-  pan?: number;
-  /** Extra brightness, 1 = normal. */
-  glow?: number;
-};
-
-export function setSceneTarget(target: SceneTarget) {
-  window.dispatchEvent(new CustomEvent<SceneTarget>("eden:target", { detail: target }));
-}
+import { buildShapes } from "./shapes";
+import { getSceneTarget, type SceneTarget } from "./sceneBus";
 
 const vertex = /* glsl */ `
   attribute float aSize;
@@ -182,10 +169,10 @@ export default function EdenScene() {
     });
     scene.add(new THREE.Points(fgeo, fmat));
 
-    let target: SceneTarget = { shape: "apple", align: "right" };
-    let tPos = shapes.apple.positions;
-    let tCol = shapes.apple.colors;
-    let tSize = shapes.apple.sizes;
+    let target: SceneTarget = getSceneTarget();
+    let tPos = shapes[target.shape].positions;
+    let tCol = shapes[target.shape].colors;
+    let tSize = shapes[target.shape].sizes;
     const place = { x: 0, y: 0, s: 1, glow: 1 };
     const goal = { x: 0, y: 0, s: 1, glow: 1 };
     let settled = false;
@@ -214,7 +201,7 @@ export default function EdenScene() {
 
     const onTarget = (e: Event) => {
       const next = (e as CustomEvent<SceneTarget>).detail;
-      target = { ...target, ...next };
+      target = next;
       const shape = shapes[target.shape];
       tPos = shape.positions;
       tCol = shape.colors;

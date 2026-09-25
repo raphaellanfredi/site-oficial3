@@ -1,0 +1,28 @@
+.curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  visibility: hidden; /* GSAP owns the transform; see PageTransition */
+  background: #050806;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+.edge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -6px;
+  height: 6px;
+  background: linear-gradient(90deg, #FF0080, #FF6B00);
+  box-shadow: 0 0 40px rgba(255, 0, 128, 0.7);
+}
+.mark {
+  font-family: var(--font-verse), Georgia, serif;
+  font-style: italic;
+  font-size: clamp(40px, 7vw, 88px);
+  background: linear-gradient(120deg, #FF0080, #FF6B00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

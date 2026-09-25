@@ -1,34 +1,12 @@
-import Navbar from "@/components/shared/Navbar";
-import Footer from "@/components/shared/Footer";
-import FinalCTA from "@/components/shared/FinalCTA";
-import ProductsHero from "@/components/products/ProductsHero";
-import ProductsChannels from "@/components/products/ProductsChannels";
-import ProductsCRM from "@/components/products/ProductsCRM";
-import ProductsAutomation from "@/components/products/ProductsAutomation";
-import ProductsTranscription from "@/components/products/ProductsTranscription";
-import ProductsSecurity from "@/components/products/ProductsSecurity";
-import ProductsIntegrations from "@/components/products/ProductsIntegrations";
-import ProductsPlatform from "@/components/products/ProductsPlatform";
+import type { Metadata } from "next";
+import ProductsPage from "@/components/eden/pages/ProductsPage";
 
-export const metadata = {
-  title: "Produto — Eva Inteligência",
-  description: "IA omnichannel completa: todos os canais, CRM, automação e segurança enterprise.",
+export const metadata: Metadata = {
+  title: "Produto · Eva Inteligência",
+  description:
+    "Agente de IA que resolve, CRM nativo, automação, agenda e gestão da equipe em oito canais, numa tela só. No ar em 24 horas.",
 };
 
-export default function ProductsPage() {
-  return (
-    <div style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
-      <Navbar />
-      <ProductsHero />
-      <ProductsChannels />
-      <ProductsCRM />
-      <ProductsAutomation />
-      <ProductsTranscription />
-      <ProductsSecurity />
-      <ProductsIntegrations />
-      <ProductsPlatform />
-      <FinalCTA />
-      <Footer />
-    </div>
-  );
+export default function Page() {
+  return <ProductsPage />;
 }

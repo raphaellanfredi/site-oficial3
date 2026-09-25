@@ -1,18 +1,12 @@
-import Navbar from "@/components/shared/Navbar";
-import Footer from "@/components/shared/Footer";
-import EvaClub from "@/components/eva-club/EvaClub";
+import type { Metadata } from "next";
+import ClubPage from "@/components/eden/pages/ClubPage";
 
-export const metadata = {
-  title: "Eva Club — Eva Inteligência",
-  description: "O clube exclusivo de empresários que levam a IA a sério. Todo cliente Eva é membro.",
+export const metadata: Metadata = {
+  title: "Eva Club · Eva Inteligência",
+  description:
+    "Acesso antecipado, suporte direto com resposta em até 1 hora, comunidade, treinamento toda terça e quinta e 50% de desconto em novos produtos. Todo cliente Eva é membro.",
 };
 
-export default function EvaClubPage() {
-  return (
-    <div style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
-      <Navbar />
-      <EvaClub />
-      <Footer />
-    </div>
-  );
+export default function Page() {
+  return <ClubPage />;
 }

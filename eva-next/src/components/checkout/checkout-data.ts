@@ -77,6 +77,30 @@ export const PLANS: PlanConfig[] = [
 ];
 
 // Installment options offered in checkout
+// Plan specs for comparison tables. Same numbers as the features above
+// (brief, section 4); keep both in step.
+export type Spec = string | boolean;
+export const PLAN_SPECS: { label: string; values: Record<PlanKey, Spec> }[] = [
+  { label: "Atendimentos por mês", values: { one: "1.500", pro: "3.500", black: "15.200" } },
+  { label: "Conexões", values: { one: "2", pro: "5", black: "10" } },
+  { label: "Usuários", values: { one: "3", pro: "10", black: "30" } },
+  { label: "Etapas de follow-up", values: { one: "3", pro: "7", black: "15" } },
+  { label: "CRM nativo", values: { one: true, pro: true, black: true } },
+  { label: "Google Agenda", values: { one: true, pro: true, black: true } },
+  { label: "Disparo em massa com segmentação", values: { one: true, pro: true, black: true } },
+  { label: "Anti No Show", values: { one: false, pro: true, black: true } },
+  { label: "Integração Asaas, PagarMe e Conta Azul", values: { one: false, pro: true, black: true } },
+  { label: "Ligações com IA (uso pós-pago)", values: { one: false, pro: true, black: true } },
+  { label: "Servidor dedicado", values: { one: false, pro: false, black: true } },
+  { label: "Suporte Premium", values: { one: false, pro: false, black: true } },
+];
+
+export const PLAN_LIMITS: Record<PlanKey, { users: number; connections: number }> = {
+  one: { users: 3, connections: 2 },
+  pro: { users: 10, connections: 5 },
+  black: { users: 30, connections: 10 },
+};
+
 export const INSTALLMENTS = [1, 2, 3, 4, 6, 10, 12] as const;
 export type Installment = typeof INSTALLMENTS[number];
 
@@ -164,7 +188,11 @@ export const CHECKOUT_FAQS = [
     a: "Sim. A implantação pode ser parcelada em até 12x no cartão de crédito. A mensalidade é cobrada mensalmente à parte.",
   },
   {
+    q: "E se a IA não ficar pronta em 24 horas?",
+    a: "Garantia 24 horas: se a sua IA não estiver no ar em até 24 horas depois do pagamento e do formulário preenchido, a implantação é por nossa conta.",
+  },
+  {
     q: "Posso trocar de plano depois?",
-    a: "Sim. Upgrade a qualquer momento conforme seu negócio cresce — sem burocracia.",
+    a: "Sim. O upgrade vale na hora, com cobrança proporcional ao tempo que falta no período. O downgrade vale no fim do período já pago e nunca apaga atendente nem conexão.",
   },
 ];

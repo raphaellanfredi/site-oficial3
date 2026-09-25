@@ -63,8 +63,8 @@ function Header() {
         position: "sticky",
         top: 0,
         zIndex: 50,
-        backgroundColor: "rgba(255,255,255,0.98)",
-        borderBottom: "1px solid rgba(0,0,0,0.06)",
+        backgroundColor: "rgba(10,17,13,0.96)",
+        borderBottom: "1px solid rgba(242,244,241,0.1)",
         padding: "0 24px",
         height: "60px",
         display: "flex",
@@ -134,7 +134,7 @@ function PlanTabs({
               fontWeight: 700,
               transition: "background 0.2s, color 0.2s, box-shadow 0.2s",
               touchAction: "manipulation",
-              background: active ? "#fff" : "transparent",
+              background: active ? "rgba(242,244,241,0.12)" : "transparent",
               boxShadow: active ? "0 1px 4px rgba(0,0,0,0.1)" : "none",
               color: active ? "var(--ink)" : "var(--ink-2)",
               position: "relative",
@@ -167,8 +167,8 @@ function PlanDetail({ plan }: { plan: typeof PLANS[0] }) {
   return (
     <div
       style={{
-        background: "#fff",
-        border: `1.5px solid ${plan.popular ? "var(--brand-pink)" : "rgba(0,0,0,0.08)"}`,
+        background: "var(--surface)",
+        border: `1.5px solid ${plan.popular ? "var(--brand-pink)" : "rgba(242,244,241,0.12)"}`,
         borderRadius: "16px",
         padding: "28px",
         marginBottom: "24px",
@@ -245,8 +245,8 @@ function InstallmentPicker({
               style={{
                 padding: "10px 6px",
                 borderRadius: "10px",
-                border: `1.5px solid ${active ? "var(--brand-pink)" : "rgba(0,0,0,0.1)"}`,
-                background: active ? "rgba(255,0,128,0.04)" : "#fff",
+                border: `1.5px solid ${active ? "var(--brand-pink)" : "rgba(242,244,241,0.14)"}`,
+                background: active ? "rgba(255,0,128,0.04)" : "var(--surface)",
                 cursor: "pointer",
                 fontFamily: "inherit",
                 transition: "background 0.18s, border-color 0.18s, color 0.18s",
@@ -291,8 +291,8 @@ function OrderSummary({
   return (
     <div
       style={{
-        background: "#fff",
-        border: "1.5px solid rgba(0,0,0,0.08)",
+        background: "var(--surface)",
+        border: "1.5px solid rgba(242,244,241,0.12)",
         borderRadius: "20px",
         padding: "28px",
         position: "sticky",
@@ -328,7 +328,7 @@ function OrderSummary({
         </p>
       </div>
 
-      <div style={{ borderTop: "1px solid rgba(0,0,0,0.06)", paddingTop: "20px", marginBottom: "20px" }}>
+      <div style={{ borderTop: "1px solid rgba(242,244,241,0.1)", paddingTop: "20px", marginBottom: "20px" }}>
         {/* Monthly */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "12px" }}>
           <span style={{ fontSize: "14px", color: "var(--ink-2)" }}>Mensalidade</span>
@@ -396,6 +396,41 @@ function OrderSummary({
         Comprar agora
       </a>
 
+      {/* 24-hour guarantee */}
+      <div
+        style={{
+          display: "flex",
+          gap: "12px",
+          alignItems: "center",
+          padding: "12px 14px",
+          marginBottom: "14px",
+          borderRadius: "14px",
+          border: "1px solid rgba(47,203,126,0.4)",
+          background: "rgba(47,203,126,0.08)",
+        }}
+      >
+        <span
+          aria-hidden="true"
+          style={{
+            flexShrink: 0,
+            display: "grid",
+            placeItems: "center",
+            width: "40px",
+            height: "40px",
+            borderRadius: "50%",
+            border: "1.5px solid #2FCB7E",
+            color: "#2FCB7E",
+            fontWeight: 700,
+            fontSize: "12px",
+          }}
+        >
+          24h
+        </span>
+        <span style={{ fontSize: "12.5px", lineHeight: 1.45, color: "var(--ink-2)" }}>
+          <strong style={{ color: "var(--ink)" }}>Garantia 24 horas.</strong> Se a sua IA não estiver no ar em até 24 horas, a implantação é por nossa conta.
+        </span>
+      </div>
+
       {/* Security */}
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", marginBottom: "12px" }}>
         <LockIcon />
@@ -415,7 +450,7 @@ function OrderSummary({
           textAlign: "center",
           lineHeight: 1.6,
           margin: 0,
-          borderTop: "1px solid rgba(0,0,0,0.05)",
+          borderTop: "1px solid rgba(242,244,241,0.08)",
           paddingTop: "14px",
         }}
       >
@@ -480,8 +515,8 @@ function TestimonialStrip({ index }: { index: number }) {
   return (
     <div
       style={{
-        background: "#fff",
-        border: "1px solid rgba(0,0,0,0.07)",
+        background: "var(--surface)",
+        border: "1px solid rgba(242,244,241,0.1)",
         borderRadius: "14px",
         padding: "20px",
         marginBottom: "24px",
@@ -510,7 +545,7 @@ function MiniFAQ() {
         Dúvidas frequentes
       </p>
       {CHECKOUT_FAQS.map((faq, i) => (
-        <div key={i} style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
+        <div key={i} style={{ borderBottom: "1px solid rgba(242,244,241,0.1)" }}>
           <button
             onClick={() => setOpen(open === i ? null : i)}
             style={{
@@ -574,15 +609,15 @@ function LinksNotConfiguredBanner() {
         padding: "16px",
         marginBottom: "24px",
         fontSize: "13px",
-        color: "#b45309",
+        color: "#FBBF24",
         lineHeight: 1.6,
       }}
     >
       <strong>Links de pagamento não configurados.</strong> Abra{" "}
-      <code style={{ background: "rgba(0,0,0,0.05)", padding: "1px 6px", borderRadius: "4px", fontSize: "12px" }}>
+      <code style={{ background: "rgba(242,244,241,0.08)", padding: "1px 6px", borderRadius: "4px", fontSize: "12px" }}>
         src/components/checkout/checkout-data.ts
       </code>{" "}
-      e substitua os <code style={{ background: "rgba(0,0,0,0.05)", padding: "1px 6px", borderRadius: "4px", fontSize: "12px" }}>&quot;#&quot;</code>{" "}
+      e substitua os <code style={{ background: "rgba(242,244,241,0.08)", padding: "1px 6px", borderRadius: "4px", fontSize: "12px" }}>&quot;#&quot;</code>{" "}
       pelos links gerados no seu painel Asaas.
     </div>
   );
@@ -698,8 +733,8 @@ export default function CheckoutPage() {
       <div className="mobile-sticky-cta">
         <div
           style={{
-            background: "#fff",
-            borderTop: "1px solid rgba(0,0,0,0.07)",
+            background: "var(--surface)",
+            borderTop: "1px solid rgba(242,244,241,0.1)",
             padding: "12px 20px",
             display: "flex",
             alignItems: "center",

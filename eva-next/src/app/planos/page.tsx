@@ -1,24 +1,12 @@
-import Navbar from "@/components/shared/Navbar";
-import Footer from "@/components/shared/Footer";
-import FinalCTA from "@/components/shared/FinalCTA";
-import PlansHero from "@/components/plans/PlansHero";
-import PlansCards from "@/components/plans/PlansCards";
-import PlansFAQ from "@/components/plans/PlansFAQ";
+import type { Metadata } from "next";
+import PlansPage from "@/components/eden/pages/PlansPage";
 
-export const metadata = {
-  title: "Planos — Eva Inteligência",
-  description: "Escolha o plano ideal para o seu negócio. Implantação em 24 horas, sem programação.",
+export const metadata: Metadata = {
+  title: "Planos · Eva Inteligência",
+  description:
+    "Eva One, PRO e BLACK a partir de R$ 998/mês. Sem fidelidade, implantação em até 12x, no ar em 24 horas ou a implantação é por nossa conta.",
 };
 
-export default function PlansPage() {
-  return (
-    <div style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
-      <Navbar />
-      <PlansHero />
-      <PlansCards />
-      <PlansFAQ />
-      <FinalCTA />
-      <Footer />
-    </div>
-  );
+export default function Page() {
+  return <PlansPage />;
 }
