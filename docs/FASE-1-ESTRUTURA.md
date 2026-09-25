@@ -290,13 +290,21 @@ Nenhuma página é beco sem saída.
 
 ---
 
-## 8. Ponto para a Fase 5
+## 8. Implantação em 24 horas (decidido em 25/09)
 
-**O que cabe em 24 horas.** A implantação tem 5 etapas no brief (reunião de arquitetura, treinamento, integração dos canais, bateria de validação, aprovação e go-live). Na copy de `/planos` preciso mostrar essas etapas dentro de 24 horas sem contradição. Duas perguntas para a Fase 5:
-- As 24 horas contam a partir de quê: do pagamento, da reunião de arquitetura, ou do formulário de onboarding preenchido?
-- A reunião de arquitetura continua existindo, ou o formulário do `/novo-cliente` passou a fazer esse papel?
+- **As 24 horas contam a partir de dois eventos juntos:** pagamento confirmado **e** formulário de onboarding (`/novo-cliente`) preenchido
+- **A arquitetura é montada pela Super-Eva**, sem reunião. O formulário substitui a reunião de arquitetura
 
----
+As 5 etapas que `/planos` passa a mostrar:
+1. Você contrata (pagamento)
+2. Você preenche o formulário de configuração (processos, tom de voz, objeções, metas)
+3. A inteligência da Eva monta a arquitetura e treina o agente com o conhecimento do seu negócio
+4. Canais integrados e bateria de validação
+5. Você aprova e a IA entra no ar, **em até 24 horas** depois das etapas 1 e 2
+
+**Duas perguntas para a Fase 5 (copy):**
+- **Nome no site.** Pela regra de marca do brief (1.2), para o cliente a inteligência é sempre a **Eva IA**. Recomendo escrever "a Eva IA monta a arquitetura" e manter "Super-Eva" como nome interno. Confirma?
+- **"Implantação feita por especialistas"** é o diferencial central do brief (1.4). Com a arquitetura automática, o que os especialistas passam a fazer? Se eles revisam, conduzem a bateria de validação e aprovam antes do go-live, a frase vira "montada pela Eva IA, validada por especialistas", que é ainda mais forte
 
 ## 9. Próximo passo
 

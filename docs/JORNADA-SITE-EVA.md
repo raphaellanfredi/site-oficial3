@@ -264,7 +264,7 @@ Juntei aqui para não travarem o andamento. Cada uma está marcada com a fase em
 |---|---|
 | Ferramenta de analytics | 0 · **decidido: GA4, no ar desde 25/09** |
 | Oferecer teste de 15 dias sem cartão | 1 · **decidido: não** |
-| Prazo de entrega da IA | 1 · **decidido: no ar em até 24 horas** (site atualizado em 25/09) |
+| Prazo de entrega da IA | 1 · **decidido: no ar em até 24 horas a partir do pagamento + formulário de onboarding; arquitetura montada pela Super-Eva** |
 | CTA principal por página: WhatsApp, checkout ou ambos | 1 · **decidido: WhatsApp fora de `/planos`, checkout em `/planos`** |
 | Cor: caminho A, B ou C | 2 |
 | Modo escuro: sim ou não | 2 |
