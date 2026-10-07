@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
   const articles: MetadataRoute.Sitemap = ARTICLES.map((a) => ({
     url: `${SITE_URL}/conteudo/${a.slug}/`,
-    lastModified: a.published,
+    lastModified: a.updated,
     changeFrequency: "yearly",
     priority: 0.6,
   }));

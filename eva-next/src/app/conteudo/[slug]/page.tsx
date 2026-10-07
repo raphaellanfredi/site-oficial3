@@ -25,7 +25,12 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   });
   return {
     ...meta,
-    openGraph: { ...meta.openGraph, type: "article", publishedTime: article.published },
+    openGraph: {
+      ...meta.openGraph,
+      type: "article",
+      publishedTime: article.published,
+      modifiedTime: article.updated,
+    },
   };
 }
 
@@ -41,7 +46,7 @@ export default async function Page({ params }: Params) {
     headline: article.title,
     description: article.description,
     datePublished: article.published,
-    dateModified: article.published,
+    dateModified: article.updated,
     inLanguage: "pt-BR",
     mainEntityOfPage: url,
     image: `${SITE_URL}/og/artigo-${article.slug}.png`,
