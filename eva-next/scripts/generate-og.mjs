@@ -11,6 +11,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
 import { apple, tree, clock } from "../src/components/eden/shapes.ts";
+import { ARTICLES } from "../src/content/articles.ts";
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const outDir = path.join(root, "public/og");
@@ -60,6 +61,16 @@ const PAGES = [
   { slug: "eva-club", shape: "tree", kicker: "Eva Club", title: "O clube de quem leva a IA", fruit: "a sério no negócio.", sub: "Todo cliente Eva é membro." },
   { slug: "suporte", shape: "clock", kicker: "Suporte", title: "Gente de verdade,", fruit: "rápido.", sub: "Primeira resposta em até 1 hora. Em 15 minutos se a operação parar." },
   { slug: "sobre", shape: "apple", kicker: "Sobre a Eva · desde 2024", title: "O assistente perfeito,", fruit: "enfim realizado.", sub: "8 anos de experiência · clientes em 5 países" },
+  { slug: "conteudo", shape: "tree", kicker: "Conteúdo", title: "O fruto do", fruit: "conhecimento.", sub: "Guias práticos para empresários, clínicas e escritórios." },
+  ...ARTICLES.map((a) => ({
+    slug: `artigo-${a.slug}`,
+    shape: a.segment === "clinicas" ? "clock" : a.segment === "escritorios" ? "tree" : "apple",
+    kicker: { clinicas: "Para clínicas", escritorios: "Para escritórios", empresas: "Para empresários" }[a.segment],
+    title: a.title,
+    fruit: "",
+    sub: a.lead,
+    small: true,
+  })),
 ];
 
 const html = (page) => `<!doctype html><html><head><meta charset="utf-8"><style>
@@ -76,7 +87,7 @@ h1{margin-top:18px;font-family:Sora,sans-serif;font-weight:700;font-size:64px;li
 .sub{margin-top:24px;font-size:22px;line-height:1.4;color:#A7B5AD}
 .url{margin-top:auto;font-family:"Instrument Serif",serif;font-style:italic;font-size:26px;color:#F2F4F1}
 </style></head><body><div class="glow"></div><canvas id="c" width="1120" height="1260" style="width:560px;height:630px"></canvas>
-<div class="copy"><div class="logo"><img src="${logo}"></div><p class="kicker">${page.kicker}</p><h1>${page.title}<span class="fruit">${page.fruit}</span></h1><p class="sub">${page.sub}</p><p class="url">evainteligencia.com.br</p></div>
+<div class="copy"><div class="logo"><img src="${logo}"></div><p class="kicker">${page.kicker}</p><h1${page.small ? ' style="font-size:46px;line-height:1.06"' : ""}>${page.title}<span class="fruit">${page.fruit}</span></h1><p class="sub"${page.small ? ' style="font-size:19px"' : ""}>${page.sub}</p><p class="url">evainteligencia.com.br</p></div>
 <script>
 (() => {
 const S=${JSON.stringify(pack(SHAPES[page.shape]))};

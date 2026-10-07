@@ -105,3 +105,18 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Articles of the segment, under the FAQ. */
+.reading {
+  margin-top: 40px;
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+}
+.readingHead {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #5CE6FF;
+}

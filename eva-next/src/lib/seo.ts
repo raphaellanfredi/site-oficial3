@@ -45,6 +45,7 @@ export const PUBLIC_PAGES = [
   { path: "/para-empresas/", priority: 0.8 },
   { path: "/para-clinicas/", priority: 0.8 },
   { path: "/para-escritorios/", priority: 0.8 },
+  { path: "/conteudo/", priority: 0.7 },
   { path: "/central-de-ajuda/", priority: 0.6 },
   { path: "/sobre/", priority: 0.6 },
   { path: "/eva-club/", priority: 0.6 },
