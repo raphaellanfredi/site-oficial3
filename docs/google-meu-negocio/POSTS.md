@@ -1,7 +1,9 @@
 # Posts do Perfil da Empresa no Google
 
 Histórico dos posts semanais, para não repetir tema. A rotina semanal lê
-este arquivo, entrega o próximo texto e acrescenta uma linha.
+este arquivo, coloca o próximo post na fila (`fila/AAAA-MM-DD.json`, status
+`pendente`), pede a aprovação e acrescenta uma linha. A publicação
+automática está descrita em `PUBLICACAO-AUTOMATICA.md`.
 
 Regras: até 1.500 caracteres; sem preço promocional; um tema por post;
 botão e link com UTM (`utm_source=google&utm_medium=organic&utm_campaign=perfil_empresa&utm_content=post_AAAA-MM-DD`);

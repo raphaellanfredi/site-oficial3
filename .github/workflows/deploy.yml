@@ -3,6 +3,9 @@ name: Deploy to VPS
 on:
   push:
     branches: [main]
+    # Documentation (including the Google post queue) doesn't change the
+    # site, so it doesn't trigger a redeploy.
+    paths-ignore: ["docs/**"]
   # Manual run from the Actions tab, e.g. after setting GA_MEASUREMENT_ID.
   workflow_dispatch:
 
