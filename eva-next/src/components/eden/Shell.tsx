@@ -156,6 +156,7 @@ function Footer() {
             {SEGMENT_LIST.map((g) => (
               <Link key={g.key} href={g.path}>{g.label}</Link>
             ))}
+            <Link href="/conteudo">Conteúdo</Link>
           </div>
           <div>
             <p className={s.footHead}>Empresa</p>

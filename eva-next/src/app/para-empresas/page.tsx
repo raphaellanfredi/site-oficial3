@@ -3,6 +3,7 @@ import { pageMeta } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 import SegmentPage from "@/components/eden/pages/SegmentPage";
 import { SEGMENTS } from "@/components/eden/pages/segments";
+import { ARTICLES, articleCard } from "@/content/articles";
 
 const SEGMENT = SEGMENTS.empresas;
 
@@ -28,7 +29,7 @@ export default function Page() {
   return (
     <>
       <JsonLd data={FAQ} />
-      <SegmentPage segment="empresas" />
+      <SegmentPage segment="empresas" reading={ARTICLES.filter((a) => a.segment === "empresas").map(articleCard)} />
     </>
   );
 }

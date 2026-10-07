@@ -8,6 +8,7 @@ import Magnetic from "../Magnetic";
 import Guarantee from "../Guarantee";
 import type { SceneTarget } from "../sceneBus";
 import { WA_COMERCIAL, wa } from "../site";
+import type { ArticleCard } from "@/content/articles";
 import { ChatDemo } from "./Demos";
 import { SEGMENT_LIST, SEGMENTS, type Segment, type SegmentKey } from "./segments";
 import s from "../eden.module.css";
@@ -55,7 +56,7 @@ function Day({ items }: { items: Segment["day"]["items"] }) {
   );
 }
 
-export default function SegmentPage({ segment }: { segment: SegmentKey }) {
+export default function SegmentPage({ segment, reading = [] }: { segment: SegmentKey; reading?: ArticleCard[] }) {
   const seg = SEGMENTS[segment];
   const prove = wa(WA_COMERCIAL, seg.prove);
   const others = SEGMENT_LIST.filter((o) => o.key !== seg.key);
@@ -162,6 +163,14 @@ export default function SegmentPage({ segment }: { segment: SegmentKey }) {
               </details>
             ))}
           </div>
+          {reading.length > 0 && (
+            <div className={g.reading} data-fade>
+              <p className={g.readingHead}>Para ler</p>
+              {reading.map((r) => (
+                <Link key={r.slug} href={`/conteudo/${r.slug}`} className={g.more}>{r.title}</Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
