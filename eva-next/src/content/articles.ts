@@ -43,6 +43,8 @@ const LINK = {
   automatizar: "/conteudo/atendimento-do-escritorio-no-whatsapp-o-que-automatizar/",
   chatbot: "/conteudo/chatbot-ou-agente-de-ia/",
   custo: "/conteudo/atendente-ou-agente-de-ia-como-fazer-a-conta/",
+  secretaria: "/conteudo/secretaria-virtual-para-clinica/",
+  followUp: "/conteudo/follow-up-de-clientes-no-whatsapp/",
 };
 
 const READY_24H =
@@ -142,7 +144,7 @@ export const ARTICLES: Article[] = [
           },
           {
             title: "Recupere quem faltou no mesmo dia",
-            text: "Uma mensagem gentil oferecendo um novo horário traz de volta boa parte de quem faltou por imprevisto. Sem cobrança no tom.",
+            text: "Uma mensagem gentil oferecendo um novo horário traz de volta boa parte de quem faltou por imprevisto. Sem cobrança no tom. Veja [como fazer follow-up sem ser chato](" + LINK.followUp + ").",
           },
           {
             title: "Deixe a regra clara desde o início",
@@ -346,7 +348,7 @@ export const ARTICLES: Article[] = [
       },
       {
         type: "p",
-        text: "Ela é diferente de um robô de menu, aquele do \"digite 1 para agendar\". O agente de IA entende o que o paciente escreve com as próprias palavras, e também áudio. Veja a [diferença entre chatbot e agente de IA](" + LINK.chatbot + ").",
+        text: "Ela é diferente de um robô de menu, aquele do \"digite 1 para agendar\". O agente de IA entende o que o paciente escreve com as próprias palavras, e também áudio. Veja a [diferença entre chatbot e agente de IA](" + LINK.chatbot + ") e o guia completo sobre [secretária virtual para clínica](" + LINK.secretaria + ").",
       },
       { type: "h2", text: "O que a IA pode responder, e o que não pode" },
       {
@@ -471,6 +473,154 @@ export const ARTICLES: Article[] = [
       {
         q: "Quanto custa uma secretária virtual com IA?",
         a: "Na Eva, os planos começam em R$ 998 por mês, sem fidelidade, e a implantação pode ser parcelada em até 12 vezes. Os detalhes estão na página de planos.",
+      },
+    ],
+  },
+
+  {
+    slug: "secretaria-virtual-para-clinica",
+    segment: "clinicas",
+    keyword: "secretária virtual para clínica",
+    title: "Secretária virtual para clínica: o que é, como funciona e quanto custa",
+    seoTitle: "Secretária virtual para clínica: como funciona e preço · Eva",
+    description:
+      "O que é uma secretária virtual para clínica, os 3 tipos (remota, robô de menu e IA), o que ela faz, quanto custa e como escolher. Com checklist e perguntas frequentes.",
+    lead: "A recepção da clínica atende telefone, WhatsApp, Instagram e paciente no balcão, tudo ao mesmo tempo. A secretária virtual existe para que nenhuma dessas frentes fique sem resposta.",
+    published: "2026-10-07",
+    updated: "2026-10-07",
+    blocks: [
+      { type: "h2", text: "O que é uma secretária virtual para clínica" },
+      {
+        type: "p",
+        text: "**Secretária virtual para clínica** é um serviço que atende os pacientes à distância, pelo WhatsApp, telefone e redes sociais, cuidando de agendamentos, confirmações e dúvidas, sem ocupar a recepção presencial. Ela pode ser uma pessoa trabalhando remotamente, um robô de menu ou um agente de inteligência artificial.",
+      },
+      {
+        type: "p",
+        text: "Os três resolvem o mesmo problema, mas de jeitos muito diferentes. Entender a diferença é o que evita contratar a solução errada.",
+      },
+      { type: "h2", text: "Os 3 tipos de secretária virtual" },
+      {
+        type: "table",
+        head: ["Tipo", "Como funciona", "Ponto forte", "Limite"],
+        rows: [
+          ["Secretária remota", "Uma pessoa, ou uma central terceirizada, atende em nome da clínica", "Atendimento humano", "Cobre o horário contratado e atende uma conversa por vez"],
+          ["Robô de menu", "\"Digite 1 para agendar, 2 para valores\"", "Simples e barato para começar", "Não entende texto livre nem áudio, e o paciente desiste"],
+          ["Agente de IA", "Entende o paciente, responde com as informações aprovadas e marca na agenda", "Atende a qualquer hora, várias conversas ao mesmo tempo", "Precisa ser configurado com as informações da clínica"],
+        ],
+      },
+      {
+        type: "p",
+        text: "A diferença entre o robô de menu e o agente de IA é grande na prática. Veja [chatbot ou agente de IA](" + LINK.chatbot + ") com exemplos de conversa.",
+      },
+      { type: "h2", text: "O que uma secretária virtual faz pela clínica" },
+      {
+        type: "list",
+        items: [
+          "**Agenda consultas** direto na agenda da clínica, sem conflito de horário",
+          "**Confirma** as consultas na véspera e lembra no dia",
+          "**Remarca e cancela** quando o paciente pede",
+          "**Responde dúvidas** sobre valores, convênios, endereço e preparo de exames",
+          "**Atende fora do horário**, à noite e no fim de semana",
+          "**Recupera** quem faltou ou pediu orçamento e sumiu",
+          "**Passa para a equipe** o que pede um profissional, com o histórico da conversa",
+        ],
+      },
+      { type: "h2", text: "O que ela não deve fazer" },
+      {
+        type: "p",
+        text: "Seja pessoa ou IA, a secretária virtual não dá diagnóstico, orientação clínica ou interpretação de exames. Dúvidas de saúde vão para a equipe, e urgências são orientadas a procurar atendimento de emergência. No caso da IA, esses limites são configurados antes de ela entrar no ar.",
+      },
+      { type: "h2", text: "Como funciona uma secretária virtual com IA" },
+      {
+        type: "steps",
+        items: [
+          { title: "A clínica passa as informações", text: "Profissionais, especialidades, horários, valores, convênios, preparos, endereço. É a base de conhecimento da IA." },
+          { title: "As respostas sensíveis são aprovadas", text: "Valores e preparos têm texto fixo, aprovado pela clínica. A IA não improvisa." },
+          { title: "A agenda é conectada", text: "Assim a IA vê os horários livres e marca de verdade." },
+          { title: "As regras de encaminhamento são definidas", text: "O que vai para a recepção, para quem e em quanto tempo." },
+          { title: "Testes antes de entrar no ar", text: "Perguntas comuns, perguntas difíceis e tentativas de tirar a IA do roteiro." },
+          { title: "Ajustes na primeira semana", text: "Cada pergunta que ninguém previu vira uma nova resposta aprovada." },
+        ],
+      },
+      { type: "h2", text: "Quanto custa uma secretária virtual para clínica" },
+      {
+        type: "p",
+        text: "O preço depende do tipo. A **secretária remota** costuma ser cobrada por hora, por pacote de atendimentos ou por mensalidade, e o valor cresce com as horas cobertas. O **robô de menu** costuma ter mensalidade baixa, mas exige que alguém monte e mantenha os menus. O **agente de IA** costuma ter uma mensalidade e uma implantação.",
+      },
+      {
+        type: "p",
+        text: "Na Eva, os planos começam em **R$ 998 por mês**, sem fidelidade, e a implantação começa em **R$ 1.853**, parcelável em até 12 vezes. A confirmação automática de consultas, o **Anti No Show**, está incluída a partir do plano Eva PRO. Veja os detalhes em [planos](/planos/).",
+      },
+      {
+        type: "p",
+        text: "Mais importante que o preço é a conta do outro lado: quantas consultas a clínica perde hoje por falta de resposta e por faltas. Veja [como fazer essa conta](" + LINK.custo + ") e [como reduzir as faltas](" + LINK.faltas + ").",
+      },
+      { type: "h2", text: "Secretária virtual substitui a recepção?" },
+      {
+        type: "p",
+        text: "Não. Ela tira da recepção o que se repete e o que chega fora do horário, para que a equipe presencial cuide de quem está na clínica: o acolhimento, a conferência de documentos, os casos especiais. Na maioria das clínicas, a recepção fica **menos sobrecarregada**, e não menor.",
+      },
+      { type: "h2", text: "Checklist para escolher a secretária virtual" },
+      {
+        type: "list",
+        items: [
+          "Atende no WhatsApp que a clínica já usa?",
+          "Entende áudio e mensagens escritas do jeito do paciente?",
+          "Marca direto na agenda, sem conflito de horário?",
+          "Confirma na véspera e permite remarcar na conversa?",
+          "Usa só as respostas que a clínica aprovou?",
+          "Passa para a equipe com o histórico, e sai de cena quando alguém entra?",
+          "Controla quem da equipe vê as conversas, como pede a LGPD para dados de saúde?",
+          "Em quanto tempo fica pronta? Tem fidelidade?",
+        ],
+      },
+      { type: "h2", text: "Modelos de mensagem da secretária virtual" },
+      {
+        type: "template",
+        title: "Apresentação",
+        text: "Olá! Eu sou a assistente virtual da {clínica}. Posso marcar sua consulta, tirar dúvidas sobre valores e convênios ou deixar um recado para a equipe. Como posso ajudar?",
+      },
+      {
+        type: "template",
+        title: "Agendamento concluído",
+        text: "Pronto, {nome}! Sua consulta com {profissional} está marcada para {dia}, às {hora}.\n\nEndereço: {endereço}\n\nNa véspera eu te mando uma confirmação. Se precisar remarcar, é só me chamar aqui.",
+      },
+      {
+        type: "template",
+        title: "Passando para a equipe",
+        text: "Essa pergunta é para a nossa equipe, {nome}. Já passei o seu recado com o histórico da nossa conversa, e você recebe o retorno em {prazo}.",
+      },
+      { type: "h2", text: "Como a Eva funciona como secretária virtual da clínica" },
+      {
+        type: "p",
+        text: "A Eva IA atende no WhatsApp, no Instagram, no telefone e no site, 24 horas por dia, com as respostas que a clínica aprovou. Marca na agenda nativa, integrada ao Google Agenda, confirma com o Anti No Show, transcreve áudios e passa para a recepção o que pede um profissional. A Eva IA monta a arquitetura, especialistas validam, e ela entra no ar em até 24 horas. Veja a [Eva para clínicas](/para-clinicas/) e [como atender fora do horário](" + LINK.foraDoHorario + ").",
+      },
+      { type: "callout", text: READY_24H },
+    ],
+    faq: [
+      {
+        q: "Qual é a diferença entre secretária virtual e secretária remota?",
+        a: "Secretária remota é uma pessoa atendendo à distância. Secretária virtual é o termo mais amplo, que inclui a pessoa remota, o robô de menu e o agente de IA.",
+      },
+      {
+        q: "A secretária virtual com IA atende no WhatsApp da clínica?",
+        a: "Sim. A Eva atende no número que a clínica já usa, pela API oficial ou não oficial, e também no Instagram, telefone, e-mail e chat do site.",
+      },
+      {
+        q: "Ela consegue marcar consultas sozinha?",
+        a: "Sim. Com a agenda conectada, ela vê os horários livres, oferece as opções mais próximas e marca a consulta. Na Eva, a agenda nativa é integrada ao Google Agenda.",
+      },
+      {
+        q: "O paciente percebe que é uma IA?",
+        a: "É uma escolha da clínica. A recomendação é ser transparente: o paciente aceita bem quando a resposta é rápida e correta, e sabe que pode pedir para falar com uma pessoa.",
+      },
+      {
+        q: "Quanto custa uma secretária virtual com IA?",
+        a: "Na Eva, a partir de R$ 998 por mês, sem fidelidade, com implantação a partir de R$ 1.853, parcelável em até 12 vezes. A confirmação automática está incluída a partir do Eva PRO.",
+      },
+      {
+        q: "Em quanto tempo a secretária virtual fica pronta?",
+        a: "Na Eva, em até 24 horas depois do pagamento e do formulário de onboarding. Se passar disso, a implantação é por nossa conta.",
       },
     ],
   },
@@ -1197,7 +1347,7 @@ export const ARTICLES: Article[] = [
       },
       {
         type: "p",
-        text: "O melhor resultado aparece quando a IA cuida do volume e do horário, e a equipe recebe a conversa pronta para fechar. Veja também a [diferença entre chatbot e agente de IA](" + LINK.chatbot + ").",
+        text: "O melhor resultado aparece quando a IA cuida do volume e do horário, e a equipe recebe a conversa pronta para fechar. Veja também a [diferença entre chatbot e agente de IA](" + LINK.chatbot + ") e [como fazer follow-up no WhatsApp](" + LINK.followUp + ").",
       },
       { type: "h2", text: "Como medir o retorno nos primeiros 30 dias" },
       {
@@ -1242,6 +1392,170 @@ export const ARTICLES: Article[] = [
       {
         q: "Tem fidelidade?",
         a: "Não. A mensalidade não tem fidelidade obrigatória.",
+      },
+    ],
+  },
+
+  {
+    slug: "follow-up-de-clientes-no-whatsapp",
+    segment: "empresas",
+    keyword: "follow-up whatsapp",
+    title: "Follow-up no WhatsApp: como recuperar clientes sem ser chato (com modelos de mensagem)",
+    seoTitle: "Follow-up no WhatsApp: como fazer sem ser chato · Eva",
+    description:
+      "O que é follow-up, por que o cliente some, quando e quantas vezes mandar mensagem, modelos prontos para cada situação e os erros que afastam o cliente.",
+    lead: "O cliente que pediu orçamento e sumiu não disse não. Na maioria das vezes, ele só se distraiu. O follow-up certo traz essa conversa de volta, sem pressionar.",
+    published: "2026-10-07",
+    updated: "2026-10-07",
+    blocks: [
+      { type: "h2", text: "O que é follow-up" },
+      {
+        type: "p",
+        text: "**Follow-up** é a mensagem de acompanhamento enviada a um cliente que parou de responder, para retomar a conversa e ajudá-lo a decidir. No WhatsApp, é o \"e aí, conseguiu ver o orçamento?\", só que feito com método: na hora certa, com algo útil a dizer e um limite de tentativas.",
+      },
+      { type: "h2", text: "Por que o cliente some" },
+      {
+        type: "list",
+        items: [
+          "**Se distraiu.** Leu no meio de outra coisa e esqueceu de responder.",
+          "**Está comparando.** Pediu orçamento em mais de um lugar e ainda não decidiu.",
+          "**Tem uma dúvida que não perguntou.** Preço, prazo, forma de pagamento.",
+          "**Precisa da aprovação de alguém.** Sócio, cônjuge, financeiro.",
+          "**Não era o momento.** O interesse é real, mas para daqui a algumas semanas.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Em quase todos esses casos, uma mensagem bem colocada resolve. O silêncio do cliente raramente é um não.",
+      },
+      { type: "h2", text: "As 4 regras de um follow-up que não incomoda" },
+      {
+        type: "steps",
+        items: [
+          { title: "Traga algo útil em cada mensagem", text: "Uma informação nova, uma resposta à dúvida provável, uma condição, um exemplo. \"Oi, alguma novidade?\" sozinho não ajuda o cliente a decidir." },
+          { title: "Respeite o intervalo", text: "Mensagens muito seguidas parecem pressão. Espaçar as tentativas mostra interesse sem cobrar." },
+          { title: "Tenha um limite", text: "Defina quantas tentativas fazer e encerre com uma mensagem de porta aberta. Insistir para sempre afasta." },
+          { title: "Pare quando o cliente pedir", text: "Quem diz que não tem interesse ou pede para não receber mensagens sai da sequência na hora. É respeito, e é o que a LGPD espera." },
+        ],
+      },
+      { type: "h2", text: "Quando e quantas vezes mandar" },
+      {
+        type: "p",
+        text: "Não existe um número mágico, e o ritmo ideal muda com o tipo de venda. Esta é uma cadência de exemplo para começar e ajustar com os seus resultados:",
+      },
+      {
+        type: "table",
+        head: ["Quando", "Mensagem", "Objetivo"],
+        rows: [
+          ["1 dia depois", "Retomar e perguntar se ficou alguma dúvida", "Lembrar sem pressionar"],
+          ["3 dias depois", "Responder à objeção mais comum", "Tirar o motivo da indecisão"],
+          ["7 dias depois", "Trazer algo novo: exemplo, condição, prazo", "Dar um motivo para responder"],
+          ["15 dias depois", "Mensagem de encerramento, com porta aberta", "Fechar o ciclo com elegância"],
+        ],
+      },
+      {
+        type: "p",
+        text: "Para vendas de valor mais alto ou decisões que envolvem várias pessoas, os intervalos podem ser maiores. Para urgências, como uma consulta ou um serviço para esta semana, menores.",
+      },
+      { type: "h2", text: "Modelos de mensagem de follow-up" },
+      {
+        type: "template",
+        title: "Orçamento sem resposta (1 dia depois)",
+        text: "Oi, {nome}! Conseguiu ver o orçamento que te mandei? Se ficou alguma dúvida sobre valores, prazo ou forma de pagamento, me fala que eu te ajudo.",
+      },
+      {
+        type: "template",
+        title: "Respondendo à objeção (3 dias depois)",
+        text: "Oi, {nome}! Muita gente que está decidindo me pergunta sobre {dúvida comum}. {resposta curta}. Se fizer sentido, sigo com o seu pedido.",
+      },
+      {
+        type: "template",
+        title: "Trazendo algo novo (7 dias depois)",
+        text: "Oi, {nome}! Lembrei de você porque {novidade: chegou o produto, abriu uma agenda, saiu uma condição}. Quer que eu reserve para você?",
+      },
+      {
+        type: "template",
+        title: "Encerramento com porta aberta (15 dias depois)",
+        text: "Oi, {nome}! Não quero ficar te enchendo de mensagens, então esta é a última por agora. Se e quando fizer sentido, é só me chamar aqui que eu retomo de onde paramos.",
+      },
+      {
+        type: "template",
+        title: "Cliente que começou a conversa e sumiu",
+        text: "Oi, {nome}! Nossa conversa ficou no meio do caminho. Você estava vendo {assunto}. Quer que eu continue de onde paramos?",
+      },
+      {
+        type: "template",
+        title: "Pagamento não concluído",
+        text: "Oi, {nome}! Vi que o pagamento de {pedido} não foi concluído. Aconteceu algum problema? Posso te mandar o link de novo ou ver outra forma de pagamento.",
+      },
+      {
+        type: "template",
+        title: "Pós-venda",
+        text: "Oi, {nome}! Passando para saber como foi com {produto ou serviço}. Ficou tudo certo? Se precisar de qualquer coisa, estou por aqui.",
+      },
+      { type: "h2", text: "Erros que afastam o cliente" },
+      {
+        type: "list",
+        items: [
+          "Mandar a mesma mensagem genérica várias vezes",
+          "Cobrar uma resposta: \"Você não me respondeu\"",
+          "Fazer follow-up de madrugada",
+          "Não registrar o que já foi conversado e perguntar tudo de novo",
+          "Continuar mandando depois que o cliente pediu para parar",
+          "Fazer follow-up só às vezes, quando alguém lembra",
+        ],
+      },
+      { type: "h2", text: "Um cuidado da API oficial do WhatsApp" },
+      {
+        type: "p",
+        text: "Na API oficial do WhatsApp, mensagens enviadas **mais de 24 horas depois da última mensagem do cliente** precisam usar modelos aprovados pela Meta. Por isso, vale preparar os modelos de follow-up com antecedência e deixá-los aprovados antes de precisar deles.",
+      },
+      { type: "h2", text: "Como organizar o follow-up no funil" },
+      {
+        type: "p",
+        text: "Follow-up feito de cabeça depende da memória de alguém, e quase sempre falha nas semanas mais corridas. O jeito que funciona é ligar o follow-up ao **funil de vendas**: cada cliente fica numa etapa, e cada etapa tem a sua sequência de mensagens. Quando o cliente responde, a sequência para e a conversa volta para a equipe.",
+      },
+      { type: "h2", text: "Como medir se o follow-up funciona" },
+      {
+        type: "list",
+        items: [
+          "**Taxa de resposta** a cada mensagem da sequência",
+          "**Clientes recuperados**: quantos voltaram a conversar e quantos compraram",
+          "**Em qual etapa** os clientes mais respondem, para ajustar a cadência",
+          "**Pedidos para parar**, que mostram se o tom ou o ritmo está errado",
+        ],
+      },
+      { type: "h2", text: "Como a Eva faz o follow-up pela sua empresa" },
+      {
+        type: "p",
+        text: "Na Eva, o follow-up é automático e ligado ao funil: quando o cliente entra numa etapa, a sequência começa, e quando ele responde, a Eva IA retoma a conversa com o contexto do que já foi dito. Os planos incluem de 3 a 15 etapas de recuperação de cliente, além de mensagens agendadas. Veja a [Eva para empresas](/para-empresas/) e [quanto vale o cliente sem resposta](" + LINK.custo + ").",
+      },
+      { type: "callout", text: READY_24H },
+    ],
+    faq: [
+      {
+        q: "Quantas mensagens de follow-up devo mandar?",
+        a: "Depende do tipo de venda, mas uma sequência de três a quatro mensagens espaçadas, terminando com uma mensagem de porta aberta, é um bom começo. Ajuste com os seus resultados.",
+      },
+      {
+        q: "Qual é o melhor horário para fazer follow-up?",
+        a: "O horário em que o seu cliente costuma responder. Olhe as conversas que deram certo e repita o padrão. Evite madrugada e horários muito cedo.",
+      },
+      {
+        q: "Follow-up automático parece robótico?",
+        a: "Não quando a mensagem é personalizada, curta e útil, e quando a conversa volta para uma pessoa ou para um agente de IA assim que o cliente responde.",
+      },
+      {
+        q: "O que fazer quando o cliente pede para parar?",
+        a: "Tirar o cliente da sequência na hora e agradecer. Insistir afasta, e respeitar o pedido é o que a LGPD espera.",
+      },
+      {
+        q: "Posso fazer follow-up pela API oficial do WhatsApp?",
+        a: "Sim. Depois de 24 horas da última mensagem do cliente, a API oficial exige modelos aprovados pela Meta, então prepare os modelos de follow-up com antecedência.",
+      },
+      {
+        q: "Quantas etapas de follow-up a Eva faz?",
+        a: "Depende do plano: 3 etapas no Eva One, 7 no Eva PRO e 15 no Eva BLACK.",
       },
     ],
   },
