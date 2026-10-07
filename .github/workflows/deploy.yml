@@ -39,6 +39,9 @@ jobs:
           # variable, when set, overrides it. Local builds have no ID, so
           # development traffic never reaches the report.
           NEXT_PUBLIC_GA_ID: ${{ vars.GA_MEASUREMENT_ID || 'G-CVKBZMP64W' }}
+          # Meta Pixel (dataset) ID, public like the GA ID. The Pixel only
+          # loads after the visitor accepts cookies.
+          NEXT_PUBLIC_META_PIXEL_ID: ${{ vars.META_PIXEL_ID || '2430551070703690' }}
 
       - name: Copy site files
         run: |

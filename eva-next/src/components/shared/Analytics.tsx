@@ -3,9 +3,12 @@
 import { useEffect, useState } from "react";
 import Script from "next/script";
 import {
+  CONSENT_KEY,
   GA_ID,
+  META_PIXEL_ID,
   WHATSAPP_COMERCIAL,
   WHATSAPP_SUPORTE,
+  loadMetaPixel,
   readConsent,
   saveConsent,
   track,
@@ -15,13 +18,14 @@ const PRIVACY_URL =
   "https://app.evainteligencia.com.br/hc/central-de-ajuda/articles/1756986596-politica-de-priva";
 
 // Consent Mode v2: nothing is stored on the visitor's device until they
-// accept. Ads storage stays denied; the site does not run ad tags.
+// accept. Google ads storage stays denied; the site runs no Google ad tags.
+// The Meta Pixel is not loaded at all until the visitor accepts.
 const bootstrap = `
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 window.gtag = gtag;
 var stored = null;
-try { stored = localStorage.getItem("eva_consent_analytics"); } catch (e) {}
+try { stored = localStorage.getItem("${CONSENT_KEY}"); } catch (e) {}
 gtag("consent", "default", {
   analytics_storage: stored === "granted" ? "granted" : "denied",
   ad_storage: "denied",
@@ -62,13 +66,15 @@ export default function Analytics() {
   const [askConsent, setAskConsent] = useState(false);
 
   useEffect(() => {
-    if (!GA_ID) return;
-    setAskConsent(readConsent() === null);
+    if (!GA_ID && !META_PIXEL_ID) return;
+    const consent = readConsent();
+    setAskConsent(consent === null);
+    if (consent === "granted") loadMetaPixel();
     document.addEventListener("click", handleClick, { capture: true });
     return () => document.removeEventListener("click", handleClick, { capture: true });
   }, []);
 
-  if (!GA_ID) return null;
+  if (!GA_ID && !META_PIXEL_ID) return null;
 
   function choose(value: "granted" | "denied") {
     saveConsent(value);
@@ -77,13 +83,17 @@ export default function Analytics() {
 
   return (
     <>
-      <Script id="ga-bootstrap" strategy="afterInteractive">
-        {bootstrap}
-      </Script>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-        strategy="afterInteractive"
-      />
+      {GA_ID && (
+        <>
+          <Script id="ga-bootstrap" strategy="afterInteractive">
+            {bootstrap}
+          </Script>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+            strategy="afterInteractive"
+          />
+        </>
+      )}
       {askConsent && (
         <div
           role="dialog"
@@ -111,7 +121,7 @@ export default function Analytics() {
           }}
         >
           <p style={{ flex: "1 1 260px", fontSize: "14px", lineHeight: 1.5, color: "var(--ink-2)" }}>
-            Usamos cookies de análise para entender como o site é usado e melhorá-lo.{" "}
+            Usamos cookies de análise e de medição de anúncios (Google e Meta) para entender como o site é usado e melhorar a experiência.{" "}
             <a href={PRIVACY_URL} target="_blank" rel="noopener noreferrer" style={{ color: "var(--ink)", textDecoration: "underline" }}>
               Política de Privacidade
             </a>
