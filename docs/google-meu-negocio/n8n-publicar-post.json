@@ -1,0 +1,50 @@
+{
+  "name": "Eva · Publicar post no Google",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "eva-post-google",
+        "authentication": "headerAuth",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "a1b2c3d4-0001-4000-8000-000000000001",
+      "name": "Recebe post aprovado",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0],
+      "webhookId": "eva-post-google"
+    },
+    {
+      "parameters": {
+        "resource": "post",
+        "operation": "create",
+        "postType": "STANDARD",
+        "summary": "={{ $json.body.texto }}"
+      },
+      "id": "a1b2c3d4-0002-4000-8000-000000000002",
+      "name": "Publica no Perfil da Empresa",
+      "type": "n8n-nodes-base.googleBusinessProfile",
+      "typeVersion": 1,
+      "position": [260, 0]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"ok\": true } }}",
+        "options": {}
+      },
+      "id": "a1b2c3d4-0003-4000-8000-000000000003",
+      "name": "Responde OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [520, 0]
+    }
+  ],
+  "connections": {
+    "Recebe post aprovado": { "main": [[{ "node": "Publica no Perfil da Empresa", "type": "main", "index": 0 }]] },
+    "Publica no Perfil da Empresa": { "main": [[{ "node": "Responde OK", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" }
+}

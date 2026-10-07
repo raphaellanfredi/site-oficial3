@@ -1,0 +1,53 @@
+name: Publish Google post
+
+# Sends each approved post in docs/google-meu-negocio/fila/ to the n8n
+# webhook that publishes it on the Eva's Google Business Profile. Runs on
+# the VPS runner because the webhook is only reachable from there.
+#
+# A post goes out only when its file says "status": "aprovado". Each post
+# is sent once: the ids already sent are kept on the VPS, in
+# /opt/data/eva-gbp/published.txt. Until the GBP_WEBHOOK_URL and
+# GBP_WEBHOOK_TOKEN repository secrets exist, nothing is sent.
+on:
+  push:
+    branches: [main]
+    paths: ["docs/google-meu-negocio/fila/**"]
+  workflow_dispatch:
+
+concurrency: google-post
+
+jobs:
+  publish:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Send approved posts to n8n
+        env:
+          WEBHOOK_URL: ${{ secrets.GBP_WEBHOOK_URL }}
+          WEBHOOK_TOKEN: ${{ secrets.GBP_WEBHOOK_TOKEN }}
+        run: |
+          if [ -z "$WEBHOOK_URL" ] || [ -z "$WEBHOOK_TOKEN" ]; then
+            echo "GBP_WEBHOOK_URL / GBP_WEBHOOK_TOKEN not set yet; nothing sent."
+            exit 0
+          fi
+          mkdir -p /opt/data/eva-gbp
+          sent=/opt/data/eva-gbp/published.txt
+          touch "$sent"
+          for f in docs/google-meu-negocio/fila/*.json; do
+            [ -e "$f" ] || continue
+            id=$(basename "$f" .json)
+            status=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1])).get("status",""))' "$f")
+            [ "$status" = "aprovado" ] || { echo "$id: $status, skipped"; continue; }
+            if grep -qx "$id" "$sent"; then echo "$id: already sent"; continue; fi
+            code=$(curl -sS -m 60 -o /tmp/gbp-response.txt -w '%{http_code}' -X POST "$WEBHOOK_URL" \
+              -H "Content-Type: application/json" -H "X-Eva-Token: $WEBHOOK_TOKEN" --data-binary @"$f")
+            if [ "$code" -ge 200 ] && [ "$code" -lt 300 ]; then
+              echo "$id" >> "$sent"
+              echo "$id: published"
+            else
+              echo "$id: n8n answered $code"
+              head -c 500 /tmp/gbp-response.txt
+              exit 1
+            fi
+          done
