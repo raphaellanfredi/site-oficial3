@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Shell from "../Shell";
 import Magnetic from "../Magnetic";
@@ -12,14 +13,42 @@ import a from "./article.module.css";
 
 const scene = (t: SceneTarget) => JSON.stringify(t);
 
-/** Renders **bold** inside a string. */
+/** Renders **bold** and [links](/path/) inside a string. */
 export function Rich({ text }: { text: string }) {
   return (
     <>
-      {text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
-        part.startsWith("**") && part.endsWith("**") ? <strong key={i}>{part.slice(2, -2)}</strong> : part,
-      )}
+      {text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g).map((part, i) => {
+        if (part.startsWith("**") && part.endsWith("**")) return <strong key={i}>{part.slice(2, -2)}</strong>;
+        const link = /^\[([^\]]+)\]\(([^)]+)\)$/.exec(part);
+        if (link) return <Link key={i} href={link[2]} className={a.inline}>{link[1]}</Link>;
+        return part;
+      })}
     </>
+  );
+}
+
+/** A message template the reader can copy with one tap. */
+function Template({ title, text }: { title: string; text: string }) {
+  const [copied, setCopied] = useState(false);
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Clipboard blocked: the text stays selectable.
+    }
+  }
+  return (
+    <figure className={a.template}>
+      <figcaption className={a.templateHead}>
+        <span>{title}</span>
+        <button type="button" onClick={copy} className={a.copy}>
+          {copied ? "Copiado" : "Copiar"}
+        </button>
+      </figcaption>
+      <p className={a.templateText}>{text}</p>
+    </figure>
   );
 }
 
@@ -65,6 +94,8 @@ function BlockView({ block }: { block: Block }) {
       );
     case "callout":
       return <p className={a.callout}><Rich text={block.text} /></p>;
+    case "template":
+      return <Template title={block.title} text={block.text} />;
   }
 }
 
@@ -79,11 +110,8 @@ export default function ArticlePage({
 }) {
   const seg = SEGMENTS[article.segment];
   const toc = article.blocks.filter((b): b is Extract<Block, { type: "h2" }> => b.type === "h2");
-  const date = new Date(`${article.published}T12:00:00`).toLocaleDateString("pt-BR", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  const date = (d: string) =>
+    new Date(`${d}T12:00:00`).toLocaleDateString("pt-BR", { day: "numeric", month: "long", year: "numeric" });
 
   return (
     <Shell>
@@ -97,7 +125,12 @@ export default function ArticlePage({
           <h1 className={a.title} data-hero-title>{article.title}</h1>
           <p className={s.heroSub} data-hero-fade>{article.lead}</p>
           <p className={a.meta} data-hero-fade>
-            <time dateTime={article.published}>{date}</time> · {minutes} min de leitura
+            {article.updated !== article.published ? (
+              <>Atualizado em <time dateTime={article.updated}>{date(article.updated)}</time></>
+            ) : (
+              <time dateTime={article.published}>{date(article.published)}</time>
+            )}{" "}
+            · {minutes} min de leitura
           </p>
         </div>
       </section>
