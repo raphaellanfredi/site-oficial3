@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { pageMeta } from "@/lib/seo";
 import EdenHome from "@/components/eden/EdenHome";
 import JsonLd from "@/components/seo/JsonLd";
+import { GOOGLE_PROFILE, INSTAGRAM } from "@/components/eden/site";
 import { SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta({
@@ -21,7 +22,7 @@ const ORGANIZATION = {
   foundingDate: "2024",
   description:
     "Inteligência artificial de atendimento no WhatsApp, Instagram, e-mail e telefone, montada pela Eva IA e validada por especialistas.",
-  sameAs: ["https://www.instagram.com/eva.inteligencia.art/"],
+  sameAs: [INSTAGRAM, GOOGLE_PROFILE],
   contactPoint: [
     { "@type": "ContactPoint", contactType: "sales", telephone: "+55-11-96116-3777", availableLanguage: "Portuguese" },
     {

@@ -14,6 +14,8 @@ export const TERMS =
   "https://app.evainteligencia.com.br/hc/central-de-ajuda/articles/1777938226-termos-de-servico";
 export const LOGIN = "https://app.evainteligencia.com.br";
 export const INSTAGRAM = "https://www.instagram.com/eva.inteligencia.art/";
+/** The Eva's Google Business Profile, as shared from Google. */
+export const GOOGLE_PROFILE = "https://share.google/N2fGEQAd5Wn9FLSPP";
 export const SUPPORT_EMAIL = "suporte@evainteligencia.com.br";
 
 export const GUARANTEE =

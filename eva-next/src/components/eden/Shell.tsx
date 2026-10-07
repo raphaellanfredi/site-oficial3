@@ -8,6 +8,7 @@ import { gsap } from "@/lib/gsap";
 import { getLenis } from "@/lib/lenis";
 import { useEdenMotion } from "./useEdenMotion";
 import {
+  GOOGLE_PROFILE,
   HELP_CENTER,
   INSTAGRAM,
   LOGIN,
@@ -166,6 +167,7 @@ function Footer() {
             <Link href="/afiliados">Programa de Afiliados</Link>
             <a href={HELP_CENTER} target="_blank" rel="noopener noreferrer">Central de Ajuda da Eva</a>
             <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href={GOOGLE_PROFILE} target="_blank" rel="noopener noreferrer">Eva no Google</a>
           </div>
           <div>
             <p className={s.footHead}>Contato</p>
