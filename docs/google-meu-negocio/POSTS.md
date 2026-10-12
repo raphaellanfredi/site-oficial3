@@ -13,3 +13,4 @@ a arquitetura").
 | Data | Tema | Link do botão | Imagem |
 |---|---|---|---|
 | 2026-10-07 | Apresentação: "Enquanto você vive, a Eva trabalha" (post 1 do GUIA.md) | Home | post-1-apresentacao.png |
+| 2026-10-12 | Garantia 24 horas (post 2 do GUIA.md) — pendente | Planos | post-2-garantia.png |
