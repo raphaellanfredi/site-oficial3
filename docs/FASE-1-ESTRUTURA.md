@@ -102,7 +102,7 @@ Mesmo conteúdo, em lista. Os submenus abrem como sanfona. **O botão "Falar com
 | Automação | Canais e integrações | Planos | | Central de Ajuda (externa) |
 | Gestão e equipe | | | | Instagram |
 
-Barra inferior: © · CNPJ 62.162.039/0001-62 · Privacidade · Termos.
+Barra inferior: © · CNPJ 67.792.163/0001-25 · Privacidade · Termos.
 
 ---
 
