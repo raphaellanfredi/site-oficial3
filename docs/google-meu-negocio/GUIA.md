@@ -131,7 +131,7 @@ O Google escolhe o método. Hoje o mais comum é **vídeo**: um vídeo curto e c
 
 1. a placa ou algo com o nome da empresa, ou o local de trabalho
 2. o painel da Eva aberto
-3. um documento com o CNPJ 62.162.039/0001-62
+3. um documento com o CNPJ 67.792.163/0001-25
 
 A análise leva de alguns dias a duas semanas. O perfil só aparece na busca depois de verificado.
 
