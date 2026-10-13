@@ -184,7 +184,7 @@ function Footer() {
         </div>
       </div>
       <div className={s.footBottom}>
-        <span>© 2026 Eva Inteligência · CNPJ 62.162.039/0001-62</span>
+        <span>© 2026 Eva Inteligência Art – EVA SERVICOS E TECNOLOGIA DA INFORMACAO LTDA – CNPJ 67.792.163/0001-25</span>
         <nav aria-label="Legal">
           <a href={PRIVACY} target="_blank" rel="noopener noreferrer">Privacidade</a>
           <a href={TERMS} target="_blank" rel="noopener noreferrer">Termos</a>

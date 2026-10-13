@@ -203,7 +203,7 @@ export default function AboutPage() {
       <section className={s.final} data-scene={scene({ shape: "apple", align: "center", glow: 1.6 })}>
         <div className={s.finalInner}>
           <h2 className={s.finalVerse} data-reveal>O assistente perfeito existe. Prove.</h2>
-          <p className={s.body} data-fade>Eva Inteligência · desde 2024 · CNPJ 62.162.039/0001-62</p>
+          <p className={s.body} data-fade>Eva Inteligência · desde 2024 · CNPJ 67.792.163/0001-25</p>
           <div className={`${s.ctaRow} ${s.center}`} data-fade>
             <Magnetic href={PROVE} external>Prove a Eva</Magnetic>
             <Magnetic href="/planos" variant="ghost">Ver planos</Magnetic>
