@@ -4,6 +4,7 @@ import EdenHome from "@/components/eden/EdenHome";
 import JsonLd from "@/components/seo/JsonLd";
 import { GOOGLE_PROFILE, INSTAGRAM } from "@/components/eden/site";
 import { SITE_URL } from "@/lib/seo";
+import { ARTICLES, articleCard } from "@/content/articles";
 
 export const metadata: Metadata = pageMeta({
   path: "/",
@@ -50,7 +51,7 @@ export default function Home() {
   return (
     <>
       <JsonLd data={ORGANIZATION} />
-      <EdenHome />
+      <EdenHome reading={ARTICLES.map(articleCard)} />
     </>
   );
 }

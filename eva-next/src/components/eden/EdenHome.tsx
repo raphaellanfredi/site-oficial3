@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import Shell from "./Shell";
 import Magnetic from "./Magnetic";
@@ -8,8 +9,11 @@ import Growth from "./Growth";
 import Guarantee from "./Guarantee";
 import { setSceneTarget, type SceneTarget } from "./sceneBus";
 import { PROVE } from "./site";
+import { SEGMENTS } from "./pages/segments";
+import type { ArticleCard } from "@/content/articles";
 import s from "./eden.module.css";
 import h from "./home.module.css";
+import a from "./pages/article.module.css";
 
 const CHAOS_MESSAGES = [
   "Oi, ainda tem?",
@@ -167,7 +171,7 @@ function useHomeMotion(root: React.RefObject<HTMLDivElement | null>) {
   }, [root]);
 }
 
-export default function EdenHome() {
+export default function EdenHome({ reading }: { reading: ArticleCard[] }) {
   const root = useRef<HTMLDivElement>(null);
   useHomeMotion(root);
 
@@ -323,6 +327,26 @@ export default function EdenHome() {
                 </figure>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* VII */}
+        <section data-scene={scene({ shape: "tree", align: "right", pan: 1, glow: 0.6 })}>
+          <div className={s.wrap}>
+            <p className={s.chapterLabel}>VII · Conteúdo</p>
+            <h2 className={s.verse} data-reveal>Mais frutos do conhecimento.</h2>
+            <div className={a.related}>
+              {reading.map((r) => (
+                <Link key={r.slug} href={`/conteudo/${r.slug}`} className={s.card} data-fade data-spot>
+                  <span className={s.cardTag}>{SEGMENTS[r.segment].kicker}</span>
+                  <h3 className={s.cardTitle}>{r.title}</h3>
+                  <p className={s.cardText}>{r.description}</p>
+                </Link>
+              ))}
+            </div>
+            <p className={s.body} data-fade>
+              <Link href="/conteudo" className={a.more}>Ver todo o conteúdo</Link>
+            </p>
           </div>
         </section>
 
