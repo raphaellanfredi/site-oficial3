@@ -15,3 +15,4 @@ a arquitetura").
 | 2026-10-07 | Apresentação: "Enquanto você vive, a Eva trabalha" (post 1 do GUIA.md) | Home | post-1-apresentacao.png |
 | 2026-10-12 | Garantia 24 horas (post 2 do GUIA.md) — aprovado em 13/10 | Planos | post-2-garantia.png |
 | 2026-10-19 | Clínicas: "Nenhum paciente sem resposta" (post 3 do GUIA.md) — pendente | Para clínicas | post-3-clinicas.png |
+| 2026-10-26 | Escritórios: triagem de clientes (artigo /conteudo) — pendente | Artigo triagem-de-clientes-no-escritorio | og/artigo-triagem-de-clientes-no-escritorio.png |
